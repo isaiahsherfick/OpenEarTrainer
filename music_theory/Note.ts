@@ -1,57 +1,71 @@
 import {NoteName} from './NoteName';
 
+//public exported Note class
+//encapsulates a note and is responsible for handling enharmonic equivalency conversions
 export class Note {
-    name: NoteName;
+    noteName: NoteName;
     octave: number;
 
-    constructor(name: NoteName, octave: number) {
-        this.name = name;
+    constructor(noteName: NoteName, octave: number) {
+        this.noteName = noteName;
         this.octave = octave;
     }
 
-    getFrequency() {
-        const frequencyOfOctave0 = BaseNoteFrequencies[this.name];
-        return frequencyOfOctave0 * Math.pow(2, this.octave);
+    getSoundFileName() {
+        let noteName = this.noteName.toString();
+        let octave = this.octave;
+        octave = handleOctaveShiftEdgeCases(noteName, octave);
+        //if noteName has an enharmonic equivalent with either no sharps or a single sharp, change it to that
+        if (enharmonicEquivalencies.has(noteName)) {
+            noteName = enharmonicEquivalencies.get(noteName) as string;
+        }
+        noteName = noteName.replace('#', 'sharp');
+        return noteName + octave + 'piano.mp3';
     }
 }
-//These frequences are for the occurrence of each note in OCTAVE 0 (Notes below A0 (C0 - Ab/G#0) do not appear on a standard 88-key keyboard,
-//but using them here makes calculation of subsequent octaves easier and consistent for all notes).
-//Each subsequent frequency can be calculated easily by multiplying the frequencies listed here by 2^n, where n is the octave of the note whose frequency we want to calculate
-//frequencies taken from https://en.wikipedia.org/wiki/Piano_key_frequencies
-const BaseNoteFrequencies = {
-    [NoteName.A]: 27.5,
-    [NoteName.ASharp]: 29.13524,
-    [NoteName.AFlat]: 25.95654,
-    [NoteName.B]: 30.86771,
-    [NoteName.BSharp]: 32.7032, //C1
-    [NoteName.BFlat]: 29.13524,
-    [NoteName.C]: 16.3516,
-    [NoteName.CSharp]: 17.32391,
-    [NoteName.CFlat]: 15.43385,
-    [NoteName.D]: 18.35405,
-    [NoteName.DSharp]: 19.44544,
-    [NoteName.DFlat]: 17.32391,
-    [NoteName.E]: 20.60172,
-    [NoteName.ESharp]: 21.82676,
-    [NoteName.EFlat]: 19.44544,
-    [NoteName.F]: 21.82676,
-    [NoteName.FSharp]: 23.12465,
-    [NoteName.FFlat]: 20.60172,
-    [NoteName.G]: 24.49971,
-    [NoteName.GSharp]: 25.95654,
-    [NoteName.GFlat]: 23.12465,
-    [NoteName.ADoubleSharp]: 30.86771, //B0
-    [NoteName.ADoubleFlat]: 24.49971, //G0
-    [NoteName.BDoubleSharp]: 34.64783, //C#1
-    [NoteName.BDoubleFlat]: 27.5, //A0
-    [NoteName.CDoubleSharp]: 18.35405, //D0
-    [NoteName.CDoubleFlat]: 30.86771, //B0
-    [NoteName.DDoubleSharp]: 20.60172, //E0
-    [NoteName.DDoubleFlat]: 16.3516, //C0
-    [NoteName.EDoubleSharp]: 23.12465, //F#0
-    [NoteName.EDoubleFlat]: 18.35405, //D0
-    [NoteName.FDoubleSharp]: 24.49971, //G0
-    [NoteName.FDoubleFlat]: 19.44544, //D#0
-    [NoteName.GDoubleSharp]: 27.5, //A0
-    [NoteName.GDoubleFlat]: 21.82676, //F0
-};
+
+//Needed to handle converting note noteNames to exclusively natural or sharp
+const enharmonicEquivalencies: Map<string, string> = new Map([
+    ['Ab', 'G#'],
+    ['Abb', 'G'],
+    ['Ax', 'B'],
+    ['B#', 'C'],
+    ['Bb', 'A#'],
+    ['Bbb', 'A'],
+    ['Bx', 'C#'],
+    ['Cb', 'B'],
+    ['Cbb', 'A#'],
+    ['Cx', 'D'],
+    ['Db', 'C#'],
+    ['Dbb', 'C'],
+    ['Dx', 'E'],
+    ['E#', 'F'],
+    ['Eb', 'D#'],
+    ['Ebb', 'D'],
+    ['Ex', 'F#'],
+    ['Fb', 'E'],
+    ['Fbb', 'D#'],
+    ['Fx', 'G'],
+    ['Gb', 'F#'],
+    ['Gbb', 'F'],
+    ['Gx', 'A']
+]);
+//private helper functions
+
+//looks at a note and returns the proper octave designation.
+//consider the case where we have a note like Cb. Cb3 != B3; Cb3 == B2. Similarly B#2 != C2; B#2 == C3.
+//enharmonic equivalencies are fun, aren't they?
+function handleOctaveShiftEdgeCases(noteName: string, octave: number): number {
+    if (noteName.includes('B')) {
+        //B# / Bx case -- increase octave
+        if (noteName.includes('#') || noteName.includes('x')) {
+            return octave + 1;
+        }
+    } else if (noteName.includes('C')) {
+        //Cb / Cbb case -- decrease octave
+        if (noteName.includes('b')) {
+            return octave - 1;
+        }
+    }
+    return octave;
+}

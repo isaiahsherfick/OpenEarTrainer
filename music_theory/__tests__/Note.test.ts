@@ -4,56 +4,161 @@ import {NoteName} from '../NoteName';
 describe('Note', () => {
     it('should be able to create a new note with correct properties', () => {
         const note = new Note(NoteName.A, 4);
-        expect(note).toHaveProperty('name', NoteName.A);
+        expect(note).toHaveProperty('noteName', NoteName.A);
         expect(note).toHaveProperty('octave', 4);
     });
-    it('should be able to calculate the frequency of A6', () => {
-        const note = new Note(NoteName.A, 6);
-        expect(note.getFrequency()).toBeCloseTo(1760);
+    it('should provide the correct filename for its sound file in /sound_files for the trivial natural note case', () => {
+        let note = new Note(NoteName.A, 4);
+        let expected = 'A4piano.mp3';
+        let actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.B, 2);
+        expected = 'B2piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.C, 6);
+        expected = 'C6piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.D, 1);
+        expected = 'D1piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.E, 0);
+        expected = 'E0piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.F, 3);
+        expected = 'F3piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.G, 8);
+        expected = 'G8piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
     });
-
-    it('should be able to calculate the frequency of GSharp6', () => {
-        const note = new Note(NoteName.GSharp, 6);
-        expect(note.getFrequency()).toBeCloseTo(1661.219);
+    it('should provide the correct filename for its sound file in /sound_files for the sharp note case', () => {
+        let note = new Note(NoteName.ASharp, 4);
+        let expected = 'Asharp4piano.mp3';
+        let actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        //octave goes up by 1 at each 'C' -- this is the tricky case
+        note = new Note(NoteName.BSharp, 2);
+        expected = 'C3piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.CSharp, 6);
+        expected = 'Csharp6piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.DSharp, 1);
+        expected = 'Dsharp1piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.ESharp, 0);
+        expected = 'F0piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.FSharp, 3);
+        expected = 'Fsharp3piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.GSharp, 8);
+        expected = 'Gsharp8piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
     });
-
-    it('should be able to calculate the frequency of G6', () => {
-        const note = new Note(NoteName.G, 6);
-        expect(note.getFrequency()).toBeCloseTo(1567.982);
+    it('should provide the correct filename for its sound file in /sound_files for the flat note case', () => {
+        let note = new Note(NoteName.AFlat, 4);
+        let expected = 'Gsharp4piano.mp3';
+        let actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.BFlat, 2);
+        expected = 'Asharp2piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        //tricky case again
+        note = new Note(NoteName.CFlat, 6);
+        expected = 'B5piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.DFlat, 1);
+        expected = 'Csharp1piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.EFlat, 0);
+        expected = 'Dsharp0piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.FFlat, 3);
+        expected = 'E3piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.GFlat, 8);
+        expected = 'Fsharp8piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
     });
-
-    it('should be able to calculate the frequency of FSharp6', () => {
-        const note = new Note(NoteName.FSharp, 6);
-        expect(note.getFrequency()).toBeCloseTo(1479.978);
+    it('should provide the correct filename for its sound file in /sound_files for the double sharp note case', () => {
+        let note = new Note(NoteName.ADoubleSharp, 4);
+        let expected = 'B4piano.mp3';
+        let actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        //tricky case
+        note = new Note(NoteName.BDoubleSharp, 2);
+        expected = 'Csharp3piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.CDoubleSharp, 6);
+        expected = 'D6piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.DDoubleSharp, 1);
+        expected = 'E1piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.EDoubleSharp, 0);
+        expected = 'Fsharp0piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.FDoubleSharp, 3);
+        expected = 'G3piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.GDoubleSharp, 8);
+        expected = 'A8piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
     });
-
-    it('should be able to calculate the frequency of C4 (Middle C)', () => {
-        const note = new Note(NoteName.C, 4);
-        expect(note.getFrequency()).toBeCloseTo(261.6256);
-    });
-
-    it('should be able to calculate the frequency of B3', () => {
-        const note = new Note(NoteName.B, 3);
-        expect(note.getFrequency()).toBeCloseTo(246.9417);
-    });
-
-    it('should be able to calculate the frequency of ASharp3', () => {
-        const note = new Note(NoteName.ASharp, 3);
-        expect(note.getFrequency()).toBeCloseTo(233.0819);
-    });
-
-    it('should be able to calculate the frequency of C1 (Pedal C)', () => {
-        const note = new Note(NoteName.C, 1);
-        expect(note.getFrequency()).toBeCloseTo(32.7032);
-    });
-
-    it('should be able to calculate the frequency of B0', () => {
-        const note = new Note(NoteName.B, 0);
-        expect(note.getFrequency()).toBeCloseTo(30.86771);
-    });
-
-    it('should be able to calculate the frequency of ASharp0', () => {
-        const note = new Note(NoteName.ASharp, 0);
-        expect(note.getFrequency()).toBeCloseTo(29.13524);
+    it('should provide the correct filename for its sound file in /sound_files for the double flat note case', () => {
+        let note = new Note(NoteName.ADoubleFlat, 4);
+        let expected = 'G4piano.mp3';
+        let actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.BDoubleFlat, 2);
+        expected = 'A2piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        //The tricky case to end all tricky cases
+        note = new Note(NoteName.CDoubleFlat, 6);
+        expected = 'Asharp5piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.DDoubleFlat, 1);
+        expected = 'C1piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.EDoubleFlat, 0);
+        expected = 'D0piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.FDoubleFlat, 3);
+        expected = 'Dsharp3piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
+        note = new Note(NoteName.GDoubleFlat, 8);
+        expected = 'F8piano.mp3';
+        actual = note.getSoundFileName();
+        expect(actual).toEqual(expected);
     });
 });
