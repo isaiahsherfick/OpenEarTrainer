@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -29,8 +29,8 @@ type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = true;
+function Section({ children, title }: SectionProps): JSX.Element {
+  const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -71,7 +71,7 @@ function App(): JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+        {/* <Header /> */}
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -86,10 +86,10 @@ function App(): JSX.Element {
           <Section title="Debug">
             <DebugInstructions />
           </Section>
-          <Section title="Learn More">
+          {/* <Section title="Learn More">
             Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          </Section> */}
+          {/* <LearnMoreLinks /> */}
         </View>
       </ScrollView>
     </SafeAreaView>
