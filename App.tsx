@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import type { PropsWithChildren } from 'react';
 import {
@@ -25,12 +18,54 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import PassiveTraining from './screens/PassiveTraining';
+import ActiveTraining from './screens/ActiveTraining';
+import { RootStackParamList } from './screens/RootStackPrams';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
+function Welcome(): JSX.Element {
+  const isDarkMode = true;
+
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  };
+
+  return (
+    <SafeAreaView style={backgroundStyle}>
+      <StatusBar
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        backgroundColor={backgroundStyle.backgroundColor}
+      />
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={backgroundStyle}>
+        <View
+          style={{
+            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+          }}>
+          <Section title="Step One">
+            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            screen and then come back to see your edits.
+          </Section>
+          <Section title="See Your Changes">
+            <ReloadInstructions />
+          </Section>
+          <Section title="Debug">
+            <DebugInstructions />
+          </Section>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  )
+}
 function Section({ children, title }: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = true;
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -56,43 +91,26 @@ function Section({ children, title }: SectionProps): JSX.Element {
 }
 
 function App(): JSX.Element {
-  const isDarkMode = true;
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const Stack = createStackNavigator<RootStackParamList>();
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        {/* <Header /> */}
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          {/* <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section> */}
-          {/* <LearnMoreLinks /> */}
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          gestureEnabled: true,
+          headerShown: false
+        }}
+      >
+        <Stack.Screen
+          name='PassiveTraining'
+          component={PassiveTraining}
+        />
+        <Stack.Screen
+          name='ActiveTraining'
+          component={ActiveTraining}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
