@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, StyleSheet } from 'react-native';
 import type { StackScreenProps } from '@react-navigation/stack';
 import ScreenHeader from '../components/ScreenHeader';
 import PlaybackControl from '../components/PlaybackControl';
@@ -16,14 +16,16 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                 title='to active'
                 onPress={() => navigation.navigate('ActiveTraining')}
             />
-            <ScreenHeader
-                TrainingMode='Passive'
-                NotesMode='Chords' // TODO make dynamic based on setting
-            />
-            <PassiveTrainingBody />
-            <PlaybackControl
-                TrainingMode='Passive'
-            />
+            <View style={styles.TrainingScreen}>
+                <ScreenHeader
+                    TrainingMode='Passive'
+                    NotesMode='Chords' // TODO make dynamic based on setting
+                />
+                <PassiveTrainingBody />
+                <PlaybackControl
+                    TrainingMode='Passive'
+                />
+            </View>
         </View>
     )
 }
@@ -38,3 +40,11 @@ function PassiveTrainingBody(props: PropsWithChildren): JSX.Element {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    TrainingScreen: {
+        height: '90%',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+    }
+})

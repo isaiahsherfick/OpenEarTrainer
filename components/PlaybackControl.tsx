@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 type PlaybackControlProps = PropsWithChildren<{
     TrainingMode: "Active" | "Passive",
@@ -11,7 +11,7 @@ export default function PlaybackControl(props: PlaybackControlProps): JSX.Elemen
     return (
         <View>
             {props.TrainingMode === "Passive" &&
-                <View>
+                <View style={styles.playbackControlRow}>
                     <TouchableOpacity onPress={toggleAscend}>
                         <Text>toggleAscend</Text>
                     </TouchableOpacity>
@@ -23,7 +23,7 @@ export default function PlaybackControl(props: PlaybackControlProps): JSX.Elemen
                     </TouchableOpacity>
                 </View>
             }
-            <View>
+            <View style={styles.playbackControlRow}>
                 {props.TrainingMode === "Passive" &&
                     <TouchableOpacity onPress={togglePlay}>
                         <Text>togglePlay</Text>
@@ -48,3 +48,11 @@ function togglePlaybackSpeed() { }
 function togglePlay() { }
 function replay() { }
 function skip() { }
+
+const styles = StyleSheet.create({
+    playbackControlRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingVertical: 10
+    }
+})

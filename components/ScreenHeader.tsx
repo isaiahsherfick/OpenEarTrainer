@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 type HeaderProps = PropsWithChildren<{
     TrainingMode: "Active" | "Passive",
@@ -10,12 +10,12 @@ type HeaderProps = PropsWithChildren<{
 export default function ScreenHeader(props: HeaderProps): JSX.Element {
 
     return (
-        <View>
+        <View style={styles.headerContainer}>
             <View>
-                <Text>
+                <Text style={styles.notesMode}>
                     {props.NotesMode}
                 </Text>
-                <Text>
+                <Text style={styles.trainingMode}>
                     {props.TrainingMode} Training
                 </Text>
             </View>
@@ -25,3 +25,18 @@ export default function ScreenHeader(props: HeaderProps): JSX.Element {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    headerContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    notesMode: {
+        fontSize: 32,
+        fontWeight: 'bold',
+        color: 'black'
+    },
+    trainingMode: {
+        fontSize: 20
+    }
+})
