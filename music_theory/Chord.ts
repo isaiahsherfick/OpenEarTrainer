@@ -28,4 +28,20 @@ export class Chord {
         const fifth = thirdToFifth.note2;
         return new Chord(rootNote,third,fifth);
     }
+
+    public static DiminishedTriad(rootNote: note): Chord {
+        const rootToThird = Interval.AscendingInterval(rootNote,Intervals.minorThird);
+        const third = rootToThird.note2;
+        const thirdToFifth = Interval.AscendingInterval(third,Intervals.minorThird);
+        const fifth = thirdToFifth.note2;
+        return new Chord(rootNote,third,fifth);
+    }
+
+    public static AugmentedTriad(rootNote: note): Chord {
+        const rootToThird = Interval.AscendingInterval(rootNote,Intervals.majorThird);
+        const third = rootToThird.note2;
+        const thirdToFifth = Interval.AscendingInterval(third,Intervals.majorThird);
+        const fifth = thirdToFifth.note2;
+        return new Chord(rootNote,third,fifth);
+    }
 }
