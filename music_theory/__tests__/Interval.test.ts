@@ -14,6 +14,11 @@ describe('Interval', () => {
         interval = Interval.AscendingInterval(note,Intervals.majorSecond);
         actual = interval.note2;
         expect(actual).toEqual(expected);
+
+        expected = new Note(NoteName.GSharp,5);
+        interval = Interval.AscendingInterval(note,Intervals.majorSeventh);
+        actual = interval.note2;
+        expect(actual).toEqual(expected);
     });
     it('Should be able to generate unisons', () => {
         const note = new Note(NoteName.A, 4);
