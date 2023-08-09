@@ -2,6 +2,17 @@ import {Note} from '../Note';
 import {NoteName} from '../NoteName';
 
 describe('Note', () => {
+    it('should be able to handle equivalencies', () => {
+        const note1 = new Note(NoteName.A,4);
+        const note2 = new Note(NoteName.A,4);
+        expect(note1).toEqual(note2);
+        const note3 = new Note(NoteName.A,3);
+        expect(note1).not.toEqual(note3);
+        const note4 = new Note(NoteName.B,3);
+        expect(note1).not.toEqual(note4);
+        const note5 = new Note(NoteName.B,4);
+        expect(note1).not.toEqual(note5);
+    });
     it('should be able to create a new note with correct properties', () => {
         const note = new Note(NoteName.A, 4);
         expect(note).toHaveProperty('noteName', NoteName.A);
