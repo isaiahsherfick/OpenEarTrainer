@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
@@ -23,7 +23,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import PassiveTraining from './screens/PassiveTraining';
 import ActiveTraining from './screens/ActiveTraining';
-import { RootStackParamList } from './screens/RootStackPrams';
+import { NotesMode, RootStackParamList, TrainingMode } from './screens/RootStackPrams';
+import Settings from './screens/Settings';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -92,6 +93,8 @@ function Section({ children, title }: SectionProps): JSX.Element {
 
 function App(): JSX.Element {
   const Stack = createStackNavigator<RootStackParamList>();
+  const [notesMode, useNotesMode] = useState<NotesMode>('Intervals');
+  const [trainingMode, useTrainingMode] = useState<TrainingMode>('Passive')
 
   return (
     <NavigationContainer>
@@ -108,6 +111,10 @@ function App(): JSX.Element {
         <Stack.Screen
           name='ActiveTraining'
           component={ActiveTraining}
+        />
+        <Stack.Screen
+          name='Settings'
+          component={Settings}
         />
       </Stack.Navigator>
     </NavigationContainer>

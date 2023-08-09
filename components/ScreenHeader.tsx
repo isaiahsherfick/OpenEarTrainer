@@ -1,10 +1,12 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActiveTrainingProp, NotesMode, PassiveTrainingProp, SettignsScreenProps, TrainingMode } from '../screens/RootStackPrams';
 
 type HeaderProps = PropsWithChildren<{
-    TrainingMode: "Active" | "Passive",
-    NotesMode: "Intervals" | "Chords"
+    TrainingMode: TrainingMode,
+    NotesMode: NotesMode,
+    Navigation: ActiveTrainingProp['navigation'] | PassiveTrainingProp['navigation'] | SettignsScreenProps['navigation']
 }>
 
 export default function ScreenHeader(props: HeaderProps): JSX.Element {
@@ -19,7 +21,7 @@ export default function ScreenHeader(props: HeaderProps): JSX.Element {
                     {props.TrainingMode} Training
                 </Text>
             </View>
-            <TouchableOpacity onPress={() => { }}>
+            <TouchableOpacity onPress={() => { props.Navigation.push('Settings') }}>
                 <Text>settigns</Text>
             </TouchableOpacity>
         </View>

@@ -1,9 +1,10 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { TrainingMode } from '../screens/RootStackPrams';
 
 type PlaybackControlProps = PropsWithChildren<{
-    TrainingMode: "Active" | "Passive",
+    TrainingMode: TrainingMode,
 }>
 
 export default function PlaybackControl(props: PlaybackControlProps): JSX.Element {

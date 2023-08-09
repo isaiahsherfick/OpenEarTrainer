@@ -19,6 +19,7 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
                 <ScreenHeader
                     TrainingMode='Active'
                     NotesMode='Chords' // TODO make dynamic based on setting
+                    Navigation={navigation}
                 />
                 <ActiveTrainingBody />
                 <PlaybackControl

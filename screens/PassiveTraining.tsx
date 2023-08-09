@@ -20,6 +20,7 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                 <ScreenHeader
                     TrainingMode='Passive'
                     NotesMode='Chords' // TODO make dynamic based on setting
+                    Navigation={navigation}
                 />
                 <PassiveTrainingBody />
                 <PlaybackControl
