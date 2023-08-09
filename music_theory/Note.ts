@@ -22,6 +22,16 @@ export class Note {
         noteName = noteName.replace('#', 'sharp');
         return noteName + octave + 'piano.mp3';
     }
+    
+    //Returns the enharmonic equivalent of the note as either a natural or a sharp.
+    //Used to simplify interval and chord calculations in other modules.
+    getEnharmonicEquivalentName() {
+        const noteName = this.noteName.toString();
+        if (enharmonicEquivalencies.has(noteName)) {
+            return enharmonicEquivalencies.get(noteName) as string;
+        }
+        return this.noteName.toString();
+    }
 }
 
 //Needed to handle converting note noteNames to exclusively natural or sharp
