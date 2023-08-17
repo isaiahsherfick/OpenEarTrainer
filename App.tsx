@@ -24,7 +24,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import PassiveTraining from './screens/PassiveTraining';
 import ActiveTraining from './screens/ActiveTraining';
 import { NotesMode, RootStackParamList, TrainingMode } from './screens/RootStackPrams';
-import Settings from './screens/Settings';
+import SettingsScreen from './screens/SettingsScreen';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -114,7 +114,7 @@ function App(): JSX.Element {
         />
         <Stack.Screen
           name='Settings'
-          component={Settings}
+          component={SettingsScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
