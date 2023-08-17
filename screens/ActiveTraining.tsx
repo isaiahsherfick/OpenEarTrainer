@@ -1,16 +1,18 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
 import type { StackScreenProps } from '@react-navigation/stack';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import ScreenHeader from '../components/ScreenHeader';
 import PlaybackControl from '../components/PlaybackControl';
 import { RootStackParamList } from './RootStackPrams';
+import { globalStyles } from '../styles';
 
 type ActiveTrainingProp = StackScreenProps<RootStackParamList, 'ActiveTraining'>
 
 export default function ActiveTraining({ route, navigation }: ActiveTrainingProp): JSX.Element {
     return (
-        <View>
+
+        <SafeAreaView style={globalStyles.container}>
             <Button
                 title='to passive'
                 onPress={() => navigation.navigate('PassiveTraining')}
@@ -26,7 +28,7 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
                     TrainingMode='Active'
                 />
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 
