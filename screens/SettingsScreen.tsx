@@ -1,10 +1,11 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import { Button, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import type { StackScreenProps } from '@react-navigation/stack';
 import { NotesMode, RootStackParamList } from './RootStackPrams';
 import { Intervals } from '../music_theory/Interval';
 import SettingsData from '../Settings';
+import { globalStyles } from '../styles';
 
 type SettignsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>
 
@@ -15,35 +16,37 @@ type SettingsProps = PropsWithChildren<{
 export default function SettingsScreen(props: SettignsScreenProps): JSX.Element {
 
     return (
-        <ScrollView style={styles.container}>
-            <View style={styles.settingsHeader}>
-                <Button
-                    title='Back'
-                    onPress={() => { props.navigation.pop() }}
-                />
-                <Text style={styles.settingsTitle}>
-                    Settings
-                </Text>
-            </View>
-            <View>
-                <Text style={styles.settingsHeading}>Training Mode</Text>
-            </View>
-            <View style={styles.toggleSwitch}>
-                <TouchableOpacity
-                    style={styles.toggleSwitchCell}
-                    onPress={() => { }}
-                >
-                    <Text style={styles.cellText}>Intervals</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.toggleSwitchCell}
-                    onPress={() => { }}>
-                    <Text style={styles.cellText}>Chords</Text>
-                </TouchableOpacity>
-            </View>
-            <IntervalsOptions />
-            <ChordsOptions />
-        </ScrollView>
+        <SafeAreaView style={globalStyles.container}>
+            <ScrollView>
+                <View style={styles.settingsHeader}>
+                    <Button
+                        title='Back'
+                        onPress={() => { props.navigation.pop() }}
+                    />
+                    <Text style={styles.settingsTitle}>
+                        Settings
+                    </Text>
+                </View>
+                <View>
+                    <Text style={styles.settingsHeading}>Training Mode</Text>
+                </View>
+                <View style={styles.toggleSwitch}>
+                    <TouchableOpacity
+                        style={styles.toggleSwitchCell}
+                        onPress={() => { }}
+                    >
+                        <Text style={styles.cellText}>Intervals</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.toggleSwitchCell}
+                        onPress={() => { }}>
+                        <Text style={styles.cellText}>Chords</Text>
+                    </TouchableOpacity>
+                </View>
+                <IntervalsOptions />
+                <ChordsOptions />
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
@@ -87,10 +90,6 @@ function ChordsOptions(): JSX.Element {
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 10
-    },
     settingsHeader: {
         flexDirection: 'row',
         alignItems: 'center',
