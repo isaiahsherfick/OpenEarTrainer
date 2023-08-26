@@ -38,4 +38,11 @@ describe('Interval', () => {
         let actual = interval.note2;
         expect(actual).toEqual(expected);
     });
+    it('Should have a working equals method that can handle enharmonic equivalence', () => {
+        const note1 = new Note(NoteName.FSharp, 4);
+        const note2 = new Note(NoteName.GFlat,4);
+        const interval1 = Interval.AscendingInterval(note1, Intervals.majorThird);
+        const interval2 = Interval.AscendingInterval(note2, Intervals.majorThird);
+        expect(interval1.equals(interval2)).toEqual(true);
+    });
 });
