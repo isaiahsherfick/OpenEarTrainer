@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
@@ -8,6 +8,7 @@ import {
   Text,
   useColorScheme,
   View,
+  AppState
 } from 'react-native';
 
 import {
@@ -25,98 +26,64 @@ import PassiveTraining from './screens/PassiveTraining';
 import ActiveTraining from './screens/ActiveTraining';
 import { NotesMode, RootStackParamList, TrainingMode } from './screens/RootStackPrams';
 import SettingsScreen from './screens/SettingsScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Welcome(): JSX.Element {
-  const isDarkMode = true;
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  )
-}
-function Section({ children, title }: SectionProps): JSX.Element {
-  const isDarkMode = true;
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import SettingsData from './Settings';
+import { SettingsContext } from './SettingsContext';
 
 function App(): JSX.Element {
   const Stack = createStackNavigator<RootStackParamList>();
-  const [notesMode, useNotesMode] = useState<NotesMode>('Intervals');
-  const [trainingMode, useTrainingMode] = useState<TrainingMode>('Passive')
+  const [settings, setSettings] = useState(SettingsData)
+
+  const loadStoredSettings = async () => {
+    try {
+      const jsonString = await AsyncStorage.getItem('OpenEarTrainerSettings');
+      if (!jsonString) { // first time app use
+        // TODO add welcome screen to navigator
+
+        AsyncStorage.setItem('OpenEarTrainerSettings', JSON.stringify(SettingsData))
+      }
+      else {
+        setSettings(JSON.parse(jsonString))
+      }
+    } catch (e) {
+      // error reading value
+      console.log('error checking for first time use', e)
+    }
+  };
+
+  loadStoredSettings().then()
 
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          gestureEnabled: true,
-          headerShown: false
-        }}
-      >
-        <Stack.Screen
-          name='PassiveTraining'
-          component={PassiveTraining}
-        />
-        <Stack.Screen
-          name='ActiveTraining'
-          component={ActiveTraining}
-        />
-        <Stack.Screen
-          name='Settings'
-          component={SettingsScreen}
-        />
-      </Stack.Navigator>
+      <SettingsContext.Provider value={{ settings: settings, setSettings: setSettings }}>
+        <Stack.Navigator
+          screenOptions={{
+            gestureEnabled: true,
+            headerShown: false
+          }}
+        >
+          {settings.trainingMode === 'Active' &&
+            <Stack.Screen
+              name='ActiveTraining'
+              component={ActiveTraining}
+            />
+          }
+          <Stack.Screen
+            name='PassiveTraining'
+            component={PassiveTraining}
+          />
+          {settings.trainingMode !== 'Active' &&
+            <Stack.Screen
+              name='ActiveTraining'
+              component={ActiveTraining}
+            />
+          }
+          <Stack.Screen
+            name='Settings'
+            component={SettingsScreen}
+          />
+        </Stack.Navigator>
+      </SettingsContext.Provider>
     </NavigationContainer>
   );
 }

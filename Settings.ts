@@ -1,4 +1,6 @@
-const SettingsData = {
+import { SettingsDataT } from "./screens/RootStackPrams"
+
+const SettingsData: SettingsDataT = {
     trainingMode: 'Passive',
     notesMode: 'Chords',
     chords: {
