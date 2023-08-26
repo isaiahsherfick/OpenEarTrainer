@@ -7,13 +7,13 @@ import { Intervals } from '../music_theory/Interval';
 import SettingsData from '../Settings';
 import { globalStyles } from '../styles';
 
-type SettignsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>
+type SettingScreenProps = StackScreenProps<RootStackParamList, 'Settings'>
 
 type SettingsProps = PropsWithChildren<{
     NotesMode: NotesMode
 }>
 
-export default function SettingsScreen(props: SettignsScreenProps): JSX.Element {
+export default function SettingsScreen(props: SettingScreenProps): JSX.Element {
 
     return (
         <SafeAreaView style={globalStyles.container}>

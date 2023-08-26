@@ -8,7 +8,7 @@ export type RootStackParamList = {
 
 export type PassiveTrainingProp = StackScreenProps<RootStackParamList, 'PassiveTraining'>;
 export type ActiveTrainingProp = StackScreenProps<RootStackParamList, 'ActiveTraining'>;
-export type SettignsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>;
+export type SettingsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>;
 
 export type NotesMode = 'Chords' | 'Intervals';
 export type TrainingMode = 'Active' | 'Passive';
