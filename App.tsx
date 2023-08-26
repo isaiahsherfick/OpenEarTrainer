@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
@@ -43,6 +43,7 @@ function App(): JSX.Element {
         AsyncStorage.setItem('OpenEarTrainerSettings', JSON.stringify(SettingsData))
       }
       else {
+        console.log('welcome back')
         setSettings(JSON.parse(jsonString))
       }
     } catch (e) {
@@ -51,7 +52,9 @@ function App(): JSX.Element {
     }
   };
 
-  loadStoredSettings().then()
+  useEffect(() => {
+    loadStoredSettings().then()
+  }, [])
 
   return (
     <NavigationContainer>

@@ -1,13 +1,15 @@
 import React, { useContext, useState } from 'react';
-import type { PropsWithChildren } from 'react';
+import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 import { Button, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import type { StackScreenProps } from '@react-navigation/stack';
 import { NotesMode, RootStackParamList } from './RootStackPrams';
-import { Intervals } from '../music_theory/Interval';
+import { Interval, Intervals } from '../music_theory/Interval';
 import SettingsData from '../Settings';
 import { globalStyles } from '../styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SettingsContext } from '../SettingsContext';
+import { Chords } from '../music_theory/Chord';
+import { object } from 'prop-types';
 
 type SettingsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>
 
@@ -15,26 +17,40 @@ type SettingsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>
 export default function SettingsScreen(props: SettingsScreenProps): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext)
     const [notesMode, setNotesMode] = useState<NotesMode>(settings.notesMode)
+    const [selectedIntervals, setSelectedIntervals] = useState(settings.intervals.intervalsToQuiz)
+    const [selectedChords, setSelectedChords] = useState(settings.chords.chordsToQuiz)
 
     const toggleNotesMode = (mode: NotesMode) => {
         if (mode != notesMode) {
             setNotesMode(mode)
-
-            // TODO sync to global settings obj
-            setSettings({
-                ...settings,
-                notesMode: mode
-            })
         }
     }
 
+    const backToTraining = () => {
+        console.log(notesMode)
+        setSettings({
+            ...settings,
+            notesMode: notesMode,
+            intervals: {
+                ...settings.intervals,
+                intervalsToQuiz: selectedIntervals
+            },
+            chords: {
+                ...settings.chords,
+                chordsToQuiz: selectedChords
+            }
+        })
+
+        props.navigation.pop()
+    }
+
     return (
-        <SafeAreaView style={globalStyles.container}>
-            <ScrollView>
+        <ScrollView style={globalStyles.container}>
+            <SafeAreaView>
                 <View style={styles.settingsHeader}>
                     <Button
                         title='Back'
-                        onPress={() => { props.navigation.pop() }}
+                        onPress={backToTraining}
                     />
                     <Text style={styles.settingsTitle}>
                         Settings
@@ -56,23 +72,22 @@ export default function SettingsScreen(props: SettingsScreenProps): JSX.Element 
                         <Text style={[styles.cellText, notesMode == 'Intervals' && styles.selectedCellText]}>Intervals</Text>
                     </TouchableOpacity>
                 </View>
-                <IntervalsOptions />
-                <ChordsOptions />
-            </ScrollView>
-        </SafeAreaView>
+                {notesMode === 'Intervals' ?
+                    <IntervalsOptions selectedIntervals={selectedIntervals} setSelectedIntervals={setSelectedIntervals} />
+                    :
+                    <ChordsOptions selectedChords={selectedChords} setSelectedChords={setSelectedChords} />
+                }
+
+            </SafeAreaView>
+        </ScrollView>
     )
 }
 
-function IntervalsOptions(): JSX.Element {
-    const { settings, setSettings } = useContext(SettingsContext)
-    const [selectedIntervals, setSelectedIntervals] = useState<string[]>(Object.keys(settings.intervals.intervalsToQuiz)) // TODO fetch inital selected from gobal obj
+function IntervalsOptions(
+    { selectedIntervals, setSelectedIntervals }: { selectedIntervals: number[], setSelectedIntervals: Dispatch<SetStateAction<number[]>> }
+): JSX.Element {
 
-    const intervals: string[] = [];
-    Object.keys(Intervals).forEach((k, i) => {
-        intervals.push(k);
-    })
-
-    const toggleIntervalOption = (interval: string) => {
+    const toggleIntervalOption = (interval: number) => {
         let newIntervals = [];
         if (selectedIntervals.includes(interval)) {
             newIntervals = selectedIntervals.filter(i => i !== interval);
@@ -82,27 +97,29 @@ function IntervalsOptions(): JSX.Element {
         }
         console.log(newIntervals);
         setSelectedIntervals(newIntervals);
-
-        // sync to global settings obj
-        setSettings({
-            ...settings,
-            intervals: {
-                ...settings.intervals,
-                intervalsToQuiz: newIntervals
-            }
-        })
     }
 
     return (
         <View>
             <Text style={styles.settingsHeading}>Interval Settings</Text>
             <View style={styles.optionsContainer}>
-                {intervals.map((interval, i) =>
+                {Object.keys(Intervals).map((interval, i) =>
                     <TouchableOpacity
                         key={interval}
-                        style={[styles.optionCell, selectedIntervals.includes(interval) && styles.selectedCell]}
-                        onPress={() => { toggleIntervalOption(interval) }}>
-                        <Text style={[styles.cellText, selectedIntervals.includes(interval) && styles.selectedCellText]}>{interval}</Text>
+                        style={[
+                            styles.optionCell,
+                            selectedIntervals.includes(Intervals[interval as keyof typeof Intervals]) && styles.selectedCell
+                        ]}
+                        onPress={() => { toggleIntervalOption(Intervals[interval as keyof typeof Intervals]) }}
+                    >
+                        <Text
+                            style={[
+                                styles.cellText,
+                                selectedIntervals.includes(Intervals[interval as keyof typeof Intervals]) && styles.selectedCellText
+                            ]}
+                        >
+                            {interval}
+                        </Text>
                     </TouchableOpacity>
                 )}
             </View>
@@ -110,16 +127,11 @@ function IntervalsOptions(): JSX.Element {
     )
 }
 
-function ChordsOptions(): JSX.Element {
-    const { settings, setSettings } = useContext(SettingsContext)
-    const [selectedChords, setSelectedChords] = useState<string[]>(Object.keys(settings.chords.chordsToQuiz))  // TODO fetch inital selected from gobal obj
+function ChordsOptions(
+    { selectedChords, setSelectedChords }: { selectedChords: number[], setSelectedChords: Dispatch<SetStateAction<number[]>> }
+): JSX.Element {
 
-    const chords: string[] = [];
-    Object.keys(SettingsData.chords.chordsToQuiz).forEach((k, i) => {
-        chords.push(k)
-    })
-
-    const toggleChordOption = (chord: string) => {
+    const toggleChordOption = (chord: number) => {
         let newChords = [];
         if (selectedChords.includes(chord)) {
             newChords = selectedChords.filter(i => i !== chord);
@@ -129,25 +141,30 @@ function ChordsOptions(): JSX.Element {
         }
         console.log(newChords);
         setSelectedChords(newChords);
-
-
-        // sync to global settings obj
-        setSettings({
-            ...settings,
-            chords: {
-                ...settings.chords,
-                chordsToQuiz: newChords
-            }
-        })
     }
 
     return (
         <View>
             <Text style={styles.settingsHeading}>Chords Settings</Text>
             <View style={styles.optionsContainer}>
-                {chords.map((chord, i) =>
-                    <TouchableOpacity key={chord} style={[styles.optionCell, selectedChords.includes(chord) && styles.selectedCell]} onPress={() => { toggleChordOption(chord) }}>
-                        <Text style={[styles.cellText, selectedChords.includes(chord) && styles.selectedCellText]}>{chord}</Text>
+                {Object.keys(Chords).map((chord, i) =>
+                    <TouchableOpacity
+                        key={chord}
+                        style={[
+                            styles.optionCell,
+                            selectedChords.includes(Chords[chord as keyof typeof Chords]) && styles.selectedCell]}
+                        onPress={() => {
+                            toggleChordOption(Chords[chord as keyof typeof Chords
+                            ])
+                        }}>
+                        <Text
+                            style={[
+                                styles.cellText,
+                                selectedChords.includes(Chords[chord as keyof typeof Chords]) && styles.selectedCellText
+                            ]}
+                        >
+                            {chord}
+                        </Text>
                     </TouchableOpacity>
                 )}
             </View>

@@ -1,21 +1,21 @@
 import { Note } from './Note';
-import { NoteName} from './NoteName';
+import { NoteName } from './NoteName';
 
 //half steps
 export const Intervals = {
-    unison : 0,
-    minorSecond : 1,
-    majorSecond : 2,
-    minorThird : 3,
-    majorThird : 4,
-    perfectFourth : 5,
-    tritone : 6, 
-    perfectFifth : 7,
-    minorSixth : 8,
-    majorSixth : 9,
-    minorSeventh : 10,
-    majorSeventh : 11,
-    octave : 12,
+    unison: 0,
+    minorSecond: 1,
+    majorSecond: 2,
+    minorThird: 3,
+    majorThird: 4,
+    perfectFourth: 5,
+    tritone: 6,
+    perfectFifth: 7,
+    minorSixth: 8,
+    majorSixth: 9,
+    minorSeventh: 10,
+    majorSeventh: 11,
+    octave: 12,
 };
 
 export class Interval {
@@ -45,8 +45,8 @@ export class Interval {
         }
         const startingNoteOctave = startingNote.octave;
         const targetNoteName = NotesInHalfSteps[targetNoteIndex];
-        const targetNote = new Note(targetNoteName,startingNoteOctave+octavesToIncrease);
-        return new Interval(startingNote,targetNote)
+        const targetNote = new Note(targetNoteName, startingNoteOctave + octavesToIncrease);
+        return new Interval(startingNote, targetNote)
     }
 
     public static DescendingInterval(startingNote: Note, numHalfSteps: number): Interval {
@@ -60,8 +60,8 @@ export class Interval {
         }
         const startingNoteOctave = startingNote.octave;
         const targetNoteName = NotesInHalfSteps[targetNoteIndex];
-        const targetNote = new Note(targetNoteName,startingNoteOctave-octavesToDecrease);
-        return new Interval(startingNote,targetNote)
+        const targetNote = new Note(targetNoteName, startingNoteOctave - octavesToDecrease);
+        return new Interval(startingNote, targetNote)
     }
 }
 

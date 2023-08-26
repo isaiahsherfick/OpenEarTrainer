@@ -21,32 +21,13 @@ export type SettingsDataT = {
             low: string,
             high: string
         },
-        chordsToQuiz: {
-            major: boolean,
-            minor: boolean,
-            diminished: boolean,
-            augmented: boolean
-        }
+        chordsToQuiz: number[]
     },
     intervals: {
         range: {
             low: string,
             high: string
         },
-        intervalsToQuiz: {
-            unison: boolean,
-            minorSecond: boolean,
-            majorSecond: boolean,
-            minorThird: boolean,
-            majorThird: boolean,
-            perfectFourth: boolean,
-            perfectFifth: boolean,
-            tritone: boolean,
-            minorSixth: boolean,
-            majorSixth: boolean,
-            minorSeventh: boolean,
-            majorSeventh: boolean,
-            octave: boolean
-        }
+        intervalsToQuiz: number[]
     }
 }

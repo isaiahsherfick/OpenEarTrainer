@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import type { PropsWithChildren } from 'react';
 import { Text, View, Button, StyleSheet, SafeAreaView } from 'react-native';
 import type { StackScreenProps } from '@react-navigation/stack';
@@ -6,10 +6,12 @@ import ScreenHeader from '../components/ScreenHeader';
 import PlaybackControl from '../components/PlaybackControl';
 import { RootStackParamList } from './RootStackPrams';
 import { globalStyles } from '../styles';
+import { SettingsContext } from '../SettingsContext';
 
 type PassiveTrainingProp = StackScreenProps<RootStackParamList, 'PassiveTraining'>
 
 export default function PassiveTraining({ route, navigation }: PassiveTrainingProp): JSX.Element {
+    const { settings } = useContext(SettingsContext)
 
     return (
         <SafeAreaView style={globalStyles.container}>
@@ -20,7 +22,7 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
             <View style={styles.TrainingScreen}>
                 <ScreenHeader
                     TrainingMode='Passive'
-                    NotesMode='Chords' // TODO make dynamic based on setting
+                    NotesMode={settings.notesMode}
                     Navigation={navigation}
                 />
                 <PassiveTrainingBody />
