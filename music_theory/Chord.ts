@@ -13,7 +13,7 @@ export class Chord {
         this.notes[2] = fifth;
     }
 
-    public static RootPositionMajorTriad(rootNote: note): Chord {
+    public static RootPositionMajorTriad(rootNote: Note): Chord {
         const rootToThird = Interval.AscendingInterval(rootNote,Intervals.majorThird);
         const third = rootToThird.note2;
         const thirdToFifth = Interval.AscendingInterval(third,Intervals.minorThird);
@@ -21,7 +21,7 @@ export class Chord {
         return new Chord(rootNote,third,fifth);
     }
 
-    public static RootPositionMinorTriad(rootNote: note): Chord {
+    public static RootPositionMinorTriad(rootNote: Note): Chord {
         const rootToThird = Interval.AscendingInterval(rootNote,Intervals.minorThird);
         const third = rootToThird.note2;
         const thirdToFifth = Interval.AscendingInterval(third,Intervals.majorThird);
@@ -29,7 +29,7 @@ export class Chord {
         return new Chord(rootNote,third,fifth);
     }
 
-    public static DiminishedTriad(rootNote: note): Chord {
+    public static DiminishedTriad(rootNote: Note): Chord {
         const rootToThird = Interval.AscendingInterval(rootNote,Intervals.minorThird);
         const third = rootToThird.note2;
         const thirdToFifth = Interval.AscendingInterval(third,Intervals.minorThird);
@@ -37,7 +37,7 @@ export class Chord {
         return new Chord(rootNote,third,fifth);
     }
 
-    public static AugmentedTriad(rootNote: note): Chord {
+    public static AugmentedTriad(rootNote: Note): Chord {
         const rootToThird = Interval.AscendingInterval(rootNote,Intervals.majorThird);
         const third = rootToThird.note2;
         const thirdToFifth = Interval.AscendingInterval(third,Intervals.majorThird);

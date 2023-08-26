@@ -9,10 +9,10 @@ import { globalStyles } from '../styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SettingsContext } from '../SettingsContext';
 
-type SettignsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>
+type SettingsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>
 
 
-export default function SettingsScreen(props: SettignsScreenProps): JSX.Element {
+export default function SettingsScreen(props: SettingsScreenProps): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext)
     const [notesMode, setNotesMode] = useState<NotesMode>(settings.notesMode)
 

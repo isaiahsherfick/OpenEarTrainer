@@ -1,3 +1,4 @@
+import { Intervals } from './music_theory/Interval';
 import { SettingsDataT } from "./screens/RootStackPrams"
 
 const SettingsData: SettingsDataT = {
