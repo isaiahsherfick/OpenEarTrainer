@@ -4,12 +4,9 @@ import { Button, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, V
 import type { StackScreenProps } from '@react-navigation/stack';
 import { NotesMode, RootStackParamList } from './RootStackPrams';
 import { Interval, Intervals } from '../music_theory/Interval';
-import SettingsData from '../Settings';
 import { globalStyles } from '../styles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SettingsContext } from '../SettingsContext';
 import { Chords } from '../music_theory/Chord';
-import { object } from 'prop-types';
 
 type SettingsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>
 
@@ -27,8 +24,7 @@ export default function SettingsScreen(props: SettingsScreenProps): JSX.Element 
     }
 
     const backToTraining = () => {
-        console.log(notesMode)
-        setSettings({
+        const updatedSettings = {
             ...settings,
             notesMode: notesMode,
             intervals: {
@@ -39,7 +35,8 @@ export default function SettingsScreen(props: SettingsScreenProps): JSX.Element 
                 ...settings.chords,
                 chordsToQuiz: selectedChords
             }
-        })
+        }
+        setSettings(updatedSettings)
 
         props.navigation.pop()
     }
@@ -95,7 +92,6 @@ function IntervalsOptions(
         else {
             newIntervals = [...selectedIntervals, interval];
         }
-        console.log(newIntervals);
         setSelectedIntervals(newIntervals);
     }
 
@@ -139,7 +135,6 @@ function ChordsOptions(
         else {
             newChords = [...selectedChords, chord];
         }
-        console.log(newChords);
         setSelectedChords(newChords);
     }
 
@@ -195,7 +190,6 @@ const styles = StyleSheet.create({
     },
     toggleSwitchCell: {
         flexGrow: 1,
-        // backgroundColor: 'cyan',
         borderBlockColor: '#aaaaaa',
         borderColor: '#aaaaaa',
         borderWidth: 1,

@@ -30,12 +30,12 @@ const SettingsData: SettingsDataT = {
             Intervals.majorThird,
             Intervals.perfectFourth,
             Intervals.perfectFifth,
-            // Intervals.tritone,
-            // Intervals.minorSixth,
-            // Intervals.majorSixth,
-            // Intervals.minorSeventh,
-            // Intervals.majorSeventh,
-            // Intervals.octave
+            Intervals.tritone,
+            Intervals.minorSixth,
+            Intervals.majorSixth,
+            Intervals.minorSeventh,
+            Intervals.majorSeventh,
+            Intervals.octave
         ]
     }
 }
