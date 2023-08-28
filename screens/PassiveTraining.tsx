@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import type { PropsWithChildren } from 'react';
 import { Text, View, Button, StyleSheet, SafeAreaView } from 'react-native';
 import type { StackScreenProps } from '@react-navigation/stack';
@@ -11,14 +11,27 @@ import { SettingsContext } from '../SettingsContext';
 type PassiveTrainingProp = StackScreenProps<RootStackParamList, 'PassiveTraining'>
 
 export default function PassiveTraining({ route, navigation }: PassiveTrainingProp): JSX.Element {
-    const { settings } = useContext(SettingsContext)
+    const { settings, setSettings } = useContext(SettingsContext)
+
+    // swipe from left side to navigate to active training
+    useEffect(() => {
+
+    }, [])
+
+    const toActive = () => {
+
+        // TODO halt audio playback
+
+        setSettings({
+            ...settings,
+            trainingMode: 'Active'
+        })
+
+        navigation.navigate('ActiveTraining')
+    }
 
     return (
         <SafeAreaView style={globalStyles.container}>
-            <Button
-                title='to active'
-                onPress={() => navigation.navigate('ActiveTraining')}
-            />
             <View style={styles.TrainingScreen}>
                 <ScreenHeader
                     TrainingMode='Passive'
@@ -30,6 +43,10 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                     TrainingMode='Passive'
                 />
             </View>
+            <Button
+                title='to active'
+                onPress={toActive}
+            />
         </SafeAreaView>
     )
 }
@@ -47,7 +64,7 @@ function PassiveTrainingBody(props: PropsWithChildren): JSX.Element {
 
 const styles = StyleSheet.create({
     TrainingScreen: {
-        height: '90%',
+        height: '95%',
         flexDirection: 'column',
         justifyContent: 'space-between'
     }

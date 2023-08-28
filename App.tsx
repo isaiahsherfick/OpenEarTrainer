@@ -49,7 +49,7 @@ function App(): JSX.Element {
   useEffect(() => {
     const subscription = AppState.addEventListener('change', nextAppState => {
       if (appState.current != nextAppState && appState.current === 'active') {
-        // console.log('saving settings...', settings)
+        console.log('saving settings...', settings)
         AsyncStorage.setItem('OpenEarTrainerSettings', JSON.stringify(settings))
           .then(() => {
             // console.log('settings saved')
@@ -65,33 +65,34 @@ function App(): JSX.Element {
     return () => {
       subscription.remove();
     };
-  }, [settings]) // side effect dependent on 
+  }, [settings]) // side effect dependent on settings state changes
 
   return (
     <NavigationContainer>
       <SettingsContext.Provider value={{ settings: settings, setSettings: setSettings }}>
         <Stack.Navigator
+          initialRouteName={settings.trainingMode === 'Active' ? 'ActiveTraining' : 'PassiveTraining'}
           screenOptions={{
-            gestureEnabled: true,
+            gestureEnabled: false,
             headerShown: false
           }}
         >
-          {settings.trainingMode === 'Active' &&
-            <Stack.Screen
-              name='ActiveTraining'
-              component={ActiveTraining}
-            />
-          }
+          <Stack.Screen
+            name='ActiveTraining'
+            component={ActiveTraining}
+            options={{
+              animationEnabled: false,
+              gestureEnabled: false,
+            }}
+          />
           <Stack.Screen
             name='PassiveTraining'
             component={PassiveTraining}
+            options={{
+              animationEnabled: false,
+              gestureEnabled: false,
+            }}
           />
-          {settings.trainingMode !== 'Active' &&
-            <Stack.Screen
-              name='ActiveTraining'
-              component={ActiveTraining}
-            />
-          }
           <Stack.Screen
             name='Settings'
             component={SettingsScreen}
