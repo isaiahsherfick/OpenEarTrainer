@@ -7,6 +7,7 @@ import PlaybackControl from '../components/PlaybackControl';
 import { RootStackParamList } from './RootStackPrams';
 import { globalStyles } from '../styles';
 import { SettingsContext } from '../SettingsContext';
+import { GestureDetector, Gesture } from 'react-native-gesture-handler';
 
 type PassiveTrainingProp = StackScreenProps<RootStackParamList, 'PassiveTraining'>
 
@@ -14,9 +15,18 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
     const { settings, setSettings } = useContext(SettingsContext)
 
     // swipe from left side to navigate to active training
-    useEffect(() => {
-
-    }, [])
+    const gesture = Gesture.Pan()
+        .onChange((e) => {
+            // TODO update screens x offset
+        })
+        .onEnd((e) => {
+            if (e.translationX > 0 && // swipe right
+                Math.abs(e.translationX) > Math.abs(2 * e.translationY) // horizontal swipe (dx > 2*dy)
+            ) {
+                console.log('right swipe')
+                toActive()
+            }
+        })
 
     const toActive = () => {
 
@@ -32,17 +42,19 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
 
     return (
         <SafeAreaView style={globalStyles.container}>
-            <View style={styles.TrainingScreen}>
-                <ScreenHeader
-                    TrainingMode='Passive'
-                    NotesMode={settings.notesMode}
-                    Navigation={navigation}
-                />
-                <PassiveTrainingBody />
-                <PlaybackControl
-                    TrainingMode='Passive'
-                />
-            </View>
+            <GestureDetector gesture={gesture}>
+                <View style={styles.TrainingScreen}>
+                    <ScreenHeader
+                        TrainingMode='Passive'
+                        NotesMode={settings.notesMode}
+                        Navigation={navigation}
+                    />
+                    <PassiveTrainingBody />
+                    <PlaybackControl
+                        TrainingMode='Passive'
+                    />
+                </View>
+            </GestureDetector>
             <Button
                 title='to active'
                 onPress={toActive}

@@ -15,15 +15,28 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
     const { settings, setSettings } = useContext(SettingsContext)
 
     // swipe from right side to navigate to passive training
-    useEffect(() => {
-
-    }, [])
-
     const gesture = Gesture.Pan()
-        .onBegin(() => { })
-        .onChange((e) => { })
-        .onEnd(() => { })
-        .onFinalize(() => { })
+        // .onBegin((e) => {
+        //     console.log('onBegin', e)
+        // })
+        .onChange((e) => {
+            // console.log('onChange', e)
+
+            // TODO update screens x offset
+        })
+        .onEnd((e) => {
+            // console.log('onEnd', e)
+
+            if (e.translationX < 0 && // swipe left
+                Math.abs(e.translationX) > Math.abs(2 * e.translationY) // horizontal swipe (dx > 2*dy)
+            ) {
+                console.log('left swipe')
+                toPassive()
+            }
+        })
+    // .onFinalize((e) => {
+    //     console.log('onFinalize', e)
+    // })
 
     const toPassive = () => {
 
