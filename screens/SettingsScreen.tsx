@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     selectedCell: {
-        backgroundColor: 'slategray',
+        backgroundColor: 'black',
     },
     selectedCellText: {
         color: 'white'

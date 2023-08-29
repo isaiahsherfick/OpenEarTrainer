@@ -1,13 +1,47 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { TrainingMode } from '../screens/RootStackPrams';
+import { SettingsContext } from '../SettingsContext';
 
 type PlaybackControlProps = PropsWithChildren<{
     TrainingMode: TrainingMode,
 }>
 
 export default function PlaybackControl(props: PlaybackControlProps): JSX.Element {
+    const { settings, setSettings } = useContext(SettingsContext)
+    const [audioPlaying, setAudioPlaying] = useState(false)
+    const [progression, setProgression] = useState<'ascend' | 'descend' | 'random'>('random')
+    const [looping, setLooping] = useState(false)
+    const [playbackSpeed, setPlaybackSpeed] = useState<'slow' | 'fast'>('slow')
+
+    const toggleAscend = () => {
+        const newProgression: 'ascend' | 'descend' | 'random' = progression === 'random' ? 'ascend' : (progression === 'ascend' ? 'descend' : 'random')
+        setProgression(newProgression)
+
+    }
+    const toggleLooping = () => {
+        const newLooping = !looping
+        setLooping(newLooping)
+
+    }
+    const togglePlaybackSpeed = () => {
+        const newPlaybackSpeed = playbackSpeed === 'slow' ? 'fast' : 'slow'
+        setPlaybackSpeed(newPlaybackSpeed)
+
+    }
+    const togglePlay = () => {
+        const newAudioPlaying = !audioPlaying
+        setAudioPlaying(newAudioPlaying)
+
+        // TODO music engine -  play audio
+    }
+    const replay = () => {
+        // TODO music engine -  replay
+    }
+    const skip = () => {
+        // TODO music engine -  next audio
+    }
 
     return (
         <View>
@@ -15,12 +49,15 @@ export default function PlaybackControl(props: PlaybackControlProps): JSX.Elemen
                 <View style={styles.playbackControlRow}>
                     <TouchableOpacity onPress={toggleAscend}>
                         <Text>toggleAscend</Text>
+                        <Text>{progression}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={toggleLooping}>
                         <Text>toggleLooping</Text>
+                        <Text>{looping ? 'looping' : 'not looping'}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={togglePlaybackSpeed}>
                         <Text>togglePlaybackSpeed</Text>
+                        <Text>{playbackSpeed}</Text>
                     </TouchableOpacity>
                 </View>
             }
@@ -28,6 +65,7 @@ export default function PlaybackControl(props: PlaybackControlProps): JSX.Elemen
                 {props.TrainingMode === "Passive" &&
                     <TouchableOpacity onPress={togglePlay}>
                         <Text>togglePlay</Text>
+                        <Text>{audioPlaying ? 'playing' : 'paused'}</Text>
                     </TouchableOpacity>
                 }
                 <TouchableOpacity onPress={replay}>
@@ -42,13 +80,6 @@ export default function PlaybackControl(props: PlaybackControlProps): JSX.Elemen
         </View>
     )
 }
-
-function toggleAscend() { }
-function toggleLooping() { }
-function togglePlaybackSpeed() { }
-function togglePlay() { }
-function replay() { }
-function skip() { }
 
 const styles = StyleSheet.create({
     playbackControlRow: {

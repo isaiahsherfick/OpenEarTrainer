@@ -46,7 +46,7 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
             if (isLeftSwipe(e)) {
                 Animated.timing(translateX, {
                     toValue: -width,
-                    duration: 200,
+                    duration: 100,
                     easing: Easing.quad,
                     useNativeDriver: true
                 }).start(res => {
