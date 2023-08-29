@@ -1,42 +1,58 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import type { StackScreenProps } from '@react-navigation/stack';
-import { Button, StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { Button, StyleSheet, Text, View, SafeAreaView, Animated, useWindowDimensions, useAnimatedValue, Easing } from 'react-native';
 import ScreenHeader from '../components/ScreenHeader';
 import PlaybackControl from '../components/PlaybackControl';
 import { RootStackParamList } from './RootStackPrams';
 import { globalStyles } from '../styles';
 import { SettingsContext } from '../SettingsContext';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import { Gesture, GestureDetector, GestureStateChangeEvent, GestureUpdateEvent, PanGestureChangeEventPayload, PanGestureHandlerEventPayload } from 'react-native-gesture-handler';
 
 type ActiveTrainingProp = StackScreenProps<RootStackParamList, 'ActiveTraining'>
 
 export default function ActiveTraining({ route, navigation }: ActiveTrainingProp): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext)
+    const [screenLoaded, setScreenloaded] = useState(false)
+    const { width } = useWindowDimensions()
+    const translateX = useAnimatedValue(-width)
+
+    useEffect(() => {
+        Animated.timing(translateX, {
+            toValue: 0,
+            duration: 200,
+            easing: Easing.out(Easing.quad),
+            useNativeDriver: true
+        }).start(res => {
+            setScreenloaded(true)
+        })
+    }, [route])
 
     // swipe from right side to navigate to passive training
     const gesture = Gesture.Pan()
-        // .onBegin((e) => {
-        //     console.log('onBegin', e)
-        // })
-        .onChange((e) => {
-            // console.log('onChange', e)
-
-            // TODO update screens x offset
-        })
-        .onEnd((e) => {
-            // console.log('onEnd', e)
-
-            if (e.translationX < 0 && // swipe left
-                Math.abs(e.translationX) > Math.abs(2 * e.translationY) // horizontal swipe (dx > 2*dy)
-            ) {
-                console.log('left swipe')
-                toPassive()
+        .onChange(e => {
+            // console.log('abs x', e.absoluteX, 'dx', e.changeX, 'transl x', e.translationX)
+            // update screens x offset
+            if (isLeftSwipe(e)) {
+                translateX.setValue(e.translationX)
             }
         })
-    // .onFinalize((e) => {
-    //     console.log('onFinalize', e)
-    // })
+        .onEnd(e => {
+            if (isLeftSwipe(e)) {
+                Animated.timing(translateX, {
+                    toValue: -width,
+                    duration: 200,
+                    easing: Easing.quad,
+                    useNativeDriver: true
+                }).start(res => {
+                    toPassive()
+                })
+            }
+        })
+
+    const isLeftSwipe = (e: GestureStateChangeEvent<PanGestureHandlerEventPayload> | GestureUpdateEvent<PanGestureHandlerEventPayload & PanGestureChangeEventPayload>) =>
+        e.translationX < 0 && // swipe left
+        Math.abs(e.translationX) > Math.abs(2 * e.translationY) // horizontal swipe (dx > 2*dy)
 
     const toPassive = () => {
 
@@ -54,7 +70,10 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
     return (
         <SafeAreaView style={globalStyles.container}>
             <GestureDetector gesture={gesture}>
-                <View style={styles.TrainingScreen}>
+                <Animated.View style={[
+                    styles.TrainingScreen,
+                    { transform: [{ translateX: translateX }] }
+                ]}>
                     <ScreenHeader
                         TrainingMode='Active'
                         NotesMode={settings.notesMode}
@@ -64,7 +83,7 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
                     <PlaybackControl
                         TrainingMode='Active'
                     />
-                </View>
+                </Animated.View>
             </GestureDetector>
             <Button
                 title='to passive'

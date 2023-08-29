@@ -1,32 +1,60 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import type { PropsWithChildren } from 'react';
-import { Text, View, Button, StyleSheet, SafeAreaView } from 'react-native';
+import { Text, View, Button, StyleSheet, SafeAreaView, Animated, useWindowDimensions, useAnimatedValue, Easing } from 'react-native';
 import type { StackScreenProps } from '@react-navigation/stack';
 import ScreenHeader from '../components/ScreenHeader';
 import PlaybackControl from '../components/PlaybackControl';
 import { RootStackParamList } from './RootStackPrams';
 import { globalStyles } from '../styles';
 import { SettingsContext } from '../SettingsContext';
-import { GestureDetector, Gesture } from 'react-native-gesture-handler';
+import { GestureDetector, Gesture, GestureStateChangeEvent, PanGestureHandlerEventPayload, PanGestureChangeEventPayload, GestureUpdateEvent } from 'react-native-gesture-handler';
 
 type PassiveTrainingProp = StackScreenProps<RootStackParamList, 'PassiveTraining'>
 
 export default function PassiveTraining({ route, navigation }: PassiveTrainingProp): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext)
+    const [screenLoaded, setScreenloaded] = useState(false)
+    const { width } = useWindowDimensions()
+    const translateX = useAnimatedValue(width) // screen sliding animation
+
+    useEffect(() => {
+        Animated.timing(translateX, {
+            toValue: 0,
+            duration: 200,
+            easing: Easing.out(Easing.quad),
+            useNativeDriver: true
+        }).start(res => {
+            setScreenloaded(true)
+        })
+    }, [route])
+
+    const isRightSwipe = (e: GestureStateChangeEvent<PanGestureHandlerEventPayload> | GestureUpdateEvent<PanGestureHandlerEventPayload & PanGestureChangeEventPayload>) =>
+        e.translationX > 0 && // swipe right
+        Math.abs(e.translationX) > Math.abs(2 * e.translationY) // horizontal swipe (dx > 2*dy)
+
 
     // swipe from left side to navigate to active training
     const gesture = Gesture.Pan()
-        .onChange((e) => {
-            // TODO update screens x offset
-        })
-        .onEnd((e) => {
-            if (e.translationX > 0 && // swipe right
-                Math.abs(e.translationX) > Math.abs(2 * e.translationY) // horizontal swipe (dx > 2*dy)
-            ) {
-                console.log('right swipe')
-                toActive()
+        .onChange(e => {
+            // update screens x offset
+            if (isRightSwipe(e)) {
+                translateX.setValue(e.translationX)
             }
         })
+        .onEnd(e => {
+            if (isRightSwipe(e)) {
+                Animated.timing(translateX, {
+                    toValue: width,
+                    duration: 100,
+                    easing: Easing.quad,
+                    useNativeDriver: true
+                }).start(res => {
+                    toActive()
+                    translateX.setValue(0)
+                })
+            }
+        })
+
 
     const toActive = () => {
 
@@ -43,7 +71,10 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
     return (
         <SafeAreaView style={globalStyles.container}>
             <GestureDetector gesture={gesture}>
-                <View style={styles.TrainingScreen}>
+                <Animated.View style={[
+                    styles.TrainingScreen,
+                    { transform: [{ translateX: translateX }] }
+                ]}>
                     <ScreenHeader
                         TrainingMode='Passive'
                         NotesMode={settings.notesMode}
@@ -53,7 +84,7 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                     <PlaybackControl
                         TrainingMode='Passive'
                     />
-                </View>
+                </Animated.View>
             </GestureDetector>
             <Button
                 title='to active'
