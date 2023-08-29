@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         borderBlockColor: '#aaaaaa',
         borderColor: '#aaaaaa',
-        borderWidth: 1,
+        borderWidth: .3,
         paddingVertical: 10
     },
     cellText: {
@@ -201,7 +201,8 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     selectedCell: {
-        backgroundColor: 'black',
+        backgroundColor: '#333333',
+        borderColor: '#ffffffaa',
     },
     selectedCellText: {
         color: 'white'
@@ -217,7 +218,7 @@ const styles = StyleSheet.create({
         width: '45%',
         flexGrow: 1,
         padding: 15,
-        borderWidth: 1,
+        borderWidth: .3,
         borderColor: '#aaaaaa',
 
     }

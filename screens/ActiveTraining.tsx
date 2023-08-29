@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import type { StackScreenProps } from '@react-navigation/stack';
-import { Button, StyleSheet, Text, View, SafeAreaView, Animated, useWindowDimensions, useAnimatedValue, Easing } from 'react-native';
+import { Button, StyleSheet, Text, View, SafeAreaView, Animated, useWindowDimensions, useAnimatedValue, Easing, TouchableOpacity, Alert } from 'react-native';
 import ScreenHeader from '../components/ScreenHeader';
 import PlaybackControl from '../components/PlaybackControl';
 import { RootStackParamList } from './RootStackPrams';
 import { globalStyles } from '../styles';
 import { SettingsContext } from '../SettingsContext';
 import { Gesture, GestureDetector, GestureStateChangeEvent, GestureUpdateEvent, PanGestureChangeEventPayload, PanGestureHandlerEventPayload } from 'react-native-gesture-handler';
+import { ActiveTrainingBody } from '../components/ActiveTrainingBody';
 
 type ActiveTrainingProp = StackScreenProps<RootStackParamList, 'ActiveTraining'>
 
@@ -95,17 +96,6 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
                 onPress={toPassive}
             /> */}
         </SafeAreaView>
-    )
-}
-
-function ActiveTrainingBody(props: PropsWithChildren): JSX.Element {
-
-    return (
-        <View>
-            <Text>
-                I'm the body of the Active Training View
-            </Text>
-        </View>
     )
 }
 
