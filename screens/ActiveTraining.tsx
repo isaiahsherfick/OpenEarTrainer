@@ -17,16 +17,21 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
     const { width } = useWindowDimensions()
     const translateX = useAnimatedValue(-width)
 
+    // screen slides in when in focus
     useEffect(() => {
-        Animated.timing(translateX, {
-            toValue: 0,
-            duration: 200,
-            easing: Easing.out(Easing.quad),
-            useNativeDriver: true
-        }).start(res => {
-            setScreenloaded(true)
+        const unsubscribe = navigation.addListener('focus', () => {
+            Animated.timing(translateX, {
+                toValue: 0,
+                duration: 200,
+                easing: Easing.out(Easing.quad),
+                useNativeDriver: true
+            }).start(res => {
+                setScreenloaded(true)
+            })
         })
-    }, [route])
+
+        return unsubscribe
+    }, [navigation])
 
     // swipe from right side to navigate to passive training
     const gesture = Gesture.Pan()
@@ -85,10 +90,10 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
                     />
                 </Animated.View>
             </GestureDetector>
-            <Button
+            {/* <Button
                 title='to passive'
                 onPress={toPassive}
-            />
+            /> */}
         </SafeAreaView>
     )
 }
@@ -106,7 +111,7 @@ function ActiveTrainingBody(props: PropsWithChildren): JSX.Element {
 
 const styles = StyleSheet.create({
     TrainingScreen: {
-        height: '95%',
+        height: '100%',
         flexDirection: 'column',
         justifyContent: 'space-between'
     }

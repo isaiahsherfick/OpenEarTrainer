@@ -78,6 +78,10 @@ function App(): JSX.Element {
           }}
         >
           <Stack.Screen
+            name='Settings'
+            component={SettingsScreen}
+          />
+          <Stack.Screen
             name='ActiveTraining'
             component={ActiveTraining}
             options={{
@@ -92,10 +96,6 @@ function App(): JSX.Element {
               animationEnabled: false,
               gestureEnabled: false,
             }}
-          />
-          <Stack.Screen
-            name='Settings'
-            component={SettingsScreen}
           />
         </Stack.Navigator>
       </SettingsContext.Provider>

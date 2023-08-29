@@ -17,21 +17,21 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
     const { width } = useWindowDimensions()
     const translateX = useAnimatedValue(width) // screen sliding animation
 
+    // screen slides in when in focus
     useEffect(() => {
-        Animated.timing(translateX, {
-            toValue: 0,
-            duration: 200,
-            easing: Easing.out(Easing.quad),
-            useNativeDriver: true
-        }).start(res => {
-            setScreenloaded(true)
+        const unsubscribe = navigation.addListener('focus', () => {
+            Animated.timing(translateX, {
+                toValue: 0,
+                duration: 200,
+                easing: Easing.out(Easing.quad),
+                useNativeDriver: true
+            }).start(res => {
+                setScreenloaded(true)
+            })
         })
-    }, [route])
 
-    const isRightSwipe = (e: GestureStateChangeEvent<PanGestureHandlerEventPayload> | GestureUpdateEvent<PanGestureHandlerEventPayload & PanGestureChangeEventPayload>) =>
-        e.translationX > 0 && // swipe right
-        Math.abs(e.translationX) > Math.abs(2 * e.translationY) // horizontal swipe (dx > 2*dy)
-
+        return unsubscribe
+    }, [navigation])
 
     // swipe from left side to navigate to active training
     const gesture = Gesture.Pan()
@@ -50,11 +50,13 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                     useNativeDriver: true
                 }).start(res => {
                     toActive()
-                    translateX.setValue(0)
                 })
             }
         })
 
+    const isRightSwipe = (e: GestureStateChangeEvent<PanGestureHandlerEventPayload> | GestureUpdateEvent<PanGestureHandlerEventPayload & PanGestureChangeEventPayload>) =>
+        e.translationX > 0 && // swipe right
+        Math.abs(e.translationX) > Math.abs(2 * e.translationY) // horizontal swipe (dx > 2*dy)
 
     const toActive = () => {
 
@@ -86,10 +88,10 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                     />
                 </Animated.View>
             </GestureDetector>
-            <Button
+            {/* <Button
                 title='to active'
                 onPress={toActive}
-            />
+            /> */}
         </SafeAreaView>
     )
 }
@@ -107,7 +109,7 @@ function PassiveTrainingBody(props: PropsWithChildren): JSX.Element {
 
 const styles = StyleSheet.create({
     TrainingScreen: {
-        height: '95%',
+        height: '100%',
         flexDirection: 'column',
         justifyContent: 'space-between'
     }
