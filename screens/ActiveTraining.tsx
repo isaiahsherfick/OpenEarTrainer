@@ -41,9 +41,7 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
         .onChange(e => {
             // console.log('abs x', e.absoluteX, 'dx', e.changeX, 'transl x', e.translationX)
             // update screens x offset
-            if (isLeftSwipe(e)) {
-                translateX.setValue(e.translationX)
-            }
+            translateX.setValue(e.translationX)
         })
         .onEnd(e => {
             if (isLeftSwipe(e)) {
@@ -55,6 +53,14 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
                 }).start(res => {
                     toPassive()
                 })
+            }
+            else {
+                Animated.timing(translateX, {
+                    toValue: 0,
+                    duration: 100,
+                    easing: Easing.quad,
+                    useNativeDriver: true
+                }).start()
             }
         })
 

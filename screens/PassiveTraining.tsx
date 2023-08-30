@@ -39,9 +39,7 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
     const gesture = Gesture.Pan()
         .onChange(e => {
             // update screens x offset
-            if (isRightSwipe(e)) {
-                translateX.setValue(e.translationX)
-            }
+            translateX.setValue(e.translationX)
         })
         .onEnd(e => {
             if (isRightSwipe(e)) {
@@ -53,6 +51,13 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                 }).start(res => {
                     toActive()
                 })
+            } else {
+                Animated.timing(translateX, {
+                    toValue: 0,
+                    duration: 100,
+                    easing: Easing.quad,
+                    useNativeDriver: true
+                }).start()
             }
         })
 

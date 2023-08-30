@@ -15,6 +15,7 @@ export function ActiveTrainingBody(props: PropsWithChildren): JSX.Element {
         <View style={styles.ActiveTrainingBody}>
             {dummyMultipleChoices.options.map((option, index) =>
                 <MultipleChoiceCell
+                    key={index}
                     index={index}
                     option={option}
                     isCorrectOption={index === dummyMultipleChoices.answer}
