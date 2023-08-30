@@ -9,6 +9,8 @@ import { globalStyles } from '../styles';
 import { SettingsContext } from '../SettingsContext';
 import { Gesture, GestureDetector, GestureStateChangeEvent, GestureUpdateEvent, PanGestureChangeEventPayload, PanGestureHandlerEventPayload } from 'react-native-gesture-handler';
 import { ActiveTrainingBody } from '../components/ActiveTrainingBody';
+import { SvgXml } from 'react-native-svg';
+import { leftScreenDots } from '../assets/icons/svgXMLs';
 
 type ActiveTrainingProp = StackScreenProps<RootStackParamList, 'ActiveTraining'>
 
@@ -91,18 +93,23 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
                     />
                 </Animated.View>
             </GestureDetector>
-            {/* <Button
-                title='to passive'
-                onPress={toPassive}
-            /> */}
+
+            <View style={styles.screenDotsContainer}>
+                <SvgXml xml={leftScreenDots} />
+            </View>
         </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     TrainingScreen: {
-        height: '100%',
+        height: '95%',
         flexDirection: 'column',
         justifyContent: 'space-between'
+    },
+    screenDotsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingVertical: 10
     }
 })

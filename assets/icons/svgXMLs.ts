@@ -81,3 +81,16 @@ export const settingsXML = `
 </svg>
 `
 
+export const leftScreenDots = `
+<svg width="40" height="13" viewBox="0 0 40 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="6" cy="6.92804" r="6" fill="#787878"/>
+<circle cx="34" cy="6.92804" r="6" fill="#D9D9D9"/>
+</svg>
+`
+
+export const rightScreenDots = `
+<svg width="40" height="13" viewBox="0 0 40 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="6" cy="6.92804" r="6" fill="#D9D9D9"/>
+<circle cx="34" cy="6.92804" r="6" fill="#787878"/>
+</svg>
+`

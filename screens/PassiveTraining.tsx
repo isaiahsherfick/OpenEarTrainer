@@ -8,6 +8,8 @@ import { RootStackParamList } from './RootStackPrams';
 import { globalStyles } from '../styles';
 import { SettingsContext } from '../SettingsContext';
 import { GestureDetector, Gesture, GestureStateChangeEvent, PanGestureHandlerEventPayload, PanGestureChangeEventPayload, GestureUpdateEvent } from 'react-native-gesture-handler';
+import { rightScreenDots } from '../assets/icons/svgXMLs';
+import { SvgXml } from 'react-native-svg';
 
 type PassiveTrainingProp = StackScreenProps<RootStackParamList, 'PassiveTraining'>
 
@@ -88,10 +90,9 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                     />
                 </Animated.View>
             </GestureDetector>
-            {/* <Button
-                title='to active'
-                onPress={toActive}
-            /> */}
+            <View style={styles.screenDotsContainer}>
+                <SvgXml xml={rightScreenDots} />
+            </View>
         </SafeAreaView>
     )
 }
@@ -109,8 +110,13 @@ function PassiveTrainingBody(props: PropsWithChildren): JSX.Element {
 
 const styles = StyleSheet.create({
     TrainingScreen: {
-        height: '100%',
+        height: '95%',
         flexDirection: 'column',
         justifyContent: 'space-between'
+    },
+    screenDotsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingVertical: 10
     }
 })

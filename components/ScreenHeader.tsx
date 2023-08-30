@@ -1,6 +1,6 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ActiveTrainingProp, NotesMode, PassiveTrainingProp, SettingsScreenProps, TrainingMode } from '../screens/RootStackPrams';
 import { SvgXml } from 'react-native-svg';
 import { settingsXML } from '../assets/icons/svgXMLs';
