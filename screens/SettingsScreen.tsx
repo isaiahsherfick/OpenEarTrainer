@@ -1,15 +1,16 @@
 import React, { useContext, useState } from 'react';
 import type { Dispatch, PropsWithChildren, SetStateAction } from 'react';
-import { Button, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import type { StackScreenProps } from '@react-navigation/stack';
 import { NotesMode, RootStackParamList } from './RootStackPrams';
-import { Interval, Intervals } from '../music_theory/Interval';
+import { Intervals } from '../music_theory/Interval';
 import { globalStyles } from '../styles';
 import { SettingsContext } from '../SettingsContext';
 import { Chords } from '../music_theory/Chord';
+import { SvgXml } from 'react-native-svg';
+import { backXML } from '../assets/icons/svgXMLs';
 
 type SettingsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>
-
 
 export default function SettingsScreen(props: SettingsScreenProps): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext)
@@ -45,10 +46,9 @@ export default function SettingsScreen(props: SettingsScreenProps): JSX.Element 
         <ScrollView style={globalStyles.container}>
             <SafeAreaView>
                 <View style={styles.settingsHeader}>
-                    <Button
-                        title='Back'
-                        onPress={backToTraining}
-                    />
+                    <TouchableOpacity onPress={backToTraining}>
+                        <SvgXml xml={backXML} />
+                    </TouchableOpacity>
                     <Text style={styles.settingsTitle}>
                         Settings
                     </Text>
@@ -85,7 +85,7 @@ function IntervalsOptions(
 ): JSX.Element {
 
     const toggleIntervalOption = (interval: number) => {
-        let newIntervals = [];
+        let newIntervals: number[] = [];
         if (selectedIntervals.includes(interval)) {
             newIntervals = selectedIntervals.filter(i => i !== interval);
         }
@@ -128,7 +128,7 @@ function ChordsOptions(
 ): JSX.Element {
 
     const toggleChordOption = (chord: number) => {
-        let newChords = [];
+        let newChords: number[] = [];
         if (selectedChords.includes(chord)) {
             newChords = selectedChords.filter(i => i !== chord);
         }

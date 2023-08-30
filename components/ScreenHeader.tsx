@@ -1,7 +1,9 @@
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ActiveTrainingProp, NotesMode, PassiveTrainingProp, SettingsScreenProps, TrainingMode } from '../screens/RootStackPrams';
+import { SvgXml } from 'react-native-svg';
+import { settingsXML } from '../assets/icons/svgXMLs';
 
 type HeaderProps = PropsWithChildren<{
     TrainingMode: TrainingMode,
@@ -21,8 +23,10 @@ export default function ScreenHeader(props: HeaderProps): JSX.Element {
                     {props.TrainingMode} Training
                 </Text>
             </View>
-            <TouchableOpacity onPress={() => { props.Navigation.push('Settings') }}>
-                <Text>settings</Text>
+            <TouchableOpacity
+                style={styles.settings}
+                onPress={() => { props.Navigation.push('Settings') }}>
+                <SvgXml xml={settingsXML} />
             </TouchableOpacity>
         </View>
     )
@@ -40,5 +44,8 @@ const styles = StyleSheet.create({
     },
     trainingMode: {
         fontSize: 20
+    },
+    settings: {
+        paddingTop: 5
     }
 })

@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
 import type { PropsWithChildren } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { TrainingMode } from '../screens/RootStackPrams';
 import { SettingsContext } from '../SettingsContext';
+import { playXML, pauseXML, replayXML, skipXML, fastXML, slowXML, repeatXML, randomXML, descendXML, ascendXML } from '../assets/icons/svgXMLs'
+import { SvgXml } from 'react-native-svg';
 
 type PlaybackControlProps = PropsWithChildren<{
     TrainingMode: TrainingMode,
@@ -48,32 +50,45 @@ export default function PlaybackControl(props: PlaybackControlProps): JSX.Elemen
             {props.TrainingMode === "Passive" &&
                 <View style={styles.playbackControlRow}>
                     <TouchableOpacity onPress={toggleAscend}>
-                        <Text>toggleAscend</Text>
-                        <Text>{progression}</Text>
+                        {progression === 'ascend' ?
+                            <SvgXml width={50} xml={ascendXML} />
+                            : progression === 'descend' ?
+                                <SvgXml width={50} xml={descendXML} />
+                                :
+                                <SvgXml width={50} xml={randomXML} />}
                     </TouchableOpacity>
                     <TouchableOpacity onPress={toggleLooping}>
-                        <Text>toggleLooping</Text>
-                        <Text>{looping ? 'looping' : 'not looping'}</Text>
+                        {looping ?
+                            <SvgXml width={50} xml={repeatXML} />
+                            :
+                            <SvgXml width={50} xml={repeatXML} />}
                     </TouchableOpacity>
                     <TouchableOpacity onPress={togglePlaybackSpeed}>
-                        <Text>togglePlaybackSpeed</Text>
-                        <Text>{playbackSpeed}</Text>
+                        {playbackSpeed === 'slow' ?
+                            <SvgXml width={50} xml={slowXML} />
+                            :
+                            <SvgXml width={50} xml={fastXML} />
+                        }
                     </TouchableOpacity>
                 </View>
             }
             <View style={styles.playbackControlRow}>
                 {props.TrainingMode === "Passive" &&
                     <TouchableOpacity onPress={togglePlay}>
-                        <Text>togglePlay</Text>
-                        <Text>{audioPlaying ? 'playing' : 'paused'}</Text>
+                        {audioPlaying ?
+                            <SvgXml width={75} xml={pauseXML} />
+                            :
+                            <SvgXml width={75} xml={playXML} />
+
+                        }
                     </TouchableOpacity>
                 }
                 <TouchableOpacity onPress={replay}>
-                    <Text>replay</Text>
+                    <SvgXml width={75} xml={replayXML} />
                 </TouchableOpacity>
                 {props.TrainingMode === "Active" &&
                     <TouchableOpacity onPress={skip}>
-                        <Text>skip</Text>
+                        <SvgXml width={75} xml={skipXML} />
                     </TouchableOpacity>
                 }
             </View>
