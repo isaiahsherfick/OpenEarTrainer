@@ -34,7 +34,6 @@ export class Interval {
     }
 
     public static AscendingInterval(startingNote: Note, numHalfSteps: number): Interval {
-        console.log(startingNote);
         const noteAsNaturalOrSharp = startingNote.getEnharmonicEquivalentName();
         const startingNoteIndex = NotesInHalfSteps.indexOf(noteAsNaturalOrSharp as NoteName);
         let targetNoteIndex = startingNoteIndex + numHalfSteps;
