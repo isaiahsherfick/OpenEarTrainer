@@ -18,14 +18,6 @@ export class Chord {
     this.notes[2] = fifth;
   }
 
-  getSoundFileNames(): string[] {
-    const soundFileNames: string[] = [];
-    for (let note of this.notes) {
-      soundFileNames.push(note.getSoundFileName());
-    }
-    return soundFileNames;
-  }
-
   public static RootPositionMajorTriad(rootNote: Note): Chord {
     const rootToThird = Interval.AscendingInterval(
       rootNote,

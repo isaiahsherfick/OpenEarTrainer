@@ -30,35 +30,29 @@ export class Interval {
   public equals(other: Interval): boolean {
     const note1sEqual: boolean =
       this.note1.getEnharmonicEquivalentName() ===
-        other.note1.getEnharmonicEquivalentName();
+      other.note1.getEnharmonicEquivalentName();
     const note2sEqual: boolean =
       this.note2.getEnharmonicEquivalentName() ===
-        other.note2.getEnharmonicEquivalentName();
+      other.note2.getEnharmonicEquivalentName();
     return note1sEqual && note2sEqual;
   }
 
   public static AscendingInterval(
     startingNote: Note,
-    numHalfSteps: number,
+    numHalfSteps: number
   ): Interval {
     const noteAsNaturalOrSharp = startingNote.getEnharmonicEquivalentName();
-
-    const startingNoteIndex = NotesInHalfSteps.indexOf(
-      noteAsNaturalOrSharp as NoteName,
-    );
+    const startingNoteIndex = NotesInHalfSteps.indexOf(noteAsNaturalOrSharp as NoteName);
     let targetNoteIndex = startingNoteIndex + numHalfSteps;
     let octavesToIncrease = 0;
-    while (targetNoteIndex >= NotesInHalfSteps.length) {
+    while (targetNoteIndex > NotesInHalfSteps.length) {
       targetNoteIndex %= 12;
       octavesToIncrease += 1;
     }
     const startingNoteOctave = startingNote.octave;
     const targetNoteName = NotesInHalfSteps[targetNoteIndex];
-    const targetNote = new Note(
-      targetNoteName,
-      startingNoteOctave + octavesToIncrease,
-    );
-    return new Interval(startingNote, targetNote);
+    const targetNote = new Note(targetNoteName, startingNoteOctave + octavesToIncrease);
+    return new Interval(startingNote, targetNote)
   }
 
   public static DescendingInterval(
