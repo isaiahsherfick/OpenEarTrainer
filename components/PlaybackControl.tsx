@@ -1,23 +1,43 @@
-import React, { useContext, useState } from 'react';
-import type { PropsWithChildren } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { TrainingMode } from '../screens/RootStackPrams';
-import { SettingsContext } from '../SettingsContext';
-import { playXML, pauseXML, replayXML, skipXML, fastXML, slowXML, repeatXML, randomXML, descendXML, ascendXML } from '../assets/icons/svgXMLs'
-import { SvgXml } from 'react-native-svg';
+import React, { useContext, useState } from "react";
+import type { PropsWithChildren } from "react";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { TrainingMode } from "../screens/RootStackPrams";
+import { SettingsContext } from "../SettingsContext";
+import {
+    ascendXML,
+    descendXML,
+    fastXML,
+    pauseXML,
+    playXML,
+    randomXML,
+    repeatXML,
+    replayXML,
+    skipXML,
+    slowXML,
+} from "../assets/icons/svgXMLs";
+import { SvgXml } from "react-native-svg";
+import { getRandomRootPositionTriad } from "../music_theory/TrainingEngine";
+import { Chord } from "../music_theory/Chord";
+
+import Sound from "react-native-sound";
+Sound.setCategory("Playback");
 
 import { playNotes } from '../music_theory/SoundEngine';
 
 type PlaybackControlProps = PropsWithChildren<{
-    TrainingMode: TrainingMode,
-}>
+    TrainingMode: TrainingMode;
+}>;
 
-export default function PlaybackControl(props: PlaybackControlProps): JSX.Element {
-    const { settings, setSettings } = useContext(SettingsContext)
-    const [audioPlaying, setAudioPlaying] = useState(false)
-    const [progression, setProgression] = useState<'ascend' | 'descend' | 'random'>('random')
-    const [looping, setLooping] = useState(false)
-    const [playbackSpeed, setPlaybackSpeed] = useState<'slow' | 'fast'>('slow')
+export default function PlaybackControl(
+    props: PlaybackControlProps,
+): JSX.Element {
+    const { settings, setSettings } = useContext(SettingsContext);
+    const [audioPlaying, setAudioPlaying] = useState(false);
+    const [progression, setProgression] = useState<
+        "ascend" | "descend" | "random"
+    >("random");
+    const [looping, setLooping] = useState(false);
+    const [playbackSpeed, setPlaybackSpeed] = useState<"slow" | "fast">("slow");
 
     const toggleAscend = () => {
         const nextState: 'ascend' | 'descend' | 'random' = progression === 'random' ? 'ascend' : (progression === 'ascend' ? 'descend' : 'random')
@@ -102,8 +122,8 @@ export default function PlaybackControl(props: PlaybackControlProps): JSX.Elemen
 
 const styles = StyleSheet.create({
     playbackControlRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        paddingVertical: 10
-    }
-})
+        flexDirection: "row",
+        justifyContent: "space-around",
+        paddingVertical: 10,
+    },
+});

@@ -8,7 +8,13 @@ import SettingsData from "../Settings";
 
 const getRandomNoteName = () => {
   const noteNames = Object.values(NoteName);
-  return noteNames[randomIntInRange(0, noteNames.length)];
+  const randomInt = randomIntInRange(0, noteNames.length - 1);
+  const chosenNoteName = noteNames[randomInt];
+  if (!chosenNoteName)
+  {
+    console.log("randomInt="+randomInt);
+  }
+  return chosenNoteName;
 };
 
 //Returns a new Note object with a random octave from 1-8.
@@ -29,7 +35,7 @@ export const getRandomNoteOfPitchClass = (pitchClass: NoteName) => {
 export const getRandomIntervalAscending = (): Interval => {
   const possibleIntervals = SettingsData.intervals.intervalsToQuiz;
   const chosenInterval =
-    possibleIntervals[randomIntInRange(0, possibleIntervals.length)];
+    possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
   const startingNote = getRandomNote();
   return Interval.AscendingInterval(startingNote, chosenInterval);
 };
@@ -38,7 +44,7 @@ export const getRandomIntervalAscending = (): Interval => {
 export const getRandomIntervalDescending = (): Interval => {
   const possibleIntervals = SettingsData.intervals.intervalsToQuiz;
   const chosenInterval =
-    possibleIntervals[randomIntInRange(0, possibleIntervals.length)];
+    possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
   const startingNote = getRandomNote();
   return Interval.DescendingInterval(startingNote, chosenInterval);
 };
@@ -49,7 +55,7 @@ export const getRandomIntervalAscendingFromNote = (
 ): Interval => {
   const possibleIntervals = SettingsData.intervals.intervalsToQuiz;
   const chosenInterval =
-    possibleIntervals[randomIntInRange(0, possibleIntervals.length)];
+    possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
   return Interval.AscendingInterval(startingNote, chosenInterval);
 };
 
@@ -59,7 +65,7 @@ export const getRandomIntervalDescendingFromNote = (
 ): Interval => {
   const possibleIntervals = SettingsData.intervals.intervalsToQuiz;
   const chosenInterval =
-    possibleIntervals[randomIntInRange(0, possibleIntervals.length)];
+    possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
   return Interval.DescendingInterval(startingNote, chosenInterval);
 };
 
@@ -72,7 +78,7 @@ export const getRandomRootPositionTriad = (): Chord => {
     Chord.DiminishedTriad,
   ];
   const chosenFunc = rootPositionTriadMethods[
-    randomIntInRange(0, rootPositionTriadMethods.length)
+    randomIntInRange(0, rootPositionTriadMethods.length - 1)
   ];
   return chosenFunc(rootNote);
 };
