@@ -20,7 +20,7 @@ export class Note {
             noteName = enharmonicEquivalencies.get(noteName) as string;
         }
         noteName = noteName.replace('#', 'sharp');
-        return noteName + octave + 'piano.mp3';
+        return noteName.toLowerCase() + octave + 'piano.mp3';
     }
 
     //Returns the enharmonic equivalent of the note as either a natural or a sharp.
