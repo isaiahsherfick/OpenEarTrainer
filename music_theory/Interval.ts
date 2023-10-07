@@ -39,20 +39,26 @@ export class Interval {
 
   public static AscendingInterval(
     startingNote: Note,
-    numHalfSteps: number
+    numHalfSteps: number,
   ): Interval {
     const noteAsNaturalOrSharp = startingNote.getEnharmonicEquivalentName();
-    const startingNoteIndex = NotesInHalfSteps.indexOf(noteAsNaturalOrSharp as NoteName);
+
+    const startingNoteIndex = NotesInHalfSteps.indexOf(
+      noteAsNaturalOrSharp as NoteName,
+    );
     let targetNoteIndex = startingNoteIndex + numHalfSteps;
     let octavesToIncrease = 0;
-    while (targetNoteIndex > NotesInHalfSteps.length) {
+    while (targetNoteIndex >= NotesInHalfSteps.length) {
       targetNoteIndex %= 12;
       octavesToIncrease += 1;
     }
     const startingNoteOctave = startingNote.octave;
     const targetNoteName = NotesInHalfSteps[targetNoteIndex];
-    const targetNote = new Note(targetNoteName, startingNoteOctave + octavesToIncrease);
-    return new Interval(startingNote, targetNote)
+    const targetNote = new Note(
+      targetNoteName,
+      startingNoteOctave + octavesToIncrease,
+    );
+    return new Interval(startingNote, targetNote);
   }
 
   public static DescendingInterval(
