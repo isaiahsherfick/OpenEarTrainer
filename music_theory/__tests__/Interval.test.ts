@@ -45,4 +45,11 @@ describe('Interval', () => {
         const interval2 = Interval.AscendingInterval(note2, Intervals.majorThird);
         expect(interval1.equals(interval2)).toEqual(true);
     });
+    it('Should be able to create a minor third above Bbb3', () => {
+        const note1 = new Note(NoteName.BDoubleFlat, 3);
+        const expected = new Note(NoteName.C,4);
+        const interval = Interval.AscendingInterval(note1, Intervals.minorThird);
+        const actual = interval.note2;
+        expect(actual).toEqual(expected);
+    });
 });
