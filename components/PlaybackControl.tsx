@@ -6,6 +6,8 @@ import { SettingsContext } from '../SettingsContext';
 import { playXML, pauseXML, replayXML, skipXML, fastXML, slowXML, repeatXML, randomXML, descendXML, ascendXML } from '../assets/icons/svgXMLs'
 import { SvgXml } from 'react-native-svg';
 
+import { playNotes } from '../music_theory/SoundEngine';
+
 type PlaybackControlProps = PropsWithChildren<{
     TrainingMode: TrainingMode,
 }>
@@ -18,25 +20,27 @@ export default function PlaybackControl(props: PlaybackControlProps): JSX.Elemen
     const [playbackSpeed, setPlaybackSpeed] = useState<'slow' | 'fast'>('slow')
 
     const toggleAscend = () => {
-        const newProgression: 'ascend' | 'descend' | 'random' = progression === 'random' ? 'ascend' : (progression === 'ascend' ? 'descend' : 'random')
-        setProgression(newProgression)
+        const nextState: 'ascend' | 'descend' | 'random' = progression === 'random' ? 'ascend' : (progression === 'ascend' ? 'descend' : 'random')
+        setProgression(nextState)
 
     }
     const toggleLooping = () => {
-        const newLooping = !looping
-        setLooping(newLooping)
+        const nextState = !looping
+        setLooping(nextState)
 
     }
     const togglePlaybackSpeed = () => {
-        const newPlaybackSpeed = playbackSpeed === 'slow' ? 'fast' : 'slow'
-        setPlaybackSpeed(newPlaybackSpeed)
+        const nextState = playbackSpeed === 'slow' ? 'fast' : 'slow'
+        setPlaybackSpeed(nextState)
 
     }
     const togglePlay = () => {
-        const newAudioPlaying = !audioPlaying
-        setAudioPlaying(newAudioPlaying)
+        const nextState = !audioPlaying
+        setAudioPlaying(nextState)
 
-        // TODO music engine -  play audio
+        playNotes()
+
+
     }
     const replay = () => {
         // TODO music engine -  replay
