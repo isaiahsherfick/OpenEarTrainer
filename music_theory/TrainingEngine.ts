@@ -70,7 +70,10 @@ export const getRandomIntervalDescendingFromNote = (
 };
 
 export const getRandomRootPositionTriad = (): Chord => {
-  const rootNote = getRandomNote();
+  let rootNote = getRandomNote();
+  while (rootNote.octave == 8) {
+    rootNote = getRandomNote();
+  }
   const rootPositionTriadMethods = [
     Chord.RootPositionMinorTriad,
     Chord.RootPositionMajorTriad,
