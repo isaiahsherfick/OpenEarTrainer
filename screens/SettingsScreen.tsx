@@ -58,18 +58,18 @@ export default function SettingsScreen(props: SettingsScreenProps): JSX.Element 
                 </View>
                 <View style={styles.toggleSwitch}>
                     <TouchableOpacity
-                        style={[styles.toggleSwitchCell, notesMode == 'Chords' && styles.selectedCell]}
-                        onPress={() => { toggleNotesMode('Chords') }}
+                        style={[styles.toggleSwitchCell, notesMode == 'chords' && styles.selectedCell]}
+                        onPress={() => { toggleNotesMode('chords') }}
                     >
-                        <Text style={[styles.cellText, notesMode == 'Chords' && styles.selectedCellText]}>Chords</Text>
+                        <Text style={[styles.cellText, notesMode == 'chords' && styles.selectedCellText]}>Chords</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={[styles.toggleSwitchCell, notesMode == 'Intervals' && styles.selectedCell]}
-                        onPress={() => { toggleNotesMode('Intervals') }}>
-                        <Text style={[styles.cellText, notesMode == 'Intervals' && styles.selectedCellText]}>Intervals</Text>
+                        style={[styles.toggleSwitchCell, notesMode == 'intervals' && styles.selectedCell]}
+                        onPress={() => { toggleNotesMode('intervals') }}>
+                        <Text style={[styles.cellText, notesMode == 'intervals' && styles.selectedCellText]}>Intervals</Text>
                     </TouchableOpacity>
                 </View>
-                {notesMode === 'Intervals' ?
+                {notesMode === 'intervals' ?
                     <IntervalsOptions selectedIntervals={selectedIntervals} setSelectedIntervals={setSelectedIntervals} />
                     :
                     <ChordsOptions selectedChords={selectedChords} setSelectedChords={setSelectedChords} />

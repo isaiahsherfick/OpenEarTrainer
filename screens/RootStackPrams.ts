@@ -10,8 +10,9 @@ export type PassiveTrainingProp = StackScreenProps<RootStackParamList, 'PassiveT
 export type ActiveTrainingProp = StackScreenProps<RootStackParamList, 'ActiveTraining'>;
 export type SettingsScreenProps = StackScreenProps<RootStackParamList, 'Settings'>;
 
-export type NotesMode = 'Chords' | 'Intervals';
+export type NotesMode = 'chords' | 'intervals';
 export type TrainingMode = 'Active' | 'Passive';
+export type ProgressionT = 'ascend' | 'descend' | 'random'
 
 export type SettingsDataT = {
     trainingMode: TrainingMode,
@@ -28,6 +29,7 @@ export type SettingsDataT = {
             low: string,
             high: string
         },
+        progression: ProgressionT,
         intervalsToQuiz: number[]
     }
 }

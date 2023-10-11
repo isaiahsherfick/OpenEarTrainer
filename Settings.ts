@@ -4,7 +4,7 @@ import { SettingsDataT } from "./screens/RootStackPrams";
 
 const SettingsData: SettingsDataT = {
   trainingMode: "Passive",
-  notesMode: "Chords",
+  notesMode: "chords",
   chords: {
     range: {
       low: "A1",
@@ -22,6 +22,7 @@ const SettingsData: SettingsDataT = {
       low: "A1",
       high: "C8",
     },
+    progression: 'ascend',
     intervalsToQuiz: [
       Intervals.unison,
       Intervals.minorSecond,
