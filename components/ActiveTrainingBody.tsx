@@ -1,5 +1,7 @@
-import { PropsWithChildren, useState } from "react"
+import { PropsWithChildren, useContext, useState } from "react"
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native"
+import { SettingsContext } from "../SettingsContext"
+import { ChordName, IntervalName } from "../music_theory/NoteName"
 
 const dummyMultipleChoices = {
     options: ['Maj7', 'min7', 'p5', 'p4', 'Maj3', 'p8',],
@@ -7,20 +9,47 @@ const dummyMultipleChoices = {
 }
 
 export function ActiveTrainingBody(props: PropsWithChildren): JSX.Element {
-
+    const { settings, setSettings } = useContext(SettingsContext)
     const wrongAnswerPicked = () => { }
     const correctAnswerPicked = () => { }
 
+    const IntervalCells = () => (settings.intervals.intervalsToQuiz.map((intevalName, index) => {
+        return (
+            <MultipleChoiceCell
+                key={index}
+                index={index}
+                option={IntervalName[intevalName]}
+                isCorrectOption={index === dummyMultipleChoices.answer}
+            />
+        )
+    }))
+
+    const ChordCells = () => (settings.chords.chordsToQuiz.map((chordName, index) => {
+        return (
+            <MultipleChoiceCell
+                key={index}
+                index={index}
+                option={ChordName[chordName]}
+                isCorrectOption={index === dummyMultipleChoices.answer}
+            />
+        )
+    }))
+
     return (
         <View style={styles.ActiveTrainingBody}>
-            {dummyMultipleChoices.options.map((option, index) =>
+            {/* {dummyMultipleChoices.options.map((option, index) =>
                 <MultipleChoiceCell
                     key={index}
                     index={index}
                     option={option}
                     isCorrectOption={index === dummyMultipleChoices.answer}
                 />
-            )}
+            )} */}
+            {settings.notesMode === 'intervals' ?
+                <IntervalCells />
+                :
+                <ChordCells />
+            }
         </View>
     )
 }
