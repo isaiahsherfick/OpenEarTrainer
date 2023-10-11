@@ -3,7 +3,7 @@ import { Chord } from "../Chord";
 import {
   getRandomIntervalAscending,
   getRandomRootPositionTriad,
-} from "../TrainingEngine";
+} from "../NotesGenerator";
 
 describe("TrainingEngine", () => {
   it("Should be able to generate random ascending intervals", () => {

@@ -10,9 +10,8 @@ const getRandomNoteName = () => {
   const noteNames = Object.values(NoteName);
   const randomInt = randomIntInRange(0, noteNames.length - 1);
   const chosenNoteName = noteNames[randomInt];
-  if (!chosenNoteName)
-  {
-    console.log("randomInt="+randomInt);
+  if (!chosenNoteName) {
+    console.log("randomInt=" + randomInt);
   }
   return chosenNoteName;
 };
