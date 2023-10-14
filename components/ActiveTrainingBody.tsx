@@ -1,6 +1,6 @@
 import { PropsWithChildren, useContext, useState } from "react"
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native"
-import { SettingsContext } from "../SettingsContext"
+import { SettingsContext } from "../contexts/SettingsContext"
 import { ChordName, IntervalName } from "../music_theory/NoteName"
 
 const dummyMultipleChoices = {
@@ -10,8 +10,9 @@ const dummyMultipleChoices = {
 
 export function ActiveTrainingBody(props: PropsWithChildren): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext)
-    const wrongAnswerPicked = () => { }
-    const correctAnswerPicked = () => { }
+    const correctAnswerPicked = () => {
+
+    }
 
     const IntervalCells = () => (settings.intervals.intervalsToQuiz.map((intevalName, index) => {
         return (
@@ -20,6 +21,7 @@ export function ActiveTrainingBody(props: PropsWithChildren): JSX.Element {
                 index={index}
                 option={IntervalName[intevalName]}
                 isCorrectOption={index === dummyMultipleChoices.answer}
+                correctAnswerPicked={correctAnswerPicked}
             />
         )
     }))
@@ -31,20 +33,13 @@ export function ActiveTrainingBody(props: PropsWithChildren): JSX.Element {
                 index={index}
                 option={ChordName[chordName]}
                 isCorrectOption={index === dummyMultipleChoices.answer}
+                correctAnswerPicked={correctAnswerPicked}
             />
         )
     }))
 
     return (
         <View style={styles.ActiveTrainingBody}>
-            {/* {dummyMultipleChoices.options.map((option, index) =>
-                <MultipleChoiceCell
-                    key={index}
-                    index={index}
-                    option={option}
-                    isCorrectOption={index === dummyMultipleChoices.answer}
-                />
-            )} */}
             {settings.notesMode === 'intervals' ?
                 <IntervalCells />
                 :
@@ -60,15 +55,19 @@ type MultipleChoiceCellProps = PropsWithChildren<{
     index: number
     option: string
     isCorrectOption: boolean
-    afterSelection?: () => {}
+    correctAnswerPicked: () => void
 }>
 
-function MultipleChoiceCell({ index, option, isCorrectOption }: MultipleChoiceCellProps): JSX.Element {
+function MultipleChoiceCell({ index, option, isCorrectOption, correctAnswerPicked }: MultipleChoiceCellProps): JSX.Element {
     const [pressed, setPressed] = useState(false)
-    const checkAnswer = () => {
+    const cellPressed = () => {
         if (pressed) return
 
         setPressed(true)
+
+        if (isCorrectOption) {
+            correctAnswerPicked()
+        }
     }
 
     return (
@@ -78,7 +77,7 @@ function MultipleChoiceCell({ index, option, isCorrectOption }: MultipleChoiceCe
                 styles.MultipeChioceCell,
                 pressed && (isCorrectOption ? styles.CorrectAnswer : styles.WrongAnswer)
             ]}
-            onPress={checkAnswer}>
+            onPress={cellPressed}>
             <Text style={styles.MultipeChioceCellText}>
                 {option}
             </Text>

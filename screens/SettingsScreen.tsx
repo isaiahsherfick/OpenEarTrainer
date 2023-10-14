@@ -5,7 +5,7 @@ import type { StackScreenProps } from '@react-navigation/stack';
 import { NotesMode, RootStackParamList } from './RootStackPrams';
 import { Intervals } from '../music_theory/Interval';
 import { globalStyles } from '../styles';
-import { SettingsContext } from '../SettingsContext';
+import { SettingsContext } from '../contexts/SettingsContext';
 import { Chords } from '../music_theory/Chord';
 import { SvgXml } from 'react-native-svg';
 import { backXML } from '../assets/icons/svgXMLs';

@@ -13,12 +13,22 @@ import { RootStackParamList } from './screens/RootStackPrams';
 import SettingsScreen from './screens/SettingsScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SettingsData from './Settings';
-import { SettingsContext } from './SettingsContext';
+import { SettingsContext } from './contexts/SettingsContext';
+import { useSoundEngine } from './hooks/useSoundEngine';
+import { useTrainingEngine } from './hooks/useTrainingEngine';
 
 function App(): JSX.Element {
   const Stack = createStackNavigator<RootStackParamList>();
   const [settings, setSettings] = useState(SettingsData);
   const appState = useRef(AppState.currentState)
+
+  const TrainingEngine = useTrainingEngine(settings)
+  const SoundEngine = useSoundEngine(
+    settings,
+    TrainingEngine.nextNotes,
+    TrainingEngine.currentNotes,
+    // TrainingEngine.notesQueue
+  )
 
   const loadStoredSettings = async () => {
     try {
@@ -68,38 +78,56 @@ function App(): JSX.Element {
   }, [settings]) // side effect dependent on settings state changes
 
   return (
+
     <NavigationContainer>
-      <SettingsContext.Provider value={{ settings: settings, setSettings: setSettings }}>
-        <Stack.Navigator
-          initialRouteName={settings.trainingMode === 'Active' ? 'ActiveTraining' : 'PassiveTraining'}
-          screenOptions={{
-            gestureEnabled: false,
-            headerShown: false
-          }}
-        >
-          <Stack.Screen
-            name='Settings'
-            component={SettingsScreen}
-          />
-          <Stack.Screen
-            name='ActiveTraining'
-            component={ActiveTraining}
-            options={{
-              animationEnabled: false,
-              gestureEnabled: false,
-            }}
-          />
-          <Stack.Screen
-            name='PassiveTraining'
-            component={PassiveTraining}
-            options={{
-              animationEnabled: false,
-              gestureEnabled: false,
-            }}
-          />
-        </Stack.Navigator>
+      <SettingsContext.Provider value={{
+        settings: settings,
+        setSettings: setSettings
+      }}>
+        <TrainingEngine.TrainingEngineContext.Provider value={{
+          nextNotes: TrainingEngine.nextNotes,
+          currentNotes: TrainingEngine.currentNotes
+        }}>
+          <SoundEngine.SoundEngineContext.Provider value={{
+            startPassive: SoundEngine.startPassive,
+            stopPlaying: SoundEngine.stopPlaying,
+            pausePassive: SoundEngine.pausePassive,
+            next: SoundEngine.next,
+            replay: SoundEngine.replay
+          }}>
+            <Stack.Navigator
+              initialRouteName={settings.trainingMode === 'active' ? 'ActiveTraining' : 'PassiveTraining'}
+              screenOptions={{
+                gestureEnabled: false,
+                headerShown: false
+              }}
+            >
+              <Stack.Screen
+                name='Settings'
+                component={SettingsScreen}
+              />
+              <Stack.Screen
+                name='ActiveTraining'
+                component={ActiveTraining}
+                options={{
+                  animationEnabled: false,
+                  gestureEnabled: false,
+                }}
+              />
+              <Stack.Screen
+                name='PassiveTraining'
+                component={PassiveTraining}
+                options={{
+                  animationEnabled: false,
+                  gestureEnabled: false,
+                }}
+              />
+            </Stack.Navigator>
+          </SoundEngine.SoundEngineContext.Provider>
+        </TrainingEngine.TrainingEngineContext.Provider>
       </SettingsContext.Provider>
-    </NavigationContainer>
+    </NavigationContainer >
+
   );
 }
 

@@ -6,7 +6,7 @@ import ScreenHeader from '../components/ScreenHeader';
 import PlaybackControl from '../components/PlaybackControl';
 import { RootStackParamList } from './RootStackPrams';
 import { globalStyles } from '../styles';
-import { SettingsContext } from '../SettingsContext';
+import { SettingsContext } from '../contexts/SettingsContext';
 import { GestureDetector, Gesture, GestureStateChangeEvent, PanGestureHandlerEventPayload, PanGestureChangeEventPayload, GestureUpdateEvent } from 'react-native-gesture-handler';
 import { rightScreenDots } from '../assets/icons/svgXMLs';
 import { SvgXml } from 'react-native-svg';
@@ -71,7 +71,7 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
 
         setSettings({
             ...settings,
-            trainingMode: 'Active'
+            trainingMode: 'active'
         })
 
         navigation.navigate('ActiveTraining')
@@ -85,13 +85,13 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                     { transform: [{ translateX: translateX }] }
                 ]}>
                     <ScreenHeader
-                        TrainingMode='Passive'
+                        TrainingMode='passive'
                         NotesMode={settings.notesMode}
                         Navigation={navigation}
                     />
                     <PassiveTrainingBody />
                     <PlaybackControl
-                        TrainingMode='Passive'
+                        TrainingMode='passive'
                     />
                 </Animated.View>
             </GestureDetector>
