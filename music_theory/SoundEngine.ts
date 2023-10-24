@@ -1,84 +1,112 @@
 import Sound from 'react-native-sound'
-import { getRandomIntervalAscending, getRandomIntervalDescending, getRandomRootPositionTriad } from './NotesGenerator'
-import { SettingsDataT, ProgressionT } from '../screens/RootStackPrams'
-import { Interval } from './Interval'
+import { NotesMode, TrainingMode, PlaybackSpeedT } from '../screens/RootStackPrams'
 import { Note } from './Note'
+import { debugNotes, debugSounds } from '../util'
 
 Sound.setCategory('Playback')
 
-async function playInterval(progression?: ProgressionT) {
-    let interval: Interval
-    switch (progression) {
-        case 'ascend':
-            interval = getRandomIntervalAscending()
-            break;
-        case 'descend':
-            interval = getRandomIntervalDescending()
-            break;
-        case 'random': // TODO change progression name and interval gen func
-            interval = getRandomIntervalAscending()
-            break;
-
-        default:
-            interval = getRandomIntervalAscending()
-            break;
-    }
-    const soundPromises = constructSoundPromises([interval.note1, interval.note2])
-
-    const sounds = await Promise.all(soundPromises)
-    for (const sound of sounds) {
-        await singleSoundplayPromise(sound)
-        sound.release()
-    }
-
-    // setTimeout(() => { }, 1000);
-
-
-    return interval
-
+interface SoundEngine {
+    strategy: SoundEngineStrategy
+    trainingMode: TrainingMode
+    sounds: Sound[],
+    playbackSpeed: PlaybackSpeedT
 }
 
-async function playChord() {
-    let chord = getRandomRootPositionTriad()
-
-    const soundPromises = constructSoundPromises(chord.notes)
-
-    const sounds = await Promise.all(soundPromises)
-    await Promise.all(multiSoundplayPromise(sounds))
-    for (const sound of sounds) {
-        sound.release()
+class SoundEngine {
+    constructor(notesMode: NotesMode, playbackSpeed?: PlaybackSpeedT) {
+        this.strategy = notesMode === 'chords' ? new ChordStrategy() : new IntervalStrategy()
+        this.playbackSpeed = playbackSpeed ?? 'slow'
     }
 
-    return chord
-}
+    setSpeed(speed: PlaybackSpeedT) {
+        this.playbackSpeed = speed
+    }
 
-async function passivePlay({ notesMode }: SettingsDataT) {
-    console.log(notesMode)
-    for (let index = 0; index < 5; index++) {
-        if (notesMode === 'intervals') {
-            await playInterval()
+    changeMode(notesMode: NotesMode) {
+        this.strategy = notesMode === 'chords' ? new ChordStrategy() : new IntervalStrategy()
+    }
+
+    async loadSounds(notes: Note[]) {
+        if (this.sounds) {
+            this.cleanup()
         }
-        else if (notesMode === 'chords') {
-            await playChord()
+        const soundPromises = constructSoundPromises(notes)
+        try {
+            this.sounds = await Promise.all(soundPromises)
+            this.sounds.forEach(s => {
+                s.setSpeed(this.playbackSpeed === 'slow' ? 1 : 1.7)
+            });
+            return this
+        }
+        catch {
+
         }
     }
+
+    async playSounds() {
+        if (!this.sounds) return
+        debugSounds('playing', this.sounds)
+        await this.strategy.play(this.sounds)
+        return this
+    }
+
+    pause() {
+        this.strategy.pause()
+    }
+
+    cleanup() {
+        this.pause()
+        this.sounds?.forEach(s => {
+            s.release()
+        });
+    }
 }
 
-function passivePause() {
+interface SoundEngineStrategy {
+    play: (sounds: Sound[]) => Promise<void>
+    pause: () => void
+}
 
+class IntervalStrategy implements SoundEngineStrategy {
+    currentlyPlaying?: Sound
+
+    async play(sounds: Sound[]) {
+        this.currentlyPlaying = sounds[0]
+        await singleSoundplayPromise(this.currentlyPlaying)
+        this.currentlyPlaying = sounds[1]
+        await singleSoundplayPromise(this.currentlyPlaying)
+        this.currentlyPlaying = undefined
+    }
+    pause() {
+        this.currentlyPlaying?.pause()
+    }
+}
+class ChordStrategy implements SoundEngineStrategy {
+    currentlyPlaying?: Sound[]
+
+    async play(sounds: Sound[]) {
+        this.currentlyPlaying = sounds
+        await Promise.all(multiSoundplayPromise(sounds))
+        this.currentlyPlaying = undefined
+    }
+    pause() {
+        this.currentlyPlaying?.forEach(s => {
+            s.pause()
+        });
+    }
 }
 
 function constructSoundPromises(notes: Note[]): Promise<Sound>[] {
+    debugNotes('SE - loading', notes)
     const promises: Promise<Sound>[] = notes.map(
         (note) => new Promise((resolve, reject) => {
-            let fileName = note.getSoundFileName() // WARNING hacky workaround until Note.ts refactor
-            fileName = fileName.substring(0, 1).toUpperCase() + fileName.substring(1) // WARNING hacky workaround until Note.ts refactor
+            let fileName = note.getSoundFileName()
             const sound = new Sound(
                 fileName,
                 Sound.MAIN_BUNDLE,
                 (err) => {
                     if (err) {
-                        reject(`error loading sound file for ${note.getSoundFileName()}`)
+                        reject(`error loading sound file ${fileName}`)
                     }
                     resolve(sound)
                 }
@@ -87,7 +115,6 @@ function constructSoundPromises(notes: Note[]): Promise<Sound>[] {
     return promises
 }
 
-// calling play will just add notes to queue
 function singleSoundplayPromise(sound: Sound): Promise<void> {
     return new Promise((resolve, reject) => {
         sound.play(success => {
@@ -106,5 +133,4 @@ function multiSoundplayPromise(sound: Sound[]): Promise<void>[] {
     }))
 }
 
-
-export { playInterval, playChord, passivePlay, passivePause }
+export default SoundEngine

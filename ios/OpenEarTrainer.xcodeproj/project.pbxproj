@@ -12,114 +12,114 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		4591D72F2AABFB7A0094C82B /* Csharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D6FB2AABFB790094C82B /* Csharp1piano.mp3 */; };
-		4591D7302AABFB7A0094C82B /* Csharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D6FC2AABFB790094C82B /* Csharp4piano.mp3 */; };
-		4591D7312AABFB7A0094C82B /* Csharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D6FD2AABFB790094C82B /* Csharp0piano.mp3 */; };
-		4591D7322AABFB7A0094C82B /* D3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D6FE2AABFB790094C82B /* D3piano.mp3 */; };
-		4591D7332AABFB7A0094C82B /* C5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D6FF2AABFB790094C82B /* C5piano.mp3 */; };
-		4591D7342AABFB7A0094C82B /* D0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7002AABFB790094C82B /* D0piano.mp3 */; };
-		4591D7352AABFB7A0094C82B /* Asharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7012AABFB790094C82B /* Asharp1piano.mp3 */; };
-		4591D7362AABFB7A0094C82B /* B0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7022AABFB790094C82B /* B0piano.mp3 */; };
-		4591D7372AABFB7A0094C82B /* A5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7032AABFB790094C82B /* A5piano.mp3 */; };
-		4591D7382AABFB7A0094C82B /* B1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7042AABFB790094C82B /* B1piano.mp3 */; };
-		4591D7392AABFB7A0094C82B /* A2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7052AABFB790094C82B /* A2piano.mp3 */; };
-		4591D73A2AABFB7A0094C82B /* Asharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7062AABFB790094C82B /* Asharp7piano.mp3 */; };
-		4591D73B2AABFB7A0094C82B /* C6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7072AABFB790094C82B /* C6piano.mp3 */; };
-		4591D73C2AABFB7A0094C82B /* B4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7082AABFB790094C82B /* B4piano.mp3 */; };
-		4591D73D2AABFB7A0094C82B /* Asharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7092AABFB790094C82B /* Asharp8piano.mp3 */; };
-		4591D73E2AABFB7A0094C82B /* A1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D70A2AABFB790094C82B /* A1piano.mp3 */; };
-		4591D73F2AABFB7A0094C82B /* B7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D70B2AABFB790094C82B /* B7piano.mp3 */; };
-		4591D7402AABFB7A0094C82B /* Asharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D70C2AABFB790094C82B /* Asharp6piano.mp3 */; };
-		4591D7412AABFB7A0094C82B /* A0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D70D2AABFB790094C82B /* A0piano.mp3 */; };
-		4591D7422AABFB7A0094C82B /* C1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D70E2AABFB790094C82B /* C1piano.mp3 */; };
-		4591D7432AABFB7A0094C82B /* Csharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D70F2AABFB790094C82B /* Csharp6piano.mp3 */; };
-		4591D7442AABFB7A0094C82B /* C0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7102AABFB790094C82B /* C0piano.mp3 */; };
-		4591D7452AABFB7A0094C82B /* C3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7112AABFB790094C82B /* C3piano.mp3 */; };
-		4591D7462AABFB7A0094C82B /* C4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7122AABFB790094C82B /* C4piano.mp3 */; };
-		4591D7472AABFB7A0094C82B /* D5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7132AABFB790094C82B /* D5piano.mp3 */; };
-		4591D7482AABFB7A0094C82B /* A7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7142AABFB790094C82B /* A7piano.mp3 */; };
-		4591D7492AABFB7A0094C82B /* C8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7152AABFB790094C82B /* C8piano.mp3 */; };
-		4591D74A2AABFB7A0094C82B /* A8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7162AABFB790094C82B /* A8piano.mp3 */; };
-		4591D74B2AABFB7A0094C82B /* Asharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7172AABFB790094C82B /* Asharp5piano.mp3 */; };
-		4591D74C2AABFB7A0094C82B /* Asharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7182AABFB790094C82B /* Asharp2piano.mp3 */; };
-		4591D74D2AABFB7A0094C82B /* Asharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7192AABFB790094C82B /* Asharp3piano.mp3 */; };
-		4591D74E2AABFB7A0094C82B /* B3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D71A2AABFB790094C82B /* B3piano.mp3 */; };
-		4591D74F2AABFB7A0094C82B /* B8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D71B2AABFB790094C82B /* B8piano.mp3 */; };
-		4591D7502AABFB7A0094C82B /* B2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D71C2AABFB790094C82B /* B2piano.mp3 */; };
-		4591D7512AABFB7A0094C82B /* Csharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D71D2AABFB790094C82B /* Csharp2piano.mp3 */; };
-		4591D7522AABFB7A0094C82B /* D6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D71E2AABFB790094C82B /* D6piano.mp3 */; };
-		4591D7532AABFB7A0094C82B /* A4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D71F2AABFB790094C82B /* A4piano.mp3 */; };
-		4591D7542AABFB7A0094C82B /* Csharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7202AABFB790094C82B /* Csharp8piano.mp3 */; };
-		4591D7552AABFB7A0094C82B /* B6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7212AABFB790094C82B /* B6piano.mp3 */; };
-		4591D7562AABFB7A0094C82B /* Csharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7222AABFB790094C82B /* Csharp7piano.mp3 */; };
-		4591D7572AABFB7A0094C82B /* A6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7232AABFB790094C82B /* A6piano.mp3 */; };
-		4591D7582AABFB7A0094C82B /* Csharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7242AABFB790094C82B /* Csharp3piano.mp3 */; };
-		4591D7592AABFB7A0094C82B /* Asharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7252AABFB790094C82B /* Asharp4piano.mp3 */; };
-		4591D75A2AABFB7A0094C82B /* B5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7262AABFB790094C82B /* B5piano.mp3 */; };
-		4591D75B2AABFB7A0094C82B /* D2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7272AABFB790094C82B /* D2piano.mp3 */; };
-		4591D75C2AABFB7A0094C82B /* D4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7282AABFB790094C82B /* D4piano.mp3 */; };
-		4591D75D2AABFB7A0094C82B /* D1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D7292AABFB790094C82B /* D1piano.mp3 */; };
-		4591D75E2AABFB7A0094C82B /* C2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D72A2AABFB790094C82B /* C2piano.mp3 */; };
-		4591D75F2AABFB7A0094C82B /* A3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D72B2AABFB7A0094C82B /* A3piano.mp3 */; };
-		4591D7602AABFB7A0094C82B /* Asharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D72C2AABFB7A0094C82B /* Asharp0piano.mp3 */; };
-		4591D7612AABFB7A0094C82B /* Csharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D72D2AABFB7A0094C82B /* Csharp5piano.mp3 */; };
-		4591D7622AABFB7A0094C82B /* C7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4591D72E2AABFB7A0094C82B /* C7piano.mp3 */; };
-		45E3D60D2AD1F41A00E8ABB3 /* F0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5D42AD1F41900E8ABB3 /* F0piano.mp3 */; };
-		45E3D60E2AD1F41A00E8ABB3 /* Fsharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5D52AD1F41900E8ABB3 /* Fsharp0piano.mp3 */; };
-		45E3D60F2AD1F41A00E8ABB3 /* E2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5D62AD1F41900E8ABB3 /* E2piano.mp3 */; };
-		45E3D6102AD1F41A00E8ABB3 /* G1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5D72AD1F41900E8ABB3 /* G1piano.mp3 */; };
-		45E3D6112AD1F41A00E8ABB3 /* G0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5D82AD1F41900E8ABB3 /* G0piano.mp3 */; };
-		45E3D6122AD1F41A00E8ABB3 /* F6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5D92AD1F41900E8ABB3 /* F6piano.mp3 */; };
-		45E3D6132AD1F41A00E8ABB3 /* Dsharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5DA2AD1F41900E8ABB3 /* Dsharp3piano.mp3 */; };
-		45E3D6142AD1F41A00E8ABB3 /* Dsharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5DB2AD1F41900E8ABB3 /* Dsharp1piano.mp3 */; };
-		45E3D6152AD1F41A00E8ABB3 /* Dsharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5DC2AD1F41900E8ABB3 /* Dsharp5piano.mp3 */; };
-		45E3D6162AD1F41A00E8ABB3 /* Gsharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5DD2AD1F41900E8ABB3 /* Gsharp4piano.mp3 */; };
-		45E3D6172AD1F41A00E8ABB3 /* Fsharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5DE2AD1F41900E8ABB3 /* Fsharp1piano.mp3 */; };
-		45E3D6182AD1F41A00E8ABB3 /* E7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5DF2AD1F41900E8ABB3 /* E7piano.mp3 */; };
-		45E3D6192AD1F41A00E8ABB3 /* E5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E02AD1F41900E8ABB3 /* E5piano.mp3 */; };
-		45E3D61A2AD1F41A00E8ABB3 /* Gsharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E12AD1F41900E8ABB3 /* Gsharp7piano.mp3 */; };
-		45E3D61B2AD1F41A00E8ABB3 /* Gsharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E22AD1F41900E8ABB3 /* Gsharp3piano.mp3 */; };
-		45E3D61C2AD1F41A00E8ABB3 /* Fsharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E32AD1F41900E8ABB3 /* Fsharp8piano.mp3 */; };
-		45E3D61D2AD1F41A00E8ABB3 /* Dsharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E42AD1F41900E8ABB3 /* Dsharp6piano.mp3 */; };
-		45E3D61E2AD1F41A00E8ABB3 /* Dsharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E52AD1F41900E8ABB3 /* Dsharp2piano.mp3 */; };
-		45E3D61F2AD1F41A00E8ABB3 /* F7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E62AD1F41900E8ABB3 /* F7piano.mp3 */; };
-		45E3D6202AD1F41A00E8ABB3 /* F5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E72AD1F41900E8ABB3 /* F5piano.mp3 */; };
-		45E3D6212AD1F41A00E8ABB3 /* F8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E82AD1F41900E8ABB3 /* F8piano.mp3 */; };
-		45E3D6222AD1F41A00E8ABB3 /* G3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5E92AD1F41900E8ABB3 /* G3piano.mp3 */; };
-		45E3D6232AD1F41A00E8ABB3 /* E1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5EA2AD1F41900E8ABB3 /* E1piano.mp3 */; };
-		45E3D6242AD1F41A00E8ABB3 /* G7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5EB2AD1F41900E8ABB3 /* G7piano.mp3 */; };
-		45E3D6252AD1F41A00E8ABB3 /* Dsharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5EC2AD1F41900E8ABB3 /* Dsharp0piano.mp3 */; };
-		45E3D6262AD1F41A00E8ABB3 /* F4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5ED2AD1F41900E8ABB3 /* F4piano.mp3 */; };
-		45E3D6272AD1F41A00E8ABB3 /* G5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5EE2AD1F41900E8ABB3 /* G5piano.mp3 */; };
-		45E3D6282AD1F41A00E8ABB3 /* Dsharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5EF2AD1F41900E8ABB3 /* Dsharp7piano.mp3 */; };
-		45E3D6292AD1F41A00E8ABB3 /* F2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5F02AD1F41900E8ABB3 /* F2piano.mp3 */; };
-		45E3D62B2AD1F41A00E8ABB3 /* G2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5F22AD1F41A00E8ABB3 /* G2piano.mp3 */; };
-		45E3D62C2AD1F41A00E8ABB3 /* Fsharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5F32AD1F41A00E8ABB3 /* Fsharp2piano.mp3 */; };
-		45E3D62D2AD1F41A00E8ABB3 /* Gsharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5F42AD1F41A00E8ABB3 /* Gsharp6piano.mp3 */; };
-		45E3D62E2AD1F41A00E8ABB3 /* Gsharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5F52AD1F41A00E8ABB3 /* Gsharp2piano.mp3 */; };
-		45E3D62F2AD1F41A00E8ABB3 /* Fsharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5F62AD1F41A00E8ABB3 /* Fsharp5piano.mp3 */; };
-		45E3D6302AD1F41A00E8ABB3 /* G4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5F72AD1F41A00E8ABB3 /* G4piano.mp3 */; };
-		45E3D6312AD1F41A00E8ABB3 /* Gsharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5F82AD1F41A00E8ABB3 /* Gsharp1piano.mp3 */; };
-		45E3D6322AD1F41A00E8ABB3 /* F1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5F92AD1F41A00E8ABB3 /* F1piano.mp3 */; };
-		45E3D6332AD1F41A00E8ABB3 /* Fsharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5FA2AD1F41A00E8ABB3 /* Fsharp3piano.mp3 */; };
-		45E3D6342AD1F41A00E8ABB3 /* F3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5FB2AD1F41A00E8ABB3 /* F3piano.mp3 */; };
-		45E3D6352AD1F41A00E8ABB3 /* Dsharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5FC2AD1F41A00E8ABB3 /* Dsharp8piano.mp3 */; };
-		45E3D6362AD1F41A00E8ABB3 /* E3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5FD2AD1F41A00E8ABB3 /* E3piano.mp3 */; };
-		45E3D6372AD1F41A00E8ABB3 /* Fsharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5FE2AD1F41A00E8ABB3 /* Fsharp6piano.mp3 */; };
-		45E3D6382AD1F41A00E8ABB3 /* E4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D5FF2AD1F41A00E8ABB3 /* E4piano.mp3 */; };
-		45E3D6392AD1F41A00E8ABB3 /* D8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6002AD1F41A00E8ABB3 /* D8piano.mp3 */; };
-		45E3D63A2AD1F41A00E8ABB3 /* Gsharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6012AD1F41A00E8ABB3 /* Gsharp5piano.mp3 */; };
-		45E3D63B2AD1F41A00E8ABB3 /* Gsharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6022AD1F41A00E8ABB3 /* Gsharp0piano.mp3 */; };
-		45E3D63C2AD1F41A00E8ABB3 /* Fsharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6032AD1F41A00E8ABB3 /* Fsharp7piano.mp3 */; };
-		45E3D63D2AD1F41A00E8ABB3 /* Fsharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6042AD1F41A00E8ABB3 /* Fsharp4piano.mp3 */; };
-		45E3D63E2AD1F41A00E8ABB3 /* E0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6052AD1F41A00E8ABB3 /* E0piano.mp3 */; };
-		45E3D63F2AD1F41A00E8ABB3 /* G8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6062AD1F41A00E8ABB3 /* G8piano.mp3 */; };
-		45E3D6402AD1F41A00E8ABB3 /* D7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6072AD1F41A00E8ABB3 /* D7piano.mp3 */; };
-		45E3D6412AD1F41A00E8ABB3 /* G6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6082AD1F41A00E8ABB3 /* G6piano.mp3 */; };
-		45E3D6422AD1F41A00E8ABB3 /* E6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6092AD1F41A00E8ABB3 /* E6piano.mp3 */; };
-		45E3D6432AD1F41A00E8ABB3 /* E8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D60A2AD1F41A00E8ABB3 /* E8piano.mp3 */; };
-		45E3D6442AD1F41A00E8ABB3 /* Dsharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D60B2AD1F41A00E8ABB3 /* Dsharp4piano.mp3 */; };
-		45E3D6452AD1F41A00E8ABB3 /* Gsharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D60C2AD1F41A00E8ABB3 /* Gsharp8piano.mp3 */; };
+		45E3D6B22ADA66CA00E8ABB3 /* e6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6462ADA66C800E8ABB3 /* e6piano.mp3 */; };
+		45E3D6B32ADA66CA00E8ABB3 /* g0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6472ADA66C800E8ABB3 /* g0piano.mp3 */; };
+		45E3D6B42ADA66CA00E8ABB3 /* a2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6482ADA66C800E8ABB3 /* a2piano.mp3 */; };
+		45E3D6B52ADA66CA00E8ABB3 /* csharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6492ADA66C800E8ABB3 /* csharp6piano.mp3 */; };
+		45E3D6B62ADA66CA00E8ABB3 /* gsharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D64A2ADA66C800E8ABB3 /* gsharp5piano.mp3 */; };
+		45E3D6B72ADA66CA00E8ABB3 /* dsharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D64B2ADA66C800E8ABB3 /* dsharp3piano.mp3 */; };
+		45E3D6B82ADA66CA00E8ABB3 /* fsharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D64C2ADA66C800E8ABB3 /* fsharp1piano.mp3 */; };
+		45E3D6B92ADA66CA00E8ABB3 /* dsharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D64D2ADA66C800E8ABB3 /* dsharp1piano.mp3 */; };
+		45E3D6BA2ADA66CA00E8ABB3 /* asharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D64E2ADA66C800E8ABB3 /* asharp1piano.mp3 */; };
+		45E3D6BB2ADA66CA00E8ABB3 /* a7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D64F2ADA66C800E8ABB3 /* a7piano.mp3 */; };
+		45E3D6BC2ADA66CA00E8ABB3 /* dsharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6502ADA66C800E8ABB3 /* dsharp0piano.mp3 */; };
+		45E3D6BD2ADA66CA00E8ABB3 /* fsharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6512ADA66C800E8ABB3 /* fsharp7piano.mp3 */; };
+		45E3D6BE2ADA66CA00E8ABB3 /* c8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6522ADA66C800E8ABB3 /* c8piano.mp3 */; };
+		45E3D6BF2ADA66CA00E8ABB3 /* e8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6532ADA66C800E8ABB3 /* e8piano.mp3 */; };
+		45E3D6C02ADA66CA00E8ABB3 /* d3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6542ADA66C800E8ABB3 /* d3piano.mp3 */; };
+		45E3D6C12ADA66CA00E8ABB3 /* csharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6552ADA66C800E8ABB3 /* csharp2piano.mp3 */; };
+		45E3D6C22ADA66CA00E8ABB3 /* c5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6562ADA66C900E8ABB3 /* c5piano.mp3 */; };
+		45E3D6C32ADA66CA00E8ABB3 /* b0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6572ADA66C900E8ABB3 /* b0piano.mp3 */; };
+		45E3D6C42ADA66CA00E8ABB3 /* g6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6582ADA66C900E8ABB3 /* g6piano.mp3 */; };
+		45E3D6C52ADA66CA00E8ABB3 /* b8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6592ADA66C900E8ABB3 /* b8piano.mp3 */; };
+		45E3D6C62ADA66CA00E8ABB3 /* d2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D65A2ADA66C900E8ABB3 /* d2piano.mp3 */; };
+		45E3D6C72ADA66CA00E8ABB3 /* f2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D65B2ADA66C900E8ABB3 /* f2piano.mp3 */; };
+		45E3D6C82ADA66CA00E8ABB3 /* dsharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D65C2ADA66C900E8ABB3 /* dsharp7piano.mp3 */; };
+		45E3D6C92ADA66CA00E8ABB3 /* c7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D65D2ADA66C900E8ABB3 /* c7piano.mp3 */; };
+		45E3D6CA2ADA66CA00E8ABB3 /* csharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D65E2ADA66C900E8ABB3 /* csharp1piano.mp3 */; };
+		45E3D6CB2ADA66CA00E8ABB3 /* asharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D65F2ADA66C900E8ABB3 /* asharp2piano.mp3 */; };
+		45E3D6CC2ADA66CA00E8ABB3 /* a4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6602ADA66C900E8ABB3 /* a4piano.mp3 */; };
+		45E3D6CD2ADA66CA00E8ABB3 /* csharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6612ADA66C900E8ABB3 /* csharp7piano.mp3 */; };
+		45E3D6CE2ADA66CA00E8ABB3 /* e2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6622ADA66C900E8ABB3 /* e2piano.mp3 */; };
+		45E3D6CF2ADA66CA00E8ABB3 /* b1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6632ADA66C900E8ABB3 /* b1piano.mp3 */; };
+		45E3D6D02ADA66CA00E8ABB3 /* csharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6642ADA66C900E8ABB3 /* csharp5piano.mp3 */; };
+		45E3D6D12ADA66CA00E8ABB3 /* csharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6652ADA66C900E8ABB3 /* csharp3piano.mp3 */; };
+		45E3D6D22ADA66CA00E8ABB3 /* gsharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6662ADA66C900E8ABB3 /* gsharp4piano.mp3 */; };
+		45E3D6D32ADA66CA00E8ABB3 /* fsharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6672ADA66C900E8ABB3 /* fsharp6piano.mp3 */; };
+		45E3D6D42ADA66CA00E8ABB3 /* fsharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6682ADA66C900E8ABB3 /* fsharp8piano.mp3 */; };
+		45E3D6D52ADA66CA00E8ABB3 /* g7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6692ADA66C900E8ABB3 /* g7piano.mp3 */; };
+		45E3D6D62ADA66CA00E8ABB3 /* e5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D66A2ADA66C900E8ABB3 /* e5piano.mp3 */; };
+		45E3D6D72ADA66CA00E8ABB3 /* d0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D66B2ADA66C900E8ABB3 /* d0piano.mp3 */; };
+		45E3D6D82ADA66CA00E8ABB3 /* asharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D66C2ADA66C900E8ABB3 /* asharp5piano.mp3 */; };
+		45E3D6D92ADA66CA00E8ABB3 /* csharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D66D2ADA66C900E8ABB3 /* csharp0piano.mp3 */; };
+		45E3D6DA2ADA66CA00E8ABB3 /* fsharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D66E2ADA66C900E8ABB3 /* fsharp4piano.mp3 */; };
+		45E3D6DB2ADA66CA00E8ABB3 /* dsharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D66F2ADA66C900E8ABB3 /* dsharp6piano.mp3 */; };
+		45E3D6DC2ADA66CA00E8ABB3 /* d6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6702ADA66C900E8ABB3 /* d6piano.mp3 */; };
+		45E3D6DD2ADA66CA00E8ABB3 /* a1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6712ADA66C900E8ABB3 /* a1piano.mp3 */; };
+		45E3D6DE2ADA66CA00E8ABB3 /* b2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6722ADA66C900E8ABB3 /* b2piano.mp3 */; };
+		45E3D6DF2ADA66CA00E8ABB3 /* e4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6732ADA66C900E8ABB3 /* e4piano.mp3 */; };
+		45E3D6E02ADA66CA00E8ABB3 /* fsharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6742ADA66C900E8ABB3 /* fsharp3piano.mp3 */; };
+		45E3D6E12ADA66CA00E8ABB3 /* c6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6752ADA66C900E8ABB3 /* c6piano.mp3 */; };
+		45E3D6E22ADA66CA00E8ABB3 /* a6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6762ADA66C900E8ABB3 /* a6piano.mp3 */; };
+		45E3D6E32ADA66CA00E8ABB3 /* dsharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6772ADA66C900E8ABB3 /* dsharp2piano.mp3 */; };
+		45E3D6E42ADA66CA00E8ABB3 /* c3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6782ADA66C900E8ABB3 /* c3piano.mp3 */; };
+		45E3D6E52ADA66CA00E8ABB3 /* f7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6792ADA66C900E8ABB3 /* f7piano.mp3 */; };
+		45E3D6E62ADA66CA00E8ABB3 /* c1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D67A2ADA66C900E8ABB3 /* c1piano.mp3 */; };
+		45E3D6E72ADA66CA00E8ABB3 /* f3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D67B2ADA66C900E8ABB3 /* f3piano.mp3 */; };
+		45E3D6E82ADA66CA00E8ABB3 /* b7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D67C2ADA66C900E8ABB3 /* b7piano.mp3 */; };
+		45E3D6E92ADA66CA00E8ABB3 /* b6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D67D2ADA66C900E8ABB3 /* b6piano.mp3 */; };
+		45E3D6EA2ADA66CA00E8ABB3 /* g8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D67E2ADA66C900E8ABB3 /* g8piano.mp3 */; };
+		45E3D6EB2ADA66CA00E8ABB3 /* gsharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D67F2ADA66C900E8ABB3 /* gsharp3piano.mp3 */; };
+		45E3D6EC2ADA66CA00E8ABB3 /* b3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6802ADA66C900E8ABB3 /* b3piano.mp3 */; };
+		45E3D6ED2ADA66CA00E8ABB3 /* g5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6812ADA66C900E8ABB3 /* g5piano.mp3 */; };
+		45E3D6EE2ADA66CA00E8ABB3 /* dsharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6822ADA66C900E8ABB3 /* dsharp4piano.mp3 */; };
+		45E3D6EF2ADA66CA00E8ABB3 /* d8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6832ADA66C900E8ABB3 /* d8piano.mp3 */; };
+		45E3D6F02ADA66CA00E8ABB3 /* e3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6842ADA66C900E8ABB3 /* e3piano.mp3 */; };
+		45E3D6F12ADA66CA00E8ABB3 /* d7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6852ADA66C900E8ABB3 /* d7piano.mp3 */; };
+		45E3D6F22ADA66CA00E8ABB3 /* a0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6862ADA66C900E8ABB3 /* a0piano.mp3 */; };
+		45E3D6F32ADA66CA00E8ABB3 /* csharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6872ADA66C900E8ABB3 /* csharp8piano.mp3 */; };
+		45E3D6F42ADA66CA00E8ABB3 /* f8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6882ADA66C900E8ABB3 /* f8piano.mp3 */; };
+		45E3D6F52ADA66CA00E8ABB3 /* g4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6892ADA66C900E8ABB3 /* g4piano.mp3 */; };
+		45E3D6F62ADA66CA00E8ABB3 /* gsharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D68A2ADA66C900E8ABB3 /* gsharp8piano.mp3 */; };
+		45E3D6F72ADA66CA00E8ABB3 /* asharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D68B2ADA66C900E8ABB3 /* asharp4piano.mp3 */; };
+		45E3D6F82ADA66CA00E8ABB3 /* g1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D68C2ADA66C900E8ABB3 /* g1piano.mp3 */; };
+		45E3D6F92ADA66CA00E8ABB3 /* fsharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D68D2ADA66C900E8ABB3 /* fsharp2piano.mp3 */; };
+		45E3D6FA2ADA66CA00E8ABB3 /* f4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D68E2ADA66C900E8ABB3 /* f4piano.mp3 */; };
+		45E3D6FB2ADA66CA00E8ABB3 /* asharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D68F2ADA66C900E8ABB3 /* asharp8piano.mp3 */; };
+		45E3D6FC2ADA66CA00E8ABB3 /* dsharp8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6902ADA66C900E8ABB3 /* dsharp8piano.mp3 */; };
+		45E3D6FD2ADA66CA00E8ABB3 /* g2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6912ADA66C900E8ABB3 /* g2piano.mp3 */; };
+		45E3D6FE2ADA66CA00E8ABB3 /* d5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6922ADA66C900E8ABB3 /* d5piano.mp3 */; };
+		45E3D6FF2ADA66CA00E8ABB3 /* a3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6932ADA66C900E8ABB3 /* a3piano.mp3 */; };
+		45E3D7002ADA66CA00E8ABB3 /* c0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6942ADA66C900E8ABB3 /* c0piano.mp3 */; };
+		45E3D7012ADA66CA00E8ABB3 /* a8piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6952ADA66C900E8ABB3 /* a8piano.mp3 */; };
+		45E3D7022ADA66CA00E8ABB3 /* a5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6962ADA66C900E8ABB3 /* a5piano.mp3 */; };
+		45E3D7032ADA66CA00E8ABB3 /* gsharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6972ADA66C900E8ABB3 /* gsharp0piano.mp3 */; };
+		45E3D7042ADA66CA00E8ABB3 /* dsharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6982ADA66C900E8ABB3 /* dsharp5piano.mp3 */; };
+		45E3D7052ADA66CA00E8ABB3 /* gsharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6992ADA66C900E8ABB3 /* gsharp6piano.mp3 */; };
+		45E3D7062ADA66CA00E8ABB3 /* csharp4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D69A2ADA66C900E8ABB3 /* csharp4piano.mp3 */; };
+		45E3D7072ADA66CA00E8ABB3 /* b4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D69B2ADA66C900E8ABB3 /* b4piano.mp3 */; };
+		45E3D7082ADA66CA00E8ABB3 /* asharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D69C2ADA66C900E8ABB3 /* asharp0piano.mp3 */; };
+		45E3D7092ADA66CA00E8ABB3 /* f5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D69D2ADA66C900E8ABB3 /* f5piano.mp3 */; };
+		45E3D70A2ADA66CA00E8ABB3 /* fsharp0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D69E2ADA66C900E8ABB3 /* fsharp0piano.mp3 */; };
+		45E3D70B2ADA66CA00E8ABB3 /* e1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D69F2ADA66C900E8ABB3 /* e1piano.mp3 */; };
+		45E3D70C2ADA66CA00E8ABB3 /* f0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A02ADA66C900E8ABB3 /* f0piano.mp3 */; };
+		45E3D70D2ADA66CA00E8ABB3 /* e7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A12ADA66C900E8ABB3 /* e7piano.mp3 */; };
+		45E3D70E2ADA66CA00E8ABB3 /* fsharp5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A22ADA66C900E8ABB3 /* fsharp5piano.mp3 */; };
+		45E3D70F2ADA66CA00E8ABB3 /* c2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A32ADA66C900E8ABB3 /* c2piano.mp3 */; };
+		45E3D7102ADA66CA00E8ABB3 /* asharp6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A42ADA66C900E8ABB3 /* asharp6piano.mp3 */; };
+		45E3D7112ADA66CA00E8ABB3 /* gsharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A52ADA66C900E8ABB3 /* gsharp7piano.mp3 */; };
+		45E3D7122ADA66CA00E8ABB3 /* e0piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A62ADA66C900E8ABB3 /* e0piano.mp3 */; };
+		45E3D7132ADA66CA00E8ABB3 /* b5piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A72ADA66CA00E8ABB3 /* b5piano.mp3 */; };
+		45E3D7142ADA66CA00E8ABB3 /* gsharp2piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A82ADA66CA00E8ABB3 /* gsharp2piano.mp3 */; };
+		45E3D7152ADA66CA00E8ABB3 /* d4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6A92ADA66CA00E8ABB3 /* d4piano.mp3 */; };
+		45E3D7162ADA66CA00E8ABB3 /* d1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6AA2ADA66CA00E8ABB3 /* d1piano.mp3 */; };
+		45E3D7172ADA66CA00E8ABB3 /* f1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6AB2ADA66CA00E8ABB3 /* f1piano.mp3 */; };
+		45E3D7182ADA66CA00E8ABB3 /* g3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6AC2ADA66CA00E8ABB3 /* g3piano.mp3 */; };
+		45E3D7192ADA66CA00E8ABB3 /* c4piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6AD2ADA66CA00E8ABB3 /* c4piano.mp3 */; };
+		45E3D71A2ADA66CA00E8ABB3 /* asharp3piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6AE2ADA66CA00E8ABB3 /* asharp3piano.mp3 */; };
+		45E3D71B2ADA66CA00E8ABB3 /* f6piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6AF2ADA66CA00E8ABB3 /* f6piano.mp3 */; };
+		45E3D71C2ADA66CA00E8ABB3 /* asharp7piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6B02ADA66CA00E8ABB3 /* asharp7piano.mp3 */; };
+		45E3D71D2ADA66CA00E8ABB3 /* gsharp1piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45E3D6B12ADA66CA00E8ABB3 /* gsharp1piano.mp3 */; };
 		7699B88040F8A987B510C191 /* libPods-OpenEarTrainer-OpenEarTrainerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-OpenEarTrainer-OpenEarTrainerTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -146,114 +146,114 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OpenEarTrainer/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-OpenEarTrainer-OpenEarTrainerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenEarTrainer-OpenEarTrainerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-OpenEarTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenEarTrainer.debug.xcconfig"; path = "Target Support Files/Pods-OpenEarTrainer/Pods-OpenEarTrainer.debug.xcconfig"; sourceTree = "<group>"; };
-		4591D6FB2AABFB790094C82B /* Csharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Csharp1piano.mp3; path = ../sound_files/Csharp1piano.mp3; sourceTree = "<group>"; };
-		4591D6FC2AABFB790094C82B /* Csharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Csharp4piano.mp3; path = ../sound_files/Csharp4piano.mp3; sourceTree = "<group>"; };
-		4591D6FD2AABFB790094C82B /* Csharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Csharp0piano.mp3; path = ../sound_files/Csharp0piano.mp3; sourceTree = "<group>"; };
-		4591D6FE2AABFB790094C82B /* D3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = D3piano.mp3; path = ../sound_files/D3piano.mp3; sourceTree = "<group>"; };
-		4591D6FF2AABFB790094C82B /* C5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C5piano.mp3; path = ../sound_files/C5piano.mp3; sourceTree = "<group>"; };
-		4591D7002AABFB790094C82B /* D0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = D0piano.mp3; path = ../sound_files/D0piano.mp3; sourceTree = "<group>"; };
-		4591D7012AABFB790094C82B /* Asharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Asharp1piano.mp3; path = ../sound_files/Asharp1piano.mp3; sourceTree = "<group>"; };
-		4591D7022AABFB790094C82B /* B0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = B0piano.mp3; path = ../sound_files/B0piano.mp3; sourceTree = "<group>"; };
-		4591D7032AABFB790094C82B /* A5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = A5piano.mp3; path = ../sound_files/A5piano.mp3; sourceTree = "<group>"; };
-		4591D7042AABFB790094C82B /* B1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = B1piano.mp3; path = ../sound_files/B1piano.mp3; sourceTree = "<group>"; };
-		4591D7052AABFB790094C82B /* A2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = A2piano.mp3; path = ../sound_files/A2piano.mp3; sourceTree = "<group>"; };
-		4591D7062AABFB790094C82B /* Asharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Asharp7piano.mp3; path = ../sound_files/Asharp7piano.mp3; sourceTree = "<group>"; };
-		4591D7072AABFB790094C82B /* C6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C6piano.mp3; path = ../sound_files/C6piano.mp3; sourceTree = "<group>"; };
-		4591D7082AABFB790094C82B /* B4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = B4piano.mp3; path = ../sound_files/B4piano.mp3; sourceTree = "<group>"; };
-		4591D7092AABFB790094C82B /* Asharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Asharp8piano.mp3; path = ../sound_files/Asharp8piano.mp3; sourceTree = "<group>"; };
-		4591D70A2AABFB790094C82B /* A1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = A1piano.mp3; path = ../sound_files/A1piano.mp3; sourceTree = "<group>"; };
-		4591D70B2AABFB790094C82B /* B7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = B7piano.mp3; path = ../sound_files/B7piano.mp3; sourceTree = "<group>"; };
-		4591D70C2AABFB790094C82B /* Asharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Asharp6piano.mp3; path = ../sound_files/Asharp6piano.mp3; sourceTree = "<group>"; };
-		4591D70D2AABFB790094C82B /* A0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = A0piano.mp3; path = ../sound_files/A0piano.mp3; sourceTree = "<group>"; };
-		4591D70E2AABFB790094C82B /* C1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C1piano.mp3; path = ../sound_files/C1piano.mp3; sourceTree = "<group>"; };
-		4591D70F2AABFB790094C82B /* Csharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Csharp6piano.mp3; path = ../sound_files/Csharp6piano.mp3; sourceTree = "<group>"; };
-		4591D7102AABFB790094C82B /* C0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C0piano.mp3; path = ../sound_files/C0piano.mp3; sourceTree = "<group>"; };
-		4591D7112AABFB790094C82B /* C3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C3piano.mp3; path = ../sound_files/C3piano.mp3; sourceTree = "<group>"; };
-		4591D7122AABFB790094C82B /* C4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C4piano.mp3; path = ../sound_files/C4piano.mp3; sourceTree = "<group>"; };
-		4591D7132AABFB790094C82B /* D5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = D5piano.mp3; path = ../sound_files/D5piano.mp3; sourceTree = "<group>"; };
-		4591D7142AABFB790094C82B /* A7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = A7piano.mp3; path = ../sound_files/A7piano.mp3; sourceTree = "<group>"; };
-		4591D7152AABFB790094C82B /* C8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C8piano.mp3; path = ../sound_files/C8piano.mp3; sourceTree = "<group>"; };
-		4591D7162AABFB790094C82B /* A8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = A8piano.mp3; path = ../sound_files/A8piano.mp3; sourceTree = "<group>"; };
-		4591D7172AABFB790094C82B /* Asharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Asharp5piano.mp3; path = ../sound_files/Asharp5piano.mp3; sourceTree = "<group>"; };
-		4591D7182AABFB790094C82B /* Asharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Asharp2piano.mp3; path = ../sound_files/Asharp2piano.mp3; sourceTree = "<group>"; };
-		4591D7192AABFB790094C82B /* Asharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Asharp3piano.mp3; path = ../sound_files/Asharp3piano.mp3; sourceTree = "<group>"; };
-		4591D71A2AABFB790094C82B /* B3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = B3piano.mp3; path = ../sound_files/B3piano.mp3; sourceTree = "<group>"; };
-		4591D71B2AABFB790094C82B /* B8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = B8piano.mp3; path = ../sound_files/B8piano.mp3; sourceTree = "<group>"; };
-		4591D71C2AABFB790094C82B /* B2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = B2piano.mp3; path = ../sound_files/B2piano.mp3; sourceTree = "<group>"; };
-		4591D71D2AABFB790094C82B /* Csharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Csharp2piano.mp3; path = ../sound_files/Csharp2piano.mp3; sourceTree = "<group>"; };
-		4591D71E2AABFB790094C82B /* D6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = D6piano.mp3; path = ../sound_files/D6piano.mp3; sourceTree = "<group>"; };
-		4591D71F2AABFB790094C82B /* A4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = A4piano.mp3; path = ../sound_files/A4piano.mp3; sourceTree = "<group>"; };
-		4591D7202AABFB790094C82B /* Csharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Csharp8piano.mp3; path = ../sound_files/Csharp8piano.mp3; sourceTree = "<group>"; };
-		4591D7212AABFB790094C82B /* B6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = B6piano.mp3; path = ../sound_files/B6piano.mp3; sourceTree = "<group>"; };
-		4591D7222AABFB790094C82B /* Csharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Csharp7piano.mp3; path = ../sound_files/Csharp7piano.mp3; sourceTree = "<group>"; };
-		4591D7232AABFB790094C82B /* A6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = A6piano.mp3; path = ../sound_files/A6piano.mp3; sourceTree = "<group>"; };
-		4591D7242AABFB790094C82B /* Csharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Csharp3piano.mp3; path = ../sound_files/Csharp3piano.mp3; sourceTree = "<group>"; };
-		4591D7252AABFB790094C82B /* Asharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Asharp4piano.mp3; path = ../sound_files/Asharp4piano.mp3; sourceTree = "<group>"; };
-		4591D7262AABFB790094C82B /* B5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = B5piano.mp3; path = ../sound_files/B5piano.mp3; sourceTree = "<group>"; };
-		4591D7272AABFB790094C82B /* D2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = D2piano.mp3; path = ../sound_files/D2piano.mp3; sourceTree = "<group>"; };
-		4591D7282AABFB790094C82B /* D4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = D4piano.mp3; path = ../sound_files/D4piano.mp3; sourceTree = "<group>"; };
-		4591D7292AABFB790094C82B /* D1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = D1piano.mp3; path = ../sound_files/D1piano.mp3; sourceTree = "<group>"; };
-		4591D72A2AABFB790094C82B /* C2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C2piano.mp3; path = ../sound_files/C2piano.mp3; sourceTree = "<group>"; };
-		4591D72B2AABFB7A0094C82B /* A3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = A3piano.mp3; path = ../sound_files/A3piano.mp3; sourceTree = "<group>"; };
-		4591D72C2AABFB7A0094C82B /* Asharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Asharp0piano.mp3; path = ../sound_files/Asharp0piano.mp3; sourceTree = "<group>"; };
-		4591D72D2AABFB7A0094C82B /* Csharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Csharp5piano.mp3; path = ../sound_files/Csharp5piano.mp3; sourceTree = "<group>"; };
-		4591D72E2AABFB7A0094C82B /* C7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = C7piano.mp3; path = ../sound_files/C7piano.mp3; sourceTree = "<group>"; };
-		45E3D5D42AD1F41900E8ABB3 /* F0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = F0piano.mp3; path = ../sound_files/F0piano.mp3; sourceTree = "<group>"; };
-		45E3D5D52AD1F41900E8ABB3 /* Fsharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fsharp0piano.mp3; path = ../sound_files/Fsharp0piano.mp3; sourceTree = "<group>"; };
-		45E3D5D62AD1F41900E8ABB3 /* E2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = E2piano.mp3; path = ../sound_files/E2piano.mp3; sourceTree = "<group>"; };
-		45E3D5D72AD1F41900E8ABB3 /* G1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G1piano.mp3; path = ../sound_files/G1piano.mp3; sourceTree = "<group>"; };
-		45E3D5D82AD1F41900E8ABB3 /* G0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G0piano.mp3; path = ../sound_files/G0piano.mp3; sourceTree = "<group>"; };
-		45E3D5D92AD1F41900E8ABB3 /* F6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = F6piano.mp3; path = ../sound_files/F6piano.mp3; sourceTree = "<group>"; };
-		45E3D5DA2AD1F41900E8ABB3 /* Dsharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dsharp3piano.mp3; path = ../sound_files/Dsharp3piano.mp3; sourceTree = "<group>"; };
-		45E3D5DB2AD1F41900E8ABB3 /* Dsharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dsharp1piano.mp3; path = ../sound_files/Dsharp1piano.mp3; sourceTree = "<group>"; };
-		45E3D5DC2AD1F41900E8ABB3 /* Dsharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dsharp5piano.mp3; path = ../sound_files/Dsharp5piano.mp3; sourceTree = "<group>"; };
-		45E3D5DD2AD1F41900E8ABB3 /* Gsharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gsharp4piano.mp3; path = ../sound_files/Gsharp4piano.mp3; sourceTree = "<group>"; };
-		45E3D5DE2AD1F41900E8ABB3 /* Fsharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fsharp1piano.mp3; path = ../sound_files/Fsharp1piano.mp3; sourceTree = "<group>"; };
-		45E3D5DF2AD1F41900E8ABB3 /* E7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = E7piano.mp3; path = ../sound_files/E7piano.mp3; sourceTree = "<group>"; };
-		45E3D5E02AD1F41900E8ABB3 /* E5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = E5piano.mp3; path = ../sound_files/E5piano.mp3; sourceTree = "<group>"; };
-		45E3D5E12AD1F41900E8ABB3 /* Gsharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gsharp7piano.mp3; path = ../sound_files/Gsharp7piano.mp3; sourceTree = "<group>"; };
-		45E3D5E22AD1F41900E8ABB3 /* Gsharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gsharp3piano.mp3; path = ../sound_files/Gsharp3piano.mp3; sourceTree = "<group>"; };
-		45E3D5E32AD1F41900E8ABB3 /* Fsharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fsharp8piano.mp3; path = ../sound_files/Fsharp8piano.mp3; sourceTree = "<group>"; };
-		45E3D5E42AD1F41900E8ABB3 /* Dsharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dsharp6piano.mp3; path = ../sound_files/Dsharp6piano.mp3; sourceTree = "<group>"; };
-		45E3D5E52AD1F41900E8ABB3 /* Dsharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dsharp2piano.mp3; path = ../sound_files/Dsharp2piano.mp3; sourceTree = "<group>"; };
-		45E3D5E62AD1F41900E8ABB3 /* F7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = F7piano.mp3; path = ../sound_files/F7piano.mp3; sourceTree = "<group>"; };
-		45E3D5E72AD1F41900E8ABB3 /* F5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = F5piano.mp3; path = ../sound_files/F5piano.mp3; sourceTree = "<group>"; };
-		45E3D5E82AD1F41900E8ABB3 /* F8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = F8piano.mp3; path = ../sound_files/F8piano.mp3; sourceTree = "<group>"; };
-		45E3D5E92AD1F41900E8ABB3 /* G3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G3piano.mp3; path = ../sound_files/G3piano.mp3; sourceTree = "<group>"; };
-		45E3D5EA2AD1F41900E8ABB3 /* E1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = E1piano.mp3; path = ../sound_files/E1piano.mp3; sourceTree = "<group>"; };
-		45E3D5EB2AD1F41900E8ABB3 /* G7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G7piano.mp3; path = ../sound_files/G7piano.mp3; sourceTree = "<group>"; };
-		45E3D5EC2AD1F41900E8ABB3 /* Dsharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dsharp0piano.mp3; path = ../sound_files/Dsharp0piano.mp3; sourceTree = "<group>"; };
-		45E3D5ED2AD1F41900E8ABB3 /* F4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = F4piano.mp3; path = ../sound_files/F4piano.mp3; sourceTree = "<group>"; };
-		45E3D5EE2AD1F41900E8ABB3 /* G5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G5piano.mp3; path = ../sound_files/G5piano.mp3; sourceTree = "<group>"; };
-		45E3D5EF2AD1F41900E8ABB3 /* Dsharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dsharp7piano.mp3; path = ../sound_files/Dsharp7piano.mp3; sourceTree = "<group>"; };
-		45E3D5F02AD1F41900E8ABB3 /* F2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = F2piano.mp3; path = ../sound_files/F2piano.mp3; sourceTree = "<group>"; };
-		45E3D5F22AD1F41A00E8ABB3 /* G2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G2piano.mp3; path = ../sound_files/G2piano.mp3; sourceTree = "<group>"; };
-		45E3D5F32AD1F41A00E8ABB3 /* Fsharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fsharp2piano.mp3; path = ../sound_files/Fsharp2piano.mp3; sourceTree = "<group>"; };
-		45E3D5F42AD1F41A00E8ABB3 /* Gsharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gsharp6piano.mp3; path = ../sound_files/Gsharp6piano.mp3; sourceTree = "<group>"; };
-		45E3D5F52AD1F41A00E8ABB3 /* Gsharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gsharp2piano.mp3; path = ../sound_files/Gsharp2piano.mp3; sourceTree = "<group>"; };
-		45E3D5F62AD1F41A00E8ABB3 /* Fsharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fsharp5piano.mp3; path = ../sound_files/Fsharp5piano.mp3; sourceTree = "<group>"; };
-		45E3D5F72AD1F41A00E8ABB3 /* G4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G4piano.mp3; path = ../sound_files/G4piano.mp3; sourceTree = "<group>"; };
-		45E3D5F82AD1F41A00E8ABB3 /* Gsharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gsharp1piano.mp3; path = ../sound_files/Gsharp1piano.mp3; sourceTree = "<group>"; };
-		45E3D5F92AD1F41A00E8ABB3 /* F1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = F1piano.mp3; path = ../sound_files/F1piano.mp3; sourceTree = "<group>"; };
-		45E3D5FA2AD1F41A00E8ABB3 /* Fsharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fsharp3piano.mp3; path = ../sound_files/Fsharp3piano.mp3; sourceTree = "<group>"; };
-		45E3D5FB2AD1F41A00E8ABB3 /* F3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = F3piano.mp3; path = ../sound_files/F3piano.mp3; sourceTree = "<group>"; };
-		45E3D5FC2AD1F41A00E8ABB3 /* Dsharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dsharp8piano.mp3; path = ../sound_files/Dsharp8piano.mp3; sourceTree = "<group>"; };
-		45E3D5FD2AD1F41A00E8ABB3 /* E3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = E3piano.mp3; path = ../sound_files/E3piano.mp3; sourceTree = "<group>"; };
-		45E3D5FE2AD1F41A00E8ABB3 /* Fsharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fsharp6piano.mp3; path = ../sound_files/Fsharp6piano.mp3; sourceTree = "<group>"; };
-		45E3D5FF2AD1F41A00E8ABB3 /* E4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = E4piano.mp3; path = ../sound_files/E4piano.mp3; sourceTree = "<group>"; };
-		45E3D6002AD1F41A00E8ABB3 /* D8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = D8piano.mp3; path = ../sound_files/D8piano.mp3; sourceTree = "<group>"; };
-		45E3D6012AD1F41A00E8ABB3 /* Gsharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gsharp5piano.mp3; path = ../sound_files/Gsharp5piano.mp3; sourceTree = "<group>"; };
-		45E3D6022AD1F41A00E8ABB3 /* Gsharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gsharp0piano.mp3; path = ../sound_files/Gsharp0piano.mp3; sourceTree = "<group>"; };
-		45E3D6032AD1F41A00E8ABB3 /* Fsharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fsharp7piano.mp3; path = ../sound_files/Fsharp7piano.mp3; sourceTree = "<group>"; };
-		45E3D6042AD1F41A00E8ABB3 /* Fsharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fsharp4piano.mp3; path = ../sound_files/Fsharp4piano.mp3; sourceTree = "<group>"; };
-		45E3D6052AD1F41A00E8ABB3 /* E0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = E0piano.mp3; path = ../sound_files/E0piano.mp3; sourceTree = "<group>"; };
-		45E3D6062AD1F41A00E8ABB3 /* G8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G8piano.mp3; path = ../sound_files/G8piano.mp3; sourceTree = "<group>"; };
-		45E3D6072AD1F41A00E8ABB3 /* D7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = D7piano.mp3; path = ../sound_files/D7piano.mp3; sourceTree = "<group>"; };
-		45E3D6082AD1F41A00E8ABB3 /* G6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = G6piano.mp3; path = ../sound_files/G6piano.mp3; sourceTree = "<group>"; };
-		45E3D6092AD1F41A00E8ABB3 /* E6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = E6piano.mp3; path = ../sound_files/E6piano.mp3; sourceTree = "<group>"; };
-		45E3D60A2AD1F41A00E8ABB3 /* E8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = E8piano.mp3; path = ../sound_files/E8piano.mp3; sourceTree = "<group>"; };
-		45E3D60B2AD1F41A00E8ABB3 /* Dsharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dsharp4piano.mp3; path = ../sound_files/Dsharp4piano.mp3; sourceTree = "<group>"; };
-		45E3D60C2AD1F41A00E8ABB3 /* Gsharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gsharp8piano.mp3; path = ../sound_files/Gsharp8piano.mp3; sourceTree = "<group>"; };
+		45E3D6462ADA66C800E8ABB3 /* e6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = e6piano.mp3; path = ../sound_files/e6piano.mp3; sourceTree = "<group>"; };
+		45E3D6472ADA66C800E8ABB3 /* g0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = g0piano.mp3; path = ../sound_files/g0piano.mp3; sourceTree = "<group>"; };
+		45E3D6482ADA66C800E8ABB3 /* a2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = a2piano.mp3; path = ../sound_files/a2piano.mp3; sourceTree = "<group>"; };
+		45E3D6492ADA66C800E8ABB3 /* csharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = csharp6piano.mp3; path = ../sound_files/csharp6piano.mp3; sourceTree = "<group>"; };
+		45E3D64A2ADA66C800E8ABB3 /* gsharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gsharp5piano.mp3; path = ../sound_files/gsharp5piano.mp3; sourceTree = "<group>"; };
+		45E3D64B2ADA66C800E8ABB3 /* dsharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dsharp3piano.mp3; path = ../sound_files/dsharp3piano.mp3; sourceTree = "<group>"; };
+		45E3D64C2ADA66C800E8ABB3 /* fsharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fsharp1piano.mp3; path = ../sound_files/fsharp1piano.mp3; sourceTree = "<group>"; };
+		45E3D64D2ADA66C800E8ABB3 /* dsharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dsharp1piano.mp3; path = ../sound_files/dsharp1piano.mp3; sourceTree = "<group>"; };
+		45E3D64E2ADA66C800E8ABB3 /* asharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = asharp1piano.mp3; path = ../sound_files/asharp1piano.mp3; sourceTree = "<group>"; };
+		45E3D64F2ADA66C800E8ABB3 /* a7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = a7piano.mp3; path = ../sound_files/a7piano.mp3; sourceTree = "<group>"; };
+		45E3D6502ADA66C800E8ABB3 /* dsharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dsharp0piano.mp3; path = ../sound_files/dsharp0piano.mp3; sourceTree = "<group>"; };
+		45E3D6512ADA66C800E8ABB3 /* fsharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fsharp7piano.mp3; path = ../sound_files/fsharp7piano.mp3; sourceTree = "<group>"; };
+		45E3D6522ADA66C800E8ABB3 /* c8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = c8piano.mp3; path = ../sound_files/c8piano.mp3; sourceTree = "<group>"; };
+		45E3D6532ADA66C800E8ABB3 /* e8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = e8piano.mp3; path = ../sound_files/e8piano.mp3; sourceTree = "<group>"; };
+		45E3D6542ADA66C800E8ABB3 /* d3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = d3piano.mp3; path = ../sound_files/d3piano.mp3; sourceTree = "<group>"; };
+		45E3D6552ADA66C800E8ABB3 /* csharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = csharp2piano.mp3; path = ../sound_files/csharp2piano.mp3; sourceTree = "<group>"; };
+		45E3D6562ADA66C900E8ABB3 /* c5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = c5piano.mp3; path = ../sound_files/c5piano.mp3; sourceTree = "<group>"; };
+		45E3D6572ADA66C900E8ABB3 /* b0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = b0piano.mp3; path = ../sound_files/b0piano.mp3; sourceTree = "<group>"; };
+		45E3D6582ADA66C900E8ABB3 /* g6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = g6piano.mp3; path = ../sound_files/g6piano.mp3; sourceTree = "<group>"; };
+		45E3D6592ADA66C900E8ABB3 /* b8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = b8piano.mp3; path = ../sound_files/b8piano.mp3; sourceTree = "<group>"; };
+		45E3D65A2ADA66C900E8ABB3 /* d2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = d2piano.mp3; path = ../sound_files/d2piano.mp3; sourceTree = "<group>"; };
+		45E3D65B2ADA66C900E8ABB3 /* f2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = f2piano.mp3; path = ../sound_files/f2piano.mp3; sourceTree = "<group>"; };
+		45E3D65C2ADA66C900E8ABB3 /* dsharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dsharp7piano.mp3; path = ../sound_files/dsharp7piano.mp3; sourceTree = "<group>"; };
+		45E3D65D2ADA66C900E8ABB3 /* c7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = c7piano.mp3; path = ../sound_files/c7piano.mp3; sourceTree = "<group>"; };
+		45E3D65E2ADA66C900E8ABB3 /* csharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = csharp1piano.mp3; path = ../sound_files/csharp1piano.mp3; sourceTree = "<group>"; };
+		45E3D65F2ADA66C900E8ABB3 /* asharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = asharp2piano.mp3; path = ../sound_files/asharp2piano.mp3; sourceTree = "<group>"; };
+		45E3D6602ADA66C900E8ABB3 /* a4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = a4piano.mp3; path = ../sound_files/a4piano.mp3; sourceTree = "<group>"; };
+		45E3D6612ADA66C900E8ABB3 /* csharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = csharp7piano.mp3; path = ../sound_files/csharp7piano.mp3; sourceTree = "<group>"; };
+		45E3D6622ADA66C900E8ABB3 /* e2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = e2piano.mp3; path = ../sound_files/e2piano.mp3; sourceTree = "<group>"; };
+		45E3D6632ADA66C900E8ABB3 /* b1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = b1piano.mp3; path = ../sound_files/b1piano.mp3; sourceTree = "<group>"; };
+		45E3D6642ADA66C900E8ABB3 /* csharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = csharp5piano.mp3; path = ../sound_files/csharp5piano.mp3; sourceTree = "<group>"; };
+		45E3D6652ADA66C900E8ABB3 /* csharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = csharp3piano.mp3; path = ../sound_files/csharp3piano.mp3; sourceTree = "<group>"; };
+		45E3D6662ADA66C900E8ABB3 /* gsharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gsharp4piano.mp3; path = ../sound_files/gsharp4piano.mp3; sourceTree = "<group>"; };
+		45E3D6672ADA66C900E8ABB3 /* fsharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fsharp6piano.mp3; path = ../sound_files/fsharp6piano.mp3; sourceTree = "<group>"; };
+		45E3D6682ADA66C900E8ABB3 /* fsharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fsharp8piano.mp3; path = ../sound_files/fsharp8piano.mp3; sourceTree = "<group>"; };
+		45E3D6692ADA66C900E8ABB3 /* g7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = g7piano.mp3; path = ../sound_files/g7piano.mp3; sourceTree = "<group>"; };
+		45E3D66A2ADA66C900E8ABB3 /* e5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = e5piano.mp3; path = ../sound_files/e5piano.mp3; sourceTree = "<group>"; };
+		45E3D66B2ADA66C900E8ABB3 /* d0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = d0piano.mp3; path = ../sound_files/d0piano.mp3; sourceTree = "<group>"; };
+		45E3D66C2ADA66C900E8ABB3 /* asharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = asharp5piano.mp3; path = ../sound_files/asharp5piano.mp3; sourceTree = "<group>"; };
+		45E3D66D2ADA66C900E8ABB3 /* csharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = csharp0piano.mp3; path = ../sound_files/csharp0piano.mp3; sourceTree = "<group>"; };
+		45E3D66E2ADA66C900E8ABB3 /* fsharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fsharp4piano.mp3; path = ../sound_files/fsharp4piano.mp3; sourceTree = "<group>"; };
+		45E3D66F2ADA66C900E8ABB3 /* dsharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dsharp6piano.mp3; path = ../sound_files/dsharp6piano.mp3; sourceTree = "<group>"; };
+		45E3D6702ADA66C900E8ABB3 /* d6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = d6piano.mp3; path = ../sound_files/d6piano.mp3; sourceTree = "<group>"; };
+		45E3D6712ADA66C900E8ABB3 /* a1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = a1piano.mp3; path = ../sound_files/a1piano.mp3; sourceTree = "<group>"; };
+		45E3D6722ADA66C900E8ABB3 /* b2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = b2piano.mp3; path = ../sound_files/b2piano.mp3; sourceTree = "<group>"; };
+		45E3D6732ADA66C900E8ABB3 /* e4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = e4piano.mp3; path = ../sound_files/e4piano.mp3; sourceTree = "<group>"; };
+		45E3D6742ADA66C900E8ABB3 /* fsharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fsharp3piano.mp3; path = ../sound_files/fsharp3piano.mp3; sourceTree = "<group>"; };
+		45E3D6752ADA66C900E8ABB3 /* c6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = c6piano.mp3; path = ../sound_files/c6piano.mp3; sourceTree = "<group>"; };
+		45E3D6762ADA66C900E8ABB3 /* a6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = a6piano.mp3; path = ../sound_files/a6piano.mp3; sourceTree = "<group>"; };
+		45E3D6772ADA66C900E8ABB3 /* dsharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dsharp2piano.mp3; path = ../sound_files/dsharp2piano.mp3; sourceTree = "<group>"; };
+		45E3D6782ADA66C900E8ABB3 /* c3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = c3piano.mp3; path = ../sound_files/c3piano.mp3; sourceTree = "<group>"; };
+		45E3D6792ADA66C900E8ABB3 /* f7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = f7piano.mp3; path = ../sound_files/f7piano.mp3; sourceTree = "<group>"; };
+		45E3D67A2ADA66C900E8ABB3 /* c1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = c1piano.mp3; path = ../sound_files/c1piano.mp3; sourceTree = "<group>"; };
+		45E3D67B2ADA66C900E8ABB3 /* f3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = f3piano.mp3; path = ../sound_files/f3piano.mp3; sourceTree = "<group>"; };
+		45E3D67C2ADA66C900E8ABB3 /* b7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = b7piano.mp3; path = ../sound_files/b7piano.mp3; sourceTree = "<group>"; };
+		45E3D67D2ADA66C900E8ABB3 /* b6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = b6piano.mp3; path = ../sound_files/b6piano.mp3; sourceTree = "<group>"; };
+		45E3D67E2ADA66C900E8ABB3 /* g8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = g8piano.mp3; path = ../sound_files/g8piano.mp3; sourceTree = "<group>"; };
+		45E3D67F2ADA66C900E8ABB3 /* gsharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gsharp3piano.mp3; path = ../sound_files/gsharp3piano.mp3; sourceTree = "<group>"; };
+		45E3D6802ADA66C900E8ABB3 /* b3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = b3piano.mp3; path = ../sound_files/b3piano.mp3; sourceTree = "<group>"; };
+		45E3D6812ADA66C900E8ABB3 /* g5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = g5piano.mp3; path = ../sound_files/g5piano.mp3; sourceTree = "<group>"; };
+		45E3D6822ADA66C900E8ABB3 /* dsharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dsharp4piano.mp3; path = ../sound_files/dsharp4piano.mp3; sourceTree = "<group>"; };
+		45E3D6832ADA66C900E8ABB3 /* d8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = d8piano.mp3; path = ../sound_files/d8piano.mp3; sourceTree = "<group>"; };
+		45E3D6842ADA66C900E8ABB3 /* e3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = e3piano.mp3; path = ../sound_files/e3piano.mp3; sourceTree = "<group>"; };
+		45E3D6852ADA66C900E8ABB3 /* d7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = d7piano.mp3; path = ../sound_files/d7piano.mp3; sourceTree = "<group>"; };
+		45E3D6862ADA66C900E8ABB3 /* a0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = a0piano.mp3; path = ../sound_files/a0piano.mp3; sourceTree = "<group>"; };
+		45E3D6872ADA66C900E8ABB3 /* csharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = csharp8piano.mp3; path = ../sound_files/csharp8piano.mp3; sourceTree = "<group>"; };
+		45E3D6882ADA66C900E8ABB3 /* f8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = f8piano.mp3; path = ../sound_files/f8piano.mp3; sourceTree = "<group>"; };
+		45E3D6892ADA66C900E8ABB3 /* g4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = g4piano.mp3; path = ../sound_files/g4piano.mp3; sourceTree = "<group>"; };
+		45E3D68A2ADA66C900E8ABB3 /* gsharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gsharp8piano.mp3; path = ../sound_files/gsharp8piano.mp3; sourceTree = "<group>"; };
+		45E3D68B2ADA66C900E8ABB3 /* asharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = asharp4piano.mp3; path = ../sound_files/asharp4piano.mp3; sourceTree = "<group>"; };
+		45E3D68C2ADA66C900E8ABB3 /* g1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = g1piano.mp3; path = ../sound_files/g1piano.mp3; sourceTree = "<group>"; };
+		45E3D68D2ADA66C900E8ABB3 /* fsharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fsharp2piano.mp3; path = ../sound_files/fsharp2piano.mp3; sourceTree = "<group>"; };
+		45E3D68E2ADA66C900E8ABB3 /* f4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = f4piano.mp3; path = ../sound_files/f4piano.mp3; sourceTree = "<group>"; };
+		45E3D68F2ADA66C900E8ABB3 /* asharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = asharp8piano.mp3; path = ../sound_files/asharp8piano.mp3; sourceTree = "<group>"; };
+		45E3D6902ADA66C900E8ABB3 /* dsharp8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dsharp8piano.mp3; path = ../sound_files/dsharp8piano.mp3; sourceTree = "<group>"; };
+		45E3D6912ADA66C900E8ABB3 /* g2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = g2piano.mp3; path = ../sound_files/g2piano.mp3; sourceTree = "<group>"; };
+		45E3D6922ADA66C900E8ABB3 /* d5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = d5piano.mp3; path = ../sound_files/d5piano.mp3; sourceTree = "<group>"; };
+		45E3D6932ADA66C900E8ABB3 /* a3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = a3piano.mp3; path = ../sound_files/a3piano.mp3; sourceTree = "<group>"; };
+		45E3D6942ADA66C900E8ABB3 /* c0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = c0piano.mp3; path = ../sound_files/c0piano.mp3; sourceTree = "<group>"; };
+		45E3D6952ADA66C900E8ABB3 /* a8piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = a8piano.mp3; path = ../sound_files/a8piano.mp3; sourceTree = "<group>"; };
+		45E3D6962ADA66C900E8ABB3 /* a5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = a5piano.mp3; path = ../sound_files/a5piano.mp3; sourceTree = "<group>"; };
+		45E3D6972ADA66C900E8ABB3 /* gsharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gsharp0piano.mp3; path = ../sound_files/gsharp0piano.mp3; sourceTree = "<group>"; };
+		45E3D6982ADA66C900E8ABB3 /* dsharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dsharp5piano.mp3; path = ../sound_files/dsharp5piano.mp3; sourceTree = "<group>"; };
+		45E3D6992ADA66C900E8ABB3 /* gsharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gsharp6piano.mp3; path = ../sound_files/gsharp6piano.mp3; sourceTree = "<group>"; };
+		45E3D69A2ADA66C900E8ABB3 /* csharp4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = csharp4piano.mp3; path = ../sound_files/csharp4piano.mp3; sourceTree = "<group>"; };
+		45E3D69B2ADA66C900E8ABB3 /* b4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = b4piano.mp3; path = ../sound_files/b4piano.mp3; sourceTree = "<group>"; };
+		45E3D69C2ADA66C900E8ABB3 /* asharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = asharp0piano.mp3; path = ../sound_files/asharp0piano.mp3; sourceTree = "<group>"; };
+		45E3D69D2ADA66C900E8ABB3 /* f5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = f5piano.mp3; path = ../sound_files/f5piano.mp3; sourceTree = "<group>"; };
+		45E3D69E2ADA66C900E8ABB3 /* fsharp0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fsharp0piano.mp3; path = ../sound_files/fsharp0piano.mp3; sourceTree = "<group>"; };
+		45E3D69F2ADA66C900E8ABB3 /* e1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = e1piano.mp3; path = ../sound_files/e1piano.mp3; sourceTree = "<group>"; };
+		45E3D6A02ADA66C900E8ABB3 /* f0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = f0piano.mp3; path = ../sound_files/f0piano.mp3; sourceTree = "<group>"; };
+		45E3D6A12ADA66C900E8ABB3 /* e7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = e7piano.mp3; path = ../sound_files/e7piano.mp3; sourceTree = "<group>"; };
+		45E3D6A22ADA66C900E8ABB3 /* fsharp5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fsharp5piano.mp3; path = ../sound_files/fsharp5piano.mp3; sourceTree = "<group>"; };
+		45E3D6A32ADA66C900E8ABB3 /* c2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = c2piano.mp3; path = ../sound_files/c2piano.mp3; sourceTree = "<group>"; };
+		45E3D6A42ADA66C900E8ABB3 /* asharp6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = asharp6piano.mp3; path = ../sound_files/asharp6piano.mp3; sourceTree = "<group>"; };
+		45E3D6A52ADA66C900E8ABB3 /* gsharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gsharp7piano.mp3; path = ../sound_files/gsharp7piano.mp3; sourceTree = "<group>"; };
+		45E3D6A62ADA66C900E8ABB3 /* e0piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = e0piano.mp3; path = ../sound_files/e0piano.mp3; sourceTree = "<group>"; };
+		45E3D6A72ADA66CA00E8ABB3 /* b5piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = b5piano.mp3; path = ../sound_files/b5piano.mp3; sourceTree = "<group>"; };
+		45E3D6A82ADA66CA00E8ABB3 /* gsharp2piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gsharp2piano.mp3; path = ../sound_files/gsharp2piano.mp3; sourceTree = "<group>"; };
+		45E3D6A92ADA66CA00E8ABB3 /* d4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = d4piano.mp3; path = ../sound_files/d4piano.mp3; sourceTree = "<group>"; };
+		45E3D6AA2ADA66CA00E8ABB3 /* d1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = d1piano.mp3; path = ../sound_files/d1piano.mp3; sourceTree = "<group>"; };
+		45E3D6AB2ADA66CA00E8ABB3 /* f1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = f1piano.mp3; path = ../sound_files/f1piano.mp3; sourceTree = "<group>"; };
+		45E3D6AC2ADA66CA00E8ABB3 /* g3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = g3piano.mp3; path = ../sound_files/g3piano.mp3; sourceTree = "<group>"; };
+		45E3D6AD2ADA66CA00E8ABB3 /* c4piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = c4piano.mp3; path = ../sound_files/c4piano.mp3; sourceTree = "<group>"; };
+		45E3D6AE2ADA66CA00E8ABB3 /* asharp3piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = asharp3piano.mp3; path = ../sound_files/asharp3piano.mp3; sourceTree = "<group>"; };
+		45E3D6AF2ADA66CA00E8ABB3 /* f6piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = f6piano.mp3; path = ../sound_files/f6piano.mp3; sourceTree = "<group>"; };
+		45E3D6B02ADA66CA00E8ABB3 /* asharp7piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = asharp7piano.mp3; path = ../sound_files/asharp7piano.mp3; sourceTree = "<group>"; };
+		45E3D6B12ADA66CA00E8ABB3 /* gsharp1piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gsharp1piano.mp3; path = ../sound_files/gsharp1piano.mp3; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-OpenEarTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenEarTrainer.release.xcconfig"; path = "Target Support Files/Pods-OpenEarTrainer/Pods-OpenEarTrainer.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-OpenEarTrainer-OpenEarTrainerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenEarTrainer-OpenEarTrainerTests.debug.xcconfig"; path = "Target Support Files/Pods-OpenEarTrainer-OpenEarTrainerTests/Pods-OpenEarTrainer-OpenEarTrainerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-OpenEarTrainer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenEarTrainer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -332,114 +332,114 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				45E3D6072AD1F41A00E8ABB3 /* D7piano.mp3 */,
-				45E3D6002AD1F41A00E8ABB3 /* D8piano.mp3 */,
-				45E3D5EC2AD1F41900E8ABB3 /* Dsharp0piano.mp3 */,
-				45E3D5DB2AD1F41900E8ABB3 /* Dsharp1piano.mp3 */,
-				45E3D5E52AD1F41900E8ABB3 /* Dsharp2piano.mp3 */,
-				45E3D5DA2AD1F41900E8ABB3 /* Dsharp3piano.mp3 */,
-				45E3D60B2AD1F41A00E8ABB3 /* Dsharp4piano.mp3 */,
-				45E3D5DC2AD1F41900E8ABB3 /* Dsharp5piano.mp3 */,
-				45E3D5E42AD1F41900E8ABB3 /* Dsharp6piano.mp3 */,
-				45E3D5EF2AD1F41900E8ABB3 /* Dsharp7piano.mp3 */,
-				45E3D5FC2AD1F41A00E8ABB3 /* Dsharp8piano.mp3 */,
-				45E3D6052AD1F41A00E8ABB3 /* E0piano.mp3 */,
-				45E3D5EA2AD1F41900E8ABB3 /* E1piano.mp3 */,
-				45E3D5D62AD1F41900E8ABB3 /* E2piano.mp3 */,
-				45E3D5FD2AD1F41A00E8ABB3 /* E3piano.mp3 */,
-				45E3D5FF2AD1F41A00E8ABB3 /* E4piano.mp3 */,
-				45E3D5E02AD1F41900E8ABB3 /* E5piano.mp3 */,
-				45E3D6092AD1F41A00E8ABB3 /* E6piano.mp3 */,
-				45E3D5DF2AD1F41900E8ABB3 /* E7piano.mp3 */,
-				45E3D60A2AD1F41A00E8ABB3 /* E8piano.mp3 */,
-				45E3D5D42AD1F41900E8ABB3 /* F0piano.mp3 */,
-				45E3D5F92AD1F41A00E8ABB3 /* F1piano.mp3 */,
-				45E3D5F02AD1F41900E8ABB3 /* F2piano.mp3 */,
-				45E3D5FB2AD1F41A00E8ABB3 /* F3piano.mp3 */,
-				45E3D5ED2AD1F41900E8ABB3 /* F4piano.mp3 */,
-				45E3D5E72AD1F41900E8ABB3 /* F5piano.mp3 */,
-				45E3D5D92AD1F41900E8ABB3 /* F6piano.mp3 */,
-				45E3D5E62AD1F41900E8ABB3 /* F7piano.mp3 */,
-				45E3D5E82AD1F41900E8ABB3 /* F8piano.mp3 */,
-				45E3D5D52AD1F41900E8ABB3 /* Fsharp0piano.mp3 */,
-				45E3D5DE2AD1F41900E8ABB3 /* Fsharp1piano.mp3 */,
-				45E3D5F32AD1F41A00E8ABB3 /* Fsharp2piano.mp3 */,
-				45E3D5FA2AD1F41A00E8ABB3 /* Fsharp3piano.mp3 */,
-				45E3D6042AD1F41A00E8ABB3 /* Fsharp4piano.mp3 */,
-				45E3D5F62AD1F41A00E8ABB3 /* Fsharp5piano.mp3 */,
-				45E3D5FE2AD1F41A00E8ABB3 /* Fsharp6piano.mp3 */,
-				45E3D6032AD1F41A00E8ABB3 /* Fsharp7piano.mp3 */,
-				45E3D5E32AD1F41900E8ABB3 /* Fsharp8piano.mp3 */,
-				45E3D5D82AD1F41900E8ABB3 /* G0piano.mp3 */,
-				45E3D5D72AD1F41900E8ABB3 /* G1piano.mp3 */,
-				45E3D5F22AD1F41A00E8ABB3 /* G2piano.mp3 */,
-				45E3D5E92AD1F41900E8ABB3 /* G3piano.mp3 */,
-				45E3D5F72AD1F41A00E8ABB3 /* G4piano.mp3 */,
-				45E3D5EE2AD1F41900E8ABB3 /* G5piano.mp3 */,
-				45E3D6082AD1F41A00E8ABB3 /* G6piano.mp3 */,
-				45E3D5EB2AD1F41900E8ABB3 /* G7piano.mp3 */,
-				45E3D6062AD1F41A00E8ABB3 /* G8piano.mp3 */,
-				45E3D6022AD1F41A00E8ABB3 /* Gsharp0piano.mp3 */,
-				45E3D5F82AD1F41A00E8ABB3 /* Gsharp1piano.mp3 */,
-				45E3D5F52AD1F41A00E8ABB3 /* Gsharp2piano.mp3 */,
-				45E3D5E22AD1F41900E8ABB3 /* Gsharp3piano.mp3 */,
-				45E3D5DD2AD1F41900E8ABB3 /* Gsharp4piano.mp3 */,
-				45E3D6012AD1F41A00E8ABB3 /* Gsharp5piano.mp3 */,
-				45E3D5F42AD1F41A00E8ABB3 /* Gsharp6piano.mp3 */,
-				45E3D5E12AD1F41900E8ABB3 /* Gsharp7piano.mp3 */,
-				45E3D60C2AD1F41A00E8ABB3 /* Gsharp8piano.mp3 */,
-				4591D70D2AABFB790094C82B /* A0piano.mp3 */,
-				4591D70A2AABFB790094C82B /* A1piano.mp3 */,
-				4591D7052AABFB790094C82B /* A2piano.mp3 */,
-				4591D72B2AABFB7A0094C82B /* A3piano.mp3 */,
-				4591D71F2AABFB790094C82B /* A4piano.mp3 */,
-				4591D7032AABFB790094C82B /* A5piano.mp3 */,
-				4591D7232AABFB790094C82B /* A6piano.mp3 */,
-				4591D7142AABFB790094C82B /* A7piano.mp3 */,
-				4591D7162AABFB790094C82B /* A8piano.mp3 */,
-				4591D72C2AABFB7A0094C82B /* Asharp0piano.mp3 */,
-				4591D7012AABFB790094C82B /* Asharp1piano.mp3 */,
-				4591D7182AABFB790094C82B /* Asharp2piano.mp3 */,
-				4591D7192AABFB790094C82B /* Asharp3piano.mp3 */,
-				4591D7252AABFB790094C82B /* Asharp4piano.mp3 */,
-				4591D7172AABFB790094C82B /* Asharp5piano.mp3 */,
-				4591D70C2AABFB790094C82B /* Asharp6piano.mp3 */,
-				4591D7062AABFB790094C82B /* Asharp7piano.mp3 */,
-				4591D7092AABFB790094C82B /* Asharp8piano.mp3 */,
-				4591D7022AABFB790094C82B /* B0piano.mp3 */,
-				4591D7042AABFB790094C82B /* B1piano.mp3 */,
-				4591D71C2AABFB790094C82B /* B2piano.mp3 */,
-				4591D71A2AABFB790094C82B /* B3piano.mp3 */,
-				4591D7082AABFB790094C82B /* B4piano.mp3 */,
-				4591D7262AABFB790094C82B /* B5piano.mp3 */,
-				4591D7212AABFB790094C82B /* B6piano.mp3 */,
-				4591D70B2AABFB790094C82B /* B7piano.mp3 */,
-				4591D71B2AABFB790094C82B /* B8piano.mp3 */,
-				4591D7102AABFB790094C82B /* C0piano.mp3 */,
-				4591D70E2AABFB790094C82B /* C1piano.mp3 */,
-				4591D72A2AABFB790094C82B /* C2piano.mp3 */,
-				4591D7112AABFB790094C82B /* C3piano.mp3 */,
-				4591D7122AABFB790094C82B /* C4piano.mp3 */,
-				4591D6FF2AABFB790094C82B /* C5piano.mp3 */,
-				4591D7072AABFB790094C82B /* C6piano.mp3 */,
-				4591D72E2AABFB7A0094C82B /* C7piano.mp3 */,
-				4591D7152AABFB790094C82B /* C8piano.mp3 */,
-				4591D6FD2AABFB790094C82B /* Csharp0piano.mp3 */,
-				4591D6FB2AABFB790094C82B /* Csharp1piano.mp3 */,
-				4591D71D2AABFB790094C82B /* Csharp2piano.mp3 */,
-				4591D7242AABFB790094C82B /* Csharp3piano.mp3 */,
-				4591D6FC2AABFB790094C82B /* Csharp4piano.mp3 */,
-				4591D72D2AABFB7A0094C82B /* Csharp5piano.mp3 */,
-				4591D70F2AABFB790094C82B /* Csharp6piano.mp3 */,
-				4591D7222AABFB790094C82B /* Csharp7piano.mp3 */,
-				4591D7202AABFB790094C82B /* Csharp8piano.mp3 */,
-				4591D7002AABFB790094C82B /* D0piano.mp3 */,
-				4591D7292AABFB790094C82B /* D1piano.mp3 */,
-				4591D7272AABFB790094C82B /* D2piano.mp3 */,
-				4591D6FE2AABFB790094C82B /* D3piano.mp3 */,
-				4591D7282AABFB790094C82B /* D4piano.mp3 */,
-				4591D7132AABFB790094C82B /* D5piano.mp3 */,
-				4591D71E2AABFB790094C82B /* D6piano.mp3 */,
+				45E3D6862ADA66C900E8ABB3 /* a0piano.mp3 */,
+				45E3D6712ADA66C900E8ABB3 /* a1piano.mp3 */,
+				45E3D6482ADA66C800E8ABB3 /* a2piano.mp3 */,
+				45E3D6932ADA66C900E8ABB3 /* a3piano.mp3 */,
+				45E3D6602ADA66C900E8ABB3 /* a4piano.mp3 */,
+				45E3D6962ADA66C900E8ABB3 /* a5piano.mp3 */,
+				45E3D6762ADA66C900E8ABB3 /* a6piano.mp3 */,
+				45E3D64F2ADA66C800E8ABB3 /* a7piano.mp3 */,
+				45E3D6952ADA66C900E8ABB3 /* a8piano.mp3 */,
+				45E3D69C2ADA66C900E8ABB3 /* asharp0piano.mp3 */,
+				45E3D64E2ADA66C800E8ABB3 /* asharp1piano.mp3 */,
+				45E3D65F2ADA66C900E8ABB3 /* asharp2piano.mp3 */,
+				45E3D6AE2ADA66CA00E8ABB3 /* asharp3piano.mp3 */,
+				45E3D68B2ADA66C900E8ABB3 /* asharp4piano.mp3 */,
+				45E3D66C2ADA66C900E8ABB3 /* asharp5piano.mp3 */,
+				45E3D6A42ADA66C900E8ABB3 /* asharp6piano.mp3 */,
+				45E3D6B02ADA66CA00E8ABB3 /* asharp7piano.mp3 */,
+				45E3D68F2ADA66C900E8ABB3 /* asharp8piano.mp3 */,
+				45E3D6572ADA66C900E8ABB3 /* b0piano.mp3 */,
+				45E3D6632ADA66C900E8ABB3 /* b1piano.mp3 */,
+				45E3D6722ADA66C900E8ABB3 /* b2piano.mp3 */,
+				45E3D6802ADA66C900E8ABB3 /* b3piano.mp3 */,
+				45E3D69B2ADA66C900E8ABB3 /* b4piano.mp3 */,
+				45E3D6A72ADA66CA00E8ABB3 /* b5piano.mp3 */,
+				45E3D67D2ADA66C900E8ABB3 /* b6piano.mp3 */,
+				45E3D67C2ADA66C900E8ABB3 /* b7piano.mp3 */,
+				45E3D6592ADA66C900E8ABB3 /* b8piano.mp3 */,
+				45E3D6942ADA66C900E8ABB3 /* c0piano.mp3 */,
+				45E3D67A2ADA66C900E8ABB3 /* c1piano.mp3 */,
+				45E3D6A32ADA66C900E8ABB3 /* c2piano.mp3 */,
+				45E3D6782ADA66C900E8ABB3 /* c3piano.mp3 */,
+				45E3D6AD2ADA66CA00E8ABB3 /* c4piano.mp3 */,
+				45E3D6562ADA66C900E8ABB3 /* c5piano.mp3 */,
+				45E3D6752ADA66C900E8ABB3 /* c6piano.mp3 */,
+				45E3D65D2ADA66C900E8ABB3 /* c7piano.mp3 */,
+				45E3D6522ADA66C800E8ABB3 /* c8piano.mp3 */,
+				45E3D66D2ADA66C900E8ABB3 /* csharp0piano.mp3 */,
+				45E3D65E2ADA66C900E8ABB3 /* csharp1piano.mp3 */,
+				45E3D6552ADA66C800E8ABB3 /* csharp2piano.mp3 */,
+				45E3D6652ADA66C900E8ABB3 /* csharp3piano.mp3 */,
+				45E3D69A2ADA66C900E8ABB3 /* csharp4piano.mp3 */,
+				45E3D6642ADA66C900E8ABB3 /* csharp5piano.mp3 */,
+				45E3D6492ADA66C800E8ABB3 /* csharp6piano.mp3 */,
+				45E3D6612ADA66C900E8ABB3 /* csharp7piano.mp3 */,
+				45E3D6872ADA66C900E8ABB3 /* csharp8piano.mp3 */,
+				45E3D66B2ADA66C900E8ABB3 /* d0piano.mp3 */,
+				45E3D6AA2ADA66CA00E8ABB3 /* d1piano.mp3 */,
+				45E3D65A2ADA66C900E8ABB3 /* d2piano.mp3 */,
+				45E3D6542ADA66C800E8ABB3 /* d3piano.mp3 */,
+				45E3D6A92ADA66CA00E8ABB3 /* d4piano.mp3 */,
+				45E3D6922ADA66C900E8ABB3 /* d5piano.mp3 */,
+				45E3D6702ADA66C900E8ABB3 /* d6piano.mp3 */,
+				45E3D6852ADA66C900E8ABB3 /* d7piano.mp3 */,
+				45E3D6832ADA66C900E8ABB3 /* d8piano.mp3 */,
+				45E3D6502ADA66C800E8ABB3 /* dsharp0piano.mp3 */,
+				45E3D64D2ADA66C800E8ABB3 /* dsharp1piano.mp3 */,
+				45E3D6772ADA66C900E8ABB3 /* dsharp2piano.mp3 */,
+				45E3D64B2ADA66C800E8ABB3 /* dsharp3piano.mp3 */,
+				45E3D6822ADA66C900E8ABB3 /* dsharp4piano.mp3 */,
+				45E3D6982ADA66C900E8ABB3 /* dsharp5piano.mp3 */,
+				45E3D66F2ADA66C900E8ABB3 /* dsharp6piano.mp3 */,
+				45E3D65C2ADA66C900E8ABB3 /* dsharp7piano.mp3 */,
+				45E3D6902ADA66C900E8ABB3 /* dsharp8piano.mp3 */,
+				45E3D6A62ADA66C900E8ABB3 /* e0piano.mp3 */,
+				45E3D69F2ADA66C900E8ABB3 /* e1piano.mp3 */,
+				45E3D6622ADA66C900E8ABB3 /* e2piano.mp3 */,
+				45E3D6842ADA66C900E8ABB3 /* e3piano.mp3 */,
+				45E3D6732ADA66C900E8ABB3 /* e4piano.mp3 */,
+				45E3D66A2ADA66C900E8ABB3 /* e5piano.mp3 */,
+				45E3D6462ADA66C800E8ABB3 /* e6piano.mp3 */,
+				45E3D6A12ADA66C900E8ABB3 /* e7piano.mp3 */,
+				45E3D6532ADA66C800E8ABB3 /* e8piano.mp3 */,
+				45E3D6A02ADA66C900E8ABB3 /* f0piano.mp3 */,
+				45E3D6AB2ADA66CA00E8ABB3 /* f1piano.mp3 */,
+				45E3D65B2ADA66C900E8ABB3 /* f2piano.mp3 */,
+				45E3D67B2ADA66C900E8ABB3 /* f3piano.mp3 */,
+				45E3D68E2ADA66C900E8ABB3 /* f4piano.mp3 */,
+				45E3D69D2ADA66C900E8ABB3 /* f5piano.mp3 */,
+				45E3D6AF2ADA66CA00E8ABB3 /* f6piano.mp3 */,
+				45E3D6792ADA66C900E8ABB3 /* f7piano.mp3 */,
+				45E3D6882ADA66C900E8ABB3 /* f8piano.mp3 */,
+				45E3D69E2ADA66C900E8ABB3 /* fsharp0piano.mp3 */,
+				45E3D64C2ADA66C800E8ABB3 /* fsharp1piano.mp3 */,
+				45E3D68D2ADA66C900E8ABB3 /* fsharp2piano.mp3 */,
+				45E3D6742ADA66C900E8ABB3 /* fsharp3piano.mp3 */,
+				45E3D66E2ADA66C900E8ABB3 /* fsharp4piano.mp3 */,
+				45E3D6A22ADA66C900E8ABB3 /* fsharp5piano.mp3 */,
+				45E3D6672ADA66C900E8ABB3 /* fsharp6piano.mp3 */,
+				45E3D6512ADA66C800E8ABB3 /* fsharp7piano.mp3 */,
+				45E3D6682ADA66C900E8ABB3 /* fsharp8piano.mp3 */,
+				45E3D6472ADA66C800E8ABB3 /* g0piano.mp3 */,
+				45E3D68C2ADA66C900E8ABB3 /* g1piano.mp3 */,
+				45E3D6912ADA66C900E8ABB3 /* g2piano.mp3 */,
+				45E3D6AC2ADA66CA00E8ABB3 /* g3piano.mp3 */,
+				45E3D6892ADA66C900E8ABB3 /* g4piano.mp3 */,
+				45E3D6812ADA66C900E8ABB3 /* g5piano.mp3 */,
+				45E3D6582ADA66C900E8ABB3 /* g6piano.mp3 */,
+				45E3D6692ADA66C900E8ABB3 /* g7piano.mp3 */,
+				45E3D67E2ADA66C900E8ABB3 /* g8piano.mp3 */,
+				45E3D6972ADA66C900E8ABB3 /* gsharp0piano.mp3 */,
+				45E3D6B12ADA66CA00E8ABB3 /* gsharp1piano.mp3 */,
+				45E3D6A82ADA66CA00E8ABB3 /* gsharp2piano.mp3 */,
+				45E3D67F2ADA66C900E8ABB3 /* gsharp3piano.mp3 */,
+				45E3D6662ADA66C900E8ABB3 /* gsharp4piano.mp3 */,
+				45E3D64A2ADA66C800E8ABB3 /* gsharp5piano.mp3 */,
+				45E3D6992ADA66C900E8ABB3 /* gsharp6piano.mp3 */,
+				45E3D6A52ADA66C900E8ABB3 /* gsharp7piano.mp3 */,
+				45E3D68A2ADA66C900E8ABB3 /* gsharp8piano.mp3 */,
 				13B07FAE1A68108700A75B9A /* OpenEarTrainer */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* OpenEarTrainerTests */,
@@ -566,116 +566,116 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4591D7312AABFB7A0094C82B /* Csharp0piano.mp3 in Resources */,
-				45E3D60E2AD1F41A00E8ABB3 /* Fsharp0piano.mp3 in Resources */,
-				4591D7322AABFB7A0094C82B /* D3piano.mp3 in Resources */,
-				4591D7452AABFB7A0094C82B /* C3piano.mp3 in Resources */,
-				4591D7472AABFB7A0094C82B /* D5piano.mp3 in Resources */,
-				4591D7482AABFB7A0094C82B /* A7piano.mp3 in Resources */,
-				4591D75B2AABFB7A0094C82B /* D2piano.mp3 in Resources */,
-				45E3D63A2AD1F41A00E8ABB3 /* Gsharp5piano.mp3 in Resources */,
-				4591D73F2AABFB7A0094C82B /* B7piano.mp3 in Resources */,
-				45E3D6232AD1F41A00E8ABB3 /* E1piano.mp3 in Resources */,
-				45E3D6312AD1F41A00E8ABB3 /* Gsharp1piano.mp3 in Resources */,
-				4591D7542AABFB7A0094C82B /* Csharp8piano.mp3 in Resources */,
-				45E3D6242AD1F41A00E8ABB3 /* G7piano.mp3 in Resources */,
-				45E3D60D2AD1F41A00E8ABB3 /* F0piano.mp3 in Resources */,
-				4591D7612AABFB7A0094C82B /* Csharp5piano.mp3 in Resources */,
-				45E3D62B2AD1F41A00E8ABB3 /* G2piano.mp3 in Resources */,
-				45E3D61D2AD1F41A00E8ABB3 /* Dsharp6piano.mp3 in Resources */,
-				4591D73B2AABFB7A0094C82B /* C6piano.mp3 in Resources */,
-				4591D74E2AABFB7A0094C82B /* B3piano.mp3 in Resources */,
-				45E3D6222AD1F41A00E8ABB3 /* G3piano.mp3 in Resources */,
-				45E3D6272AD1F41A00E8ABB3 /* G5piano.mp3 in Resources */,
-				4591D72F2AABFB7A0094C82B /* Csharp1piano.mp3 in Resources */,
-				45E3D6342AD1F41A00E8ABB3 /* F3piano.mp3 in Resources */,
-				4591D74B2AABFB7A0094C82B /* Asharp5piano.mp3 in Resources */,
-				4591D7392AABFB7A0094C82B /* A2piano.mp3 in Resources */,
-				45E3D61E2AD1F41A00E8ABB3 /* Dsharp2piano.mp3 in Resources */,
-				45E3D6412AD1F41A00E8ABB3 /* G6piano.mp3 in Resources */,
-				4591D73D2AABFB7A0094C82B /* Asharp8piano.mp3 in Resources */,
-				4591D7582AABFB7A0094C82B /* Csharp3piano.mp3 in Resources */,
+				45E3D6C72ADA66CA00E8ABB3 /* f2piano.mp3 in Resources */,
+				45E3D6B52ADA66CA00E8ABB3 /* csharp6piano.mp3 in Resources */,
+				45E3D6D52ADA66CA00E8ABB3 /* g7piano.mp3 in Resources */,
+				45E3D6B82ADA66CA00E8ABB3 /* fsharp1piano.mp3 in Resources */,
+				45E3D70D2ADA66CA00E8ABB3 /* e7piano.mp3 in Resources */,
+				45E3D6F22ADA66CA00E8ABB3 /* a0piano.mp3 in Resources */,
+				45E3D6E92ADA66CA00E8ABB3 /* b6piano.mp3 in Resources */,
+				45E3D7172ADA66CA00E8ABB3 /* f1piano.mp3 in Resources */,
+				45E3D6F42ADA66CA00E8ABB3 /* f8piano.mp3 in Resources */,
+				45E3D6D82ADA66CA00E8ABB3 /* asharp5piano.mp3 in Resources */,
+				45E3D6CC2ADA66CA00E8ABB3 /* a4piano.mp3 in Resources */,
+				45E3D6C82ADA66CA00E8ABB3 /* dsharp7piano.mp3 in Resources */,
+				45E3D6E12ADA66CA00E8ABB3 /* c6piano.mp3 in Resources */,
+				45E3D7092ADA66CA00E8ABB3 /* f5piano.mp3 in Resources */,
+				45E3D6C22ADA66CA00E8ABB3 /* c5piano.mp3 in Resources */,
+				45E3D6DD2ADA66CA00E8ABB3 /* a1piano.mp3 in Resources */,
+				45E3D6F02ADA66CA00E8ABB3 /* e3piano.mp3 in Resources */,
+				45E3D7192ADA66CA00E8ABB3 /* c4piano.mp3 in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				45E3D61C2AD1F41A00E8ABB3 /* Fsharp8piano.mp3 in Resources */,
-				4591D73C2AABFB7A0094C82B /* B4piano.mp3 in Resources */,
-				45E3D62E2AD1F41A00E8ABB3 /* Gsharp2piano.mp3 in Resources */,
-				45E3D6292AD1F41A00E8ABB3 /* F2piano.mp3 in Resources */,
-				4591D7432AABFB7A0094C82B /* Csharp6piano.mp3 in Resources */,
-				4591D7342AABFB7A0094C82B /* D0piano.mp3 in Resources */,
-				4591D7502AABFB7A0094C82B /* B2piano.mp3 in Resources */,
-				4591D7442AABFB7A0094C82B /* C0piano.mp3 in Resources */,
-				45E3D6212AD1F41A00E8ABB3 /* F8piano.mp3 in Resources */,
-				45E3D6302AD1F41A00E8ABB3 /* G4piano.mp3 in Resources */,
-				45E3D6132AD1F41A00E8ABB3 /* Dsharp3piano.mp3 in Resources */,
-				4591D7412AABFB7A0094C82B /* A0piano.mp3 in Resources */,
-				4591D7592AABFB7A0094C82B /* Asharp4piano.mp3 in Resources */,
-				45E3D63C2AD1F41A00E8ABB3 /* Fsharp7piano.mp3 in Resources */,
-				4591D7402AABFB7A0094C82B /* Asharp6piano.mp3 in Resources */,
-				45E3D63B2AD1F41A00E8ABB3 /* Gsharp0piano.mp3 in Resources */,
-				45E3D6172AD1F41A00E8ABB3 /* Fsharp1piano.mp3 in Resources */,
-				45E3D63D2AD1F41A00E8ABB3 /* Fsharp4piano.mp3 in Resources */,
-				4591D7352AABFB7A0094C82B /* Asharp1piano.mp3 in Resources */,
-				45E3D6202AD1F41A00E8ABB3 /* F5piano.mp3 in Resources */,
-				4591D7622AABFB7A0094C82B /* C7piano.mp3 in Resources */,
-				4591D75D2AABFB7A0094C82B /* D1piano.mp3 in Resources */,
-				45E3D6332AD1F41A00E8ABB3 /* Fsharp3piano.mp3 in Resources */,
-				45E3D6152AD1F41A00E8ABB3 /* Dsharp5piano.mp3 in Resources */,
-				45E3D63E2AD1F41A00E8ABB3 /* E0piano.mp3 in Resources */,
-				45E3D61A2AD1F41A00E8ABB3 /* Gsharp7piano.mp3 in Resources */,
-				45E3D6372AD1F41A00E8ABB3 /* Fsharp6piano.mp3 in Resources */,
-				45E3D6192AD1F41A00E8ABB3 /* E5piano.mp3 in Resources */,
-				4591D73E2AABFB7A0094C82B /* A1piano.mp3 in Resources */,
-				45E3D6442AD1F41A00E8ABB3 /* Dsharp4piano.mp3 in Resources */,
-				4591D7302AABFB7A0094C82B /* Csharp4piano.mp3 in Resources */,
-				4591D7532AABFB7A0094C82B /* A4piano.mp3 in Resources */,
-				45E3D6182AD1F41A00E8ABB3 /* E7piano.mp3 in Resources */,
-				4591D7572AABFB7A0094C82B /* A6piano.mp3 in Resources */,
-				45E3D6422AD1F41A00E8ABB3 /* E6piano.mp3 in Resources */,
-				45E3D6362AD1F41A00E8ABB3 /* E3piano.mp3 in Resources */,
-				4591D7552AABFB7A0094C82B /* B6piano.mp3 in Resources */,
-				4591D7382AABFB7A0094C82B /* B1piano.mp3 in Resources */,
-				4591D7522AABFB7A0094C82B /* D6piano.mp3 in Resources */,
-				4591D75E2AABFB7A0094C82B /* C2piano.mp3 in Resources */,
-				4591D74C2AABFB7A0094C82B /* Asharp2piano.mp3 in Resources */,
-				4591D7462AABFB7A0094C82B /* C4piano.mp3 in Resources */,
-				45E3D63F2AD1F41A00E8ABB3 /* G8piano.mp3 in Resources */,
-				45E3D6122AD1F41A00E8ABB3 /* F6piano.mp3 in Resources */,
-				45E3D6112AD1F41A00E8ABB3 /* G0piano.mp3 in Resources */,
-				4591D7332AABFB7A0094C82B /* C5piano.mp3 in Resources */,
-				4591D7362AABFB7A0094C82B /* B0piano.mp3 in Resources */,
-				45E3D6262AD1F41A00E8ABB3 /* F4piano.mp3 in Resources */,
-				45E3D62C2AD1F41A00E8ABB3 /* Fsharp2piano.mp3 in Resources */,
-				45E3D6402AD1F41A00E8ABB3 /* D7piano.mp3 in Resources */,
-				4591D74F2AABFB7A0094C82B /* B8piano.mp3 in Resources */,
-				45E3D62D2AD1F41A00E8ABB3 /* Gsharp6piano.mp3 in Resources */,
-				45E3D61B2AD1F41A00E8ABB3 /* Gsharp3piano.mp3 in Resources */,
-				45E3D62F2AD1F41A00E8ABB3 /* Fsharp5piano.mp3 in Resources */,
-				45E3D6142AD1F41A00E8ABB3 /* Dsharp1piano.mp3 in Resources */,
-				45E3D6452AD1F41A00E8ABB3 /* Gsharp8piano.mp3 in Resources */,
-				4591D7562AABFB7A0094C82B /* Csharp7piano.mp3 in Resources */,
-				45E3D6282AD1F41A00E8ABB3 /* Dsharp7piano.mp3 in Resources */,
-				45E3D6102AD1F41A00E8ABB3 /* G1piano.mp3 in Resources */,
-				4591D7492AABFB7A0094C82B /* C8piano.mp3 in Resources */,
-				4591D74A2AABFB7A0094C82B /* A8piano.mp3 in Resources */,
-				45E3D6252AD1F41A00E8ABB3 /* Dsharp0piano.mp3 in Resources */,
-				4591D75C2AABFB7A0094C82B /* D4piano.mp3 in Resources */,
-				4591D7422AABFB7A0094C82B /* C1piano.mp3 in Resources */,
-				45E3D6352AD1F41A00E8ABB3 /* Dsharp8piano.mp3 in Resources */,
-				4591D73A2AABFB7A0094C82B /* Asharp7piano.mp3 in Resources */,
-				45E3D6392AD1F41A00E8ABB3 /* D8piano.mp3 in Resources */,
-				4591D75F2AABFB7A0094C82B /* A3piano.mp3 in Resources */,
-				4591D7512AABFB7A0094C82B /* Csharp2piano.mp3 in Resources */,
+				45E3D6FD2ADA66CA00E8ABB3 /* g2piano.mp3 in Resources */,
+				45E3D6F52ADA66CA00E8ABB3 /* g4piano.mp3 in Resources */,
+				45E3D6F72ADA66CA00E8ABB3 /* asharp4piano.mp3 in Resources */,
+				45E3D6DB2ADA66CA00E8ABB3 /* dsharp6piano.mp3 in Resources */,
+				45E3D7122ADA66CA00E8ABB3 /* e0piano.mp3 in Resources */,
+				45E3D6EB2ADA66CA00E8ABB3 /* gsharp3piano.mp3 in Resources */,
+				45E3D6D32ADA66CA00E8ABB3 /* fsharp6piano.mp3 in Resources */,
+				45E3D6CD2ADA66CA00E8ABB3 /* csharp7piano.mp3 in Resources */,
+				45E3D7082ADA66CA00E8ABB3 /* asharp0piano.mp3 in Resources */,
+				45E3D6F92ADA66CA00E8ABB3 /* fsharp2piano.mp3 in Resources */,
+				45E3D6B72ADA66CA00E8ABB3 /* dsharp3piano.mp3 in Resources */,
+				45E3D71A2ADA66CA00E8ABB3 /* asharp3piano.mp3 in Resources */,
+				45E3D6BD2ADA66CA00E8ABB3 /* fsharp7piano.mp3 in Resources */,
+				45E3D7012ADA66CA00E8ABB3 /* a8piano.mp3 in Resources */,
+				45E3D6BB2ADA66CA00E8ABB3 /* a7piano.mp3 in Resources */,
+				45E3D7132ADA66CA00E8ABB3 /* b5piano.mp3 in Resources */,
+				45E3D6B62ADA66CA00E8ABB3 /* gsharp5piano.mp3 in Resources */,
+				45E3D6C62ADA66CA00E8ABB3 /* d2piano.mp3 in Resources */,
+				45E3D7152ADA66CA00E8ABB3 /* d4piano.mp3 in Resources */,
+				45E3D7182ADA66CA00E8ABB3 /* g3piano.mp3 in Resources */,
+				45E3D70C2ADA66CA00E8ABB3 /* f0piano.mp3 in Resources */,
+				45E3D71B2ADA66CA00E8ABB3 /* f6piano.mp3 in Resources */,
+				45E3D6C52ADA66CA00E8ABB3 /* b8piano.mp3 in Resources */,
+				45E3D6C02ADA66CA00E8ABB3 /* d3piano.mp3 in Resources */,
+				45E3D70A2ADA66CA00E8ABB3 /* fsharp0piano.mp3 in Resources */,
+				45E3D7162ADA66CA00E8ABB3 /* d1piano.mp3 in Resources */,
+				45E3D6CA2ADA66CA00E8ABB3 /* csharp1piano.mp3 in Resources */,
+				45E3D7062ADA66CA00E8ABB3 /* csharp4piano.mp3 in Resources */,
+				45E3D6CB2ADA66CA00E8ABB3 /* asharp2piano.mp3 in Resources */,
+				45E3D6FC2ADA66CA00E8ABB3 /* dsharp8piano.mp3 in Resources */,
+				45E3D7052ADA66CA00E8ABB3 /* gsharp6piano.mp3 in Resources */,
+				45E3D6EC2ADA66CA00E8ABB3 /* b3piano.mp3 in Resources */,
+				45E3D6F12ADA66CA00E8ABB3 /* d7piano.mp3 in Resources */,
+				45E3D6E02ADA66CA00E8ABB3 /* fsharp3piano.mp3 in Resources */,
+				45E3D6FF2ADA66CA00E8ABB3 /* a3piano.mp3 in Resources */,
+				45E3D6BC2ADA66CA00E8ABB3 /* dsharp0piano.mp3 in Resources */,
+				45E3D6D22ADA66CA00E8ABB3 /* gsharp4piano.mp3 in Resources */,
+				45E3D6FB2ADA66CA00E8ABB3 /* asharp8piano.mp3 in Resources */,
+				45E3D6D02ADA66CA00E8ABB3 /* csharp5piano.mp3 in Resources */,
+				45E3D7102ADA66CA00E8ABB3 /* asharp6piano.mp3 in Resources */,
+				45E3D6B22ADA66CA00E8ABB3 /* e6piano.mp3 in Resources */,
+				45E3D6CF2ADA66CA00E8ABB3 /* b1piano.mp3 in Resources */,
+				45E3D6E62ADA66CA00E8ABB3 /* c1piano.mp3 in Resources */,
+				45E3D6C12ADA66CA00E8ABB3 /* csharp2piano.mp3 in Resources */,
+				45E3D70F2ADA66CA00E8ABB3 /* c2piano.mp3 in Resources */,
+				45E3D6DA2ADA66CA00E8ABB3 /* fsharp4piano.mp3 in Resources */,
+				45E3D6F82ADA66CA00E8ABB3 /* g1piano.mp3 in Resources */,
+				45E3D7002ADA66CA00E8ABB3 /* c0piano.mp3 in Resources */,
+				45E3D70E2ADA66CA00E8ABB3 /* fsharp5piano.mp3 in Resources */,
+				45E3D6E52ADA66CA00E8ABB3 /* f7piano.mp3 in Resources */,
+				45E3D71D2ADA66CA00E8ABB3 /* gsharp1piano.mp3 in Resources */,
+				45E3D6C92ADA66CA00E8ABB3 /* c7piano.mp3 in Resources */,
+				45E3D6E22ADA66CA00E8ABB3 /* a6piano.mp3 in Resources */,
+				45E3D71C2ADA66CA00E8ABB3 /* asharp7piano.mp3 in Resources */,
+				45E3D6EA2ADA66CA00E8ABB3 /* g8piano.mp3 in Resources */,
+				45E3D7112ADA66CA00E8ABB3 /* gsharp7piano.mp3 in Resources */,
+				45E3D6FA2ADA66CA00E8ABB3 /* f4piano.mp3 in Resources */,
+				45E3D6F32ADA66CA00E8ABB3 /* csharp8piano.mp3 in Resources */,
+				45E3D6B92ADA66CA00E8ABB3 /* dsharp1piano.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				4591D7602AABFB7A0094C82B /* Asharp0piano.mp3 in Resources */,
-				45E3D60F2AD1F41A00E8ABB3 /* E2piano.mp3 in Resources */,
-				4591D75A2AABFB7A0094C82B /* B5piano.mp3 in Resources */,
-				4591D7372AABFB7A0094C82B /* A5piano.mp3 in Resources */,
-				45E3D61F2AD1F41A00E8ABB3 /* F7piano.mp3 in Resources */,
-				45E3D6162AD1F41A00E8ABB3 /* Gsharp4piano.mp3 in Resources */,
-				45E3D6432AD1F41A00E8ABB3 /* E8piano.mp3 in Resources */,
-				45E3D6382AD1F41A00E8ABB3 /* E4piano.mp3 in Resources */,
-				4591D74D2AABFB7A0094C82B /* Asharp3piano.mp3 in Resources */,
-				45E3D6322AD1F41A00E8ABB3 /* F1piano.mp3 in Resources */,
+				45E3D6D72ADA66CA00E8ABB3 /* d0piano.mp3 in Resources */,
+				45E3D6D12ADA66CA00E8ABB3 /* csharp3piano.mp3 in Resources */,
+				45E3D6D42ADA66CA00E8ABB3 /* fsharp8piano.mp3 in Resources */,
+				45E3D6B42ADA66CA00E8ABB3 /* a2piano.mp3 in Resources */,
+				45E3D70B2ADA66CA00E8ABB3 /* e1piano.mp3 in Resources */,
+				45E3D6E72ADA66CA00E8ABB3 /* f3piano.mp3 in Resources */,
+				45E3D6ED2ADA66CA00E8ABB3 /* g5piano.mp3 in Resources */,
+				45E3D6D62ADA66CA00E8ABB3 /* e5piano.mp3 in Resources */,
+				45E3D6E42ADA66CA00E8ABB3 /* c3piano.mp3 in Resources */,
+				45E3D6EE2ADA66CA00E8ABB3 /* dsharp4piano.mp3 in Resources */,
+				45E3D6BA2ADA66CA00E8ABB3 /* asharp1piano.mp3 in Resources */,
+				45E3D6BF2ADA66CA00E8ABB3 /* e8piano.mp3 in Resources */,
+				45E3D7072ADA66CA00E8ABB3 /* b4piano.mp3 in Resources */,
+				45E3D6D92ADA66CA00E8ABB3 /* csharp0piano.mp3 in Resources */,
+				45E3D6DE2ADA66CA00E8ABB3 /* b2piano.mp3 in Resources */,
+				45E3D6F62ADA66CA00E8ABB3 /* gsharp8piano.mp3 in Resources */,
+				45E3D7142ADA66CA00E8ABB3 /* gsharp2piano.mp3 in Resources */,
+				45E3D6DF2ADA66CA00E8ABB3 /* e4piano.mp3 in Resources */,
+				45E3D6DC2ADA66CA00E8ABB3 /* d6piano.mp3 in Resources */,
+				45E3D6B32ADA66CA00E8ABB3 /* g0piano.mp3 in Resources */,
+				45E3D7042ADA66CA00E8ABB3 /* dsharp5piano.mp3 in Resources */,
+				45E3D6CE2ADA66CA00E8ABB3 /* e2piano.mp3 in Resources */,
+				45E3D7022ADA66CA00E8ABB3 /* a5piano.mp3 in Resources */,
+				45E3D6C32ADA66CA00E8ABB3 /* b0piano.mp3 in Resources */,
+				45E3D6E82ADA66CA00E8ABB3 /* b7piano.mp3 in Resources */,
+				45E3D7032ADA66CA00E8ABB3 /* gsharp0piano.mp3 in Resources */,
+				45E3D6FE2ADA66CA00E8ABB3 /* d5piano.mp3 in Resources */,
+				45E3D6EF2ADA66CA00E8ABB3 /* d8piano.mp3 in Resources */,
+				45E3D6E32ADA66CA00E8ABB3 /* dsharp2piano.mp3 in Resources */,
+				45E3D6BE2ADA66CA00E8ABB3 /* c8piano.mp3 in Resources */,
+				45E3D6C42ADA66CA00E8ABB3 /* g6piano.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,6 +918,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V9QHG26K2Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OpenEarTrainer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -945,6 +946,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V9QHG26K2Y;
 				INFOPLIST_FILE = OpenEarTrainer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

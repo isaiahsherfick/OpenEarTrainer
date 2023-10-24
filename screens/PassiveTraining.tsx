@@ -66,9 +66,6 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
         Math.abs(e.translationX) > Math.abs(2 * e.translationY) // horizontal swipe (dx > 2*dy)
 
     const toActive = () => {
-
-        // TODO halt audio playback
-
         setSettings({
             ...settings,
             trainingMode: 'active'

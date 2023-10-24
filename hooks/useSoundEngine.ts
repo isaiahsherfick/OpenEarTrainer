@@ -1,167 +1,104 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { Note } from "../music_theory/Note";
-import Sound from "react-native-sound";
-import { SettingsDataT } from "../screens/RootStackPrams";
-import { NotesQueue } from "./useTrainingEngine";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { SettingsContext } from "../contexts/SettingsContext";
+import SoundEngine from "../music_theory/SoundEngine";
+import { Chord } from "../music_theory/Chord";
+import { Interval } from "../music_theory/Interval";
+import { getRandomIntervalAscending, getRandomIntervalDescending, getRandomRootPositionTriad } from "../music_theory/NotesGenerator";
 
-
-export const SoundEngineContext = createContext({
-    startPassive: () => new Promise<void>(() => { }),
-    stopPlaying: () => { },
-    pausePassive: () => { },
-    next: () => new Promise<void>(() => { }),
-    replay: () => new Promise<void>(() => { })
-})
-
-export function useSoundEngine(
-    settings: SettingsDataT,
-    nextNotes: () => Promise<Note[] | undefined>,
-    currentNotes: () => Note[],
-    // notesQueue: NotesQueue
-) {
-    const [activeSounds, setActiveSounds] = useState<Sound[]>()
-    const [preloadedSounds, setPreloadedSounds] = useState<Sound[]>()
+export default function useSoundEngine() {
+    const { settings } = useContext(SettingsContext)
     const [looping, setLooping] = useState(false)
-    const [playbackFin, setPlaybackFin] = useState(true)
+    const [soundplayed, setSoundPlayed] = useState(false)
+    const soundEngineRef = useRef(new SoundEngine(settings.notesMode))
+    const currentChordOrIntervalRef = useRef<Chord | Interval>()
 
     useEffect(() => {
-        console.log('sound engine reloaded')
-        stopPlaying()
-        setLooping(false)
-        setPlaybackFin(true)
+        soundEngineRef.current.cleanup()
+        soundEngineRef.current.changeMode(settings.notesMode)
+    }, [settings.notesMode])
 
-        const current = currentNotes()
-
-        if (!current) return
-        loadSounds(currentNotes())
-    }, [settings.notesMode, settings.trainingMode])
-
-    // ensures that in passive mode the next sound only plays when the first sound ends
     useEffect(() => {
-        console.log('SE - sound finished playing')
-        if (looping) {
-            next()
-        }
-        if (settings.trainingMode === 'active' && settings.notesMode === 'intervals' && playbackFin) {
-            next()
-        }
-    }, [playbackFin, looping])
+        soundEngineRef.current.setSpeed(settings.playbackSpeed)
+    }, [settings.playbackSpeed])
 
-    // useEffect(()=>{
-    //     console.log('SE - interval counter', intervalCounter)
-    //     if (settings.trainingMode==='active' && intervalCounter%2) {
-    //         next()
-    //     }
-    // },[intervalCounter])
+    const playNext = async () => {
+        const notes = generateChordOrInterval()
+        if (!notes) return
+        await soundEngineRef.current.loadSounds(notes)
+        await soundEngineRef.current.playSounds()
+        if (looping) setSoundPlayed(prev => !prev)
+    }
 
-
-    /* passive training actions */
-    const startPassive = async () => {
+    const playPassive = () => {
         setLooping(true)
+
     }
 
     const pausePassive = () => {
-        stopPlaying()
         setLooping(false)
+        soundEngineRef.current.pause()
     }
 
-    /**
-     * stop all sounds 
-     */
-    const stopPlaying = () => {
-        if (activeSounds) {
-            activeSounds.forEach(sound => {
-                sound.stop()
-                sound.release()
-            })
-            setActiveSounds(undefined)
+    const passive = () => {
+        // let looping = true
+
+        // while (looping) {
+        //     throttle(() => {
+        //         console.log('audio')
+        //     })
+        // }
+
+        // return () => {
+        //     looping = false
+        // }
+    }
+
+    useEffect(() => {
+        if (looping) {
+            playNext()
+        }
+    }, [looping, soundplayed])
+
+    const replay = async () => {
+        await soundEngineRef.current.playSounds()
+    }
+
+    const generateChordOrInterval = () => {
+        if (settings.notesMode === 'intervals') {
+            let interval
+            if (settings.intervals.progression === 'ascend') {
+                interval = getRandomIntervalAscending()
+            }
+            if (settings.intervals.progression === 'descend') {
+                interval = getRandomIntervalDescending()
+            }
+            else { // progression === ''
+                interval = getRandomIntervalDescending() // TODO replace placeholder call with something good
+            }
+            currentChordOrIntervalRef.current = interval
+            return [interval.note1, interval.note2]
+        }
+        else { // notesMode === 'chords'
+            const chord = getRandomRootPositionTriad()
+            currentChordOrIntervalRef.current = chord
+            return chord.notes
         }
     }
 
-    /* active training actions */
-    const next = async () => {
-        stopPlaying()
-        await loadNextSounds()
-
-        activatePreloaded()
-
-        debugSounds('SE - next - activeSounds', activeSounds)
+    return {
+        currentChordOrIntervalRef,
+        playNext, playPassive, pausePassive, replay, passive
     }
-
-    const replay = play
-
-    /* private helper functions */
-
-    const activatePreloaded = () => {
-        setActiveSounds(preloadedSounds)
-    }
-
-    useEffect(() => { play() }, [activeSounds])
-
-    async function play() {
-        if (!activeSounds) return
-
-        // play each sound
-        await Promise.all(multiSoundplayPromise(activeSounds))
-        setPlaybackFin(prev => !prev)
-
-    }
-
-    const loadSounds = async (notes: Note[]) => {
-        const soundPromises = constructSoundPromises(notes)
-        const sounds = await Promise.all(soundPromises)
-        debugSounds('SE - loadSounds', sounds)
-        setPreloadedSounds(sounds)
-    }
-
-    const loadNextSounds = async () => {
-        // swap state with the next batch of Sound objects
-        const next = await nextNotes()
-
-        console.log('SE - next', next)
-
-        if (next) {
-            await loadSounds(next)
-        }
-    }
-
-    const constructSoundPromises = (notes: Note[]): Promise<Sound>[] => {
-        const promises: Promise<Sound>[] = notes.map(
-            (note) => new Promise((resolve, reject) => {
-                let fileName = note.getSoundFileName() // WARNING hacky workaround until Note.ts refactor
-                fileName = fileName.substring(0, 1).toUpperCase() + fileName.substring(1) // WARNING hacky workaround until Note.ts refactor
-                const sound = new Sound(
-                    fileName,
-                    Sound.MAIN_BUNDLE,
-                    (err) => {
-                        if (err) {
-                            reject(`error loading sound file for ${note.getSoundFileName()}`)
-                        }
-                        resolve(sound)
-                    }
-                )
-            }))
-        return promises
-    }
-
-    const multiSoundplayPromise = (sound: Sound[]): Promise<void>[] => {
-        return sound.map(s => new Promise((resolve, reject) => {
-            s.play(success => {
-                if (success) {
-                    resolve()
-                }
-                else reject('unable to play notes')
-            })
-        }))
-    }
-
-    return { SoundEngineContext, startPassive, pausePassive, stopPlaying, next, replay }
 }
 
-function debugSounds(caption: string, sounds?: Sound[]) {
-    console.log(caption)
-    if (!sounds) return
-    sounds.forEach(s => {
-        console.log(`     ${s['_filename'].substring(186)}`, '    loaded:', s['_loaded'], '    playing:', s['_playing'])
-    });
+function throttle(callback: Function, delay = 1200) {
+    let canExecute = true
+
+    return (...args: any) => {
+        if (!canExecute) return
+        callback(...args)
+        setTimeout(() => {
+            canExecute = true
+        }, delay);
+    }
 }

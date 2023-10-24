@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import type { PropsWithChildren } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { TrainingMode, ProgressionT } from "../screens/RootStackPrams";
@@ -20,7 +20,7 @@ import { SvgXml } from "react-native-svg";
 import Sound from "react-native-sound";
 Sound.setCategory("Playback");
 
-import { SoundEngineContext } from "../hooks/useSoundEngine";
+import { SoundEngineContext } from "../contexts/SoundEngineContext";
 
 type PlaybackControlProps = PropsWithChildren<{
     TrainingMode: TrainingMode;
@@ -30,16 +30,24 @@ export default function PlaybackControl(
     props: PlaybackControlProps,
 ): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext);
-    const { startPassive, pausePassive, replay, next } = useContext(SoundEngineContext)
+    const { playPassive, pausePassive, replay, playNext, passive } = useContext(SoundEngineContext)
     const [audioPlaying, setAudioPlaying] = useState(false);
     const [progression, setProgression] = useState<ProgressionT>("random");
-    // const [looping, setLooping] = useState(false);
     const [playbackSpeed, setPlaybackSpeed] = useState<"slow" | "fast">("slow");
+    const stopPassiveRef = useRef<() => void>()
 
     useEffect(() => {
-        console.log('lasdasfadsffadfsdfaf', props.TrainingMode)
-        setAudioPlaying(false)
+        if (settings.intervals.progression) {
+            setProgression(settings.intervals.progression)
+        }
+        if (settings.playbackSpeed) {
+            setPlaybackSpeed(settings.playbackSpeed)
+        }
+    }, [settings])
 
+    useEffect(() => {
+        pausePassive()
+        setAudioPlaying(false)
     }, [settings.trainingMode])
 
     const toggleAscend = () => {
@@ -53,13 +61,10 @@ export default function PlaybackControl(
             }
         }))
     }
-    // const toggleLooping = () => {
-    //     const nextState = !looping
-    //     setLooping(nextState)
-    // }
     const togglePlaybackSpeed = () => {
         const nextState = playbackSpeed === 'slow' ? 'fast' : 'slow'
         setPlaybackSpeed(nextState)
+        console.log('PC - speed changed')
         setSettings(prev => ({
             ...prev,
             playbackSpeed: nextState
@@ -70,12 +75,12 @@ export default function PlaybackControl(
         const nextState = !audioPlaying
 
         if (nextState) {
-            // passivePlay(settings)
-            startPassive()
+            playPassive()
+            // stopPassiveRef.current = passive()
         }
         else {
-            // passivePause()
             pausePassive()
+            // if (stopPassiveRef.current) stopPassiveRef.current()
         }
 
         setAudioPlaying(nextState)
@@ -88,23 +93,17 @@ export default function PlaybackControl(
                 <View style={styles.playbackControlRow}>
                     <TouchableOpacity onPress={toggleAscend}>
                         {progression === 'ascend' ?
-                            <SvgXml width={50} xml={ascendXML} />
+                            <SvgXml width={32} xml={ascendXML} />
                             : progression === 'descend' ?
-                                <SvgXml width={50} xml={descendXML} />
+                                <SvgXml width={32} xml={descendXML} />
                                 :
-                                <SvgXml width={50} xml={randomXML} />}
+                                <SvgXml width={32} xml={randomXML} />}
                     </TouchableOpacity>
-                    {/* <TouchableOpacity onPress={toggleLooping}>
-                        {looping ?
-                            <SvgXml width={50} xml={repeatXML} />
-                            :
-                            <SvgXml width={50} xml={repeatXML} />}
-                    </TouchableOpacity> */}
                     <TouchableOpacity onPress={togglePlaybackSpeed}>
-                        {playbackSpeed === 'slow' ?
-                            <SvgXml width={50} xml={slowXML} />
+                        {settings.playbackSpeed === 'slow' ?
+                            <SvgXml width={32} xml={slowXML} />
                             :
-                            <SvgXml width={50} xml={fastXML} />
+                            <SvgXml width={32} xml={fastXML} />
                         }
                     </TouchableOpacity>
                 </View>
@@ -125,7 +124,7 @@ export default function PlaybackControl(
                         <TouchableOpacity onPress={replay}>
                             <SvgXml width={75} xml={replayXML} />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={next}>
+                        <TouchableOpacity onPress={playNext}>
                             <SvgXml width={75} xml={skipXML} />
                         </TouchableOpacity>
                     </>
@@ -139,6 +138,6 @@ const styles = StyleSheet.create({
     playbackControlRow: {
         flexDirection: "row",
         justifyContent: "space-around",
-        paddingVertical: 10,
+        paddingVertical: 5,
     },
 });
