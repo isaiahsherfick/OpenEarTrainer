@@ -69,11 +69,11 @@ export default function useSoundEngine() {
             if (settings.intervals.progression === 'ascend') {
                 interval = getRandomIntervalAscending()
             }
-            if (settings.intervals.progression === 'descend') {
+            else if (settings.intervals.progression === 'descend') {
                 interval = getRandomIntervalDescending()
             }
-            else { // progression === ''
-                interval = getRandomIntervalDescending() // TODO replace placeholder call with something good
+            else { // progression === 'simultaneous'
+                interval = getRandomIntervalAscending() // TODO replace placeholder call with something good
             }
             currentChordOrIntervalRef.current = interval
             return [interval.note1, interval.note2]

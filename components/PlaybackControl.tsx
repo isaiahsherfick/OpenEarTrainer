@@ -30,9 +30,9 @@ export default function PlaybackControl(
     props: PlaybackControlProps,
 ): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext);
-    const { playPassive, pausePassive, replay, playNext, passive } = useContext(SoundEngineContext)
+    const { playPassive, pausePassive, replay, playNext } = useContext(SoundEngineContext)
     const [audioPlaying, setAudioPlaying] = useState(false);
-    const [progression, setProgression] = useState<ProgressionT>("random");
+    const [progression, setProgression] = useState<ProgressionT>("simultaneous");
     const [playbackSpeed, setPlaybackSpeed] = useState<"slow" | "fast">("slow");
     const stopPassiveRef = useRef<() => void>()
 
@@ -51,7 +51,7 @@ export default function PlaybackControl(
     }, [settings.trainingMode])
 
     const toggleAscend = () => {
-        const nextState: ProgressionT = progression === 'random' ? 'ascend' : (progression === 'ascend' ? 'descend' : 'random')
+        const nextState: ProgressionT = progression === 'simultaneous' ? 'ascend' : (progression === 'ascend' ? 'descend' : 'simultaneous')
         setProgression(nextState)
         setSettings(prev => ({
             ...prev,
@@ -73,6 +73,8 @@ export default function PlaybackControl(
     }
     const playPause = () => {
         const nextState = !audioPlaying
+
+        console.log('settings.intervals.intervalsToQuiz', settings.intervals.intervalsToQuiz)
 
         if (nextState) {
             playPassive()

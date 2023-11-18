@@ -2,14 +2,16 @@ import { PropsWithChildren, useContext, useState } from "react"
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native"
 import { SettingsContext } from "../contexts/SettingsContext"
 import { ChordName, IntervalName } from "../music_theory/NoteName"
+import { SoundEngineContext } from "../contexts/SoundEngineContext"
 
 const dummyMultipleChoices = {
     options: ['Maj7', 'min7', 'p5', 'p4', 'Maj3', 'p8',],
     answer: 5
 }
 
-export function ActiveTrainingBody(props: PropsWithChildren): JSX.Element {
+export function ActiveTrainingBody(): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext)
+    const { currentChordOrIntervalRef } = useContext(SoundEngineContext)
     const correctAnswerPicked = () => {
 
     }
