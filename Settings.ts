@@ -8,8 +8,8 @@ const SettingsData: SettingsDataT = {
   playbackSpeed: 'slow',
   chords: {
     range: {
-      low: "A1",
-      high: "C8",
+      low: 3,
+      high: 6,
     },
     chordsToQuiz: [
       Chords.major,
