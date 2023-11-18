@@ -1,4 +1,4 @@
-import { Interval } from "./Interval";
+import { Interval, Intervals } from "./Interval";
 import { Chord, Chords } from "./Chord";
 import { Note } from "./Note";
 import { NoteName } from "./NoteName";
@@ -12,14 +12,14 @@ import SettingsData from "../Settings";
 //This is THE public entrypoint
 //takes in the settings object and generates the proper chord or interval
 //frontend should only really call this method ideally
-const getNextChordOrInterval = (settings: SettingsDataT): Chord | Interval => {
+export const getNextChordOrInterval = (settings: SettingsDataT): Chord | Interval => {
   if (settings.notesMode == "chords") {
-    const validChordQualities = settings.chordsToQuiz;
+    const validChordQualities = settings.chords.chordsToQuiz;
     return getRootPositionTriad(validChordQualities);
   }
   else if (settings.notesMode == "intervals") {
-    const intervalsToQuiz = settings.intervalsToQuiz;
-    const playbackMode = settings.progression;
+    const intervalsToQuiz = settings.intervals.intervalsToQuiz;
+    const playbackMode = settings.intervals.progression;
     if (playbackMode == "ascend") {
       return getRandomAscendingInterval(intervalsToQuiz);
     }
@@ -38,6 +38,14 @@ const getRandomAscendingInterval = (possibleIntervals: Intervals[]): Interval =>
     possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
   const startingNote = getRandomNote();
   return Interval.AscendingInterval(startingNote, chosenInterval);
+};
+
+//Returns a random descending interval using notes from octaves 3-8.
+const getRandomDescendingInterval = (possibleIntervals: Intervals[]): Interval => {
+  const chosenInterval =
+    possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
+  const startingNote = getRandomNote();
+  return Interval.DescendingInterval(startingNote, chosenInterval);
 };
 
 const getRandomNoteName = () => {

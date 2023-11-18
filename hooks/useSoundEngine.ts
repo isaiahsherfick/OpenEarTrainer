@@ -3,7 +3,7 @@ import { SettingsContext } from "../contexts/SettingsContext";
 import SoundEngine from "../music_theory/SoundEngine";
 import { Chord } from "../music_theory/Chord";
 import { Interval } from "../music_theory/Interval";
-import { getRandomIntervalAscending, getRandomIntervalDescending, getRandomRootPositionTriad } from "../music_theory/NotesGenerator";
+import { getNextChordOrInterval } from "../music_theory/NotesGenerator";
 
 export default function useSoundEngine() {
     const { settings } = useContext(SettingsContext)
@@ -64,24 +64,12 @@ export default function useSoundEngine() {
     }
 
     const generateChordOrInterval = () => {
-        if (settings.notesMode === 'intervals') {
-            let interval
-            if (settings.intervals.progression === 'ascend') {
-                interval = getRandomIntervalAscending()
-            }
-            else if (settings.intervals.progression === 'descend') {
-                interval = getRandomIntervalDescending()
-            }
-            else { // progression === 'simultaneous'
-                interval = getRandomIntervalAscending() // TODO replace placeholder call with something good
-            }
-            currentChordOrIntervalRef.current = interval
-            return [interval.note1, interval.note2]
+        currentChordOrIntervalRef.current = getNextChordOrInterval(settings)
+        if (currentChordOrIntervalRef.current instanceof Interval) {
+            return [currentChordOrIntervalRef.current.note1, currentChordOrIntervalRef.current.note2]
         }
         else { // notesMode === 'chords'
-            const chord = getRandomRootPositionTriad()
-            currentChordOrIntervalRef.current = chord
-            return chord.notes
+            return currentChordOrIntervalRef.current.notes
         }
     }
 
