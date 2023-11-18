@@ -1,18 +1,49 @@
 import { Interval } from "./Interval";
-import { Chord } from "./Chord";
+import { Chord, Chords } from "./Chord";
 import { Note } from "./Note";
 import { NoteName } from "./NoteName";
+import { SettingsDataT } from "../screens/RootStackPrams";
 import SettingsData from "../Settings";
 
+
 //Contains public entrypoints for the user interface to receive random chords and intervals
+
+
+//This is THE public entrypoint
+//takes in the settings object and generates the proper chord or interval
+//frontend should only really call this method ideally
+const getNextChordOrInterval = (settings: SettingsDataT): Chord | Interval => {
+  if (settings.notesMode == "chords") {
+    const validChordQualities = settings.chordsToQuiz;
+    return getRootPositionTriad(validChordQualities);
+  }
+  else if (settings.notesMode == "intervals") {
+    const intervalsToQuiz = settings.intervalsToQuiz;
+    const playbackMode = settings.progression;
+    if (playbackMode == "ascend") {
+      return getRandomAscendingInterval(intervalsToQuiz);
+    }
+    else if (playbackMode == "descend") {
+      return getRandomDescendingInterval(intervalsToQuiz);
+    }
+    else if (playbackMode == "simultaneous") {
+      return getRandomAscendingInterval(intervalsToQuiz);
+    }
+  }
+}
+
+//Returns a random ascending interval using notes from octaves 3-8.
+const getRandomAscendingInterval = (possibleIntervals: Intervals[]): Interval => {
+  const chosenInterval =
+    possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
+  const startingNote = getRandomNote();
+  return Interval.AscendingInterval(startingNote, chosenInterval);
+};
 
 const getRandomNoteName = () => {
   const noteNames = Object.values(NoteName);
   const randomInt = randomIntInRange(0, noteNames.length - 1);
   const chosenNoteName = noteNames[randomInt];
-  if (!chosenNoteName) {
-    console.log("randomInt=" + randomInt);
-  }
   return chosenNoteName;
 };
 
@@ -29,6 +60,7 @@ export const getRandomNoteOfPitchClass = (pitchClass: NoteName) => {
   const chosenOctave = randomIntInRange(1, 8);
   return new Note(pitchClass, chosenOctave);
 };
+
 
 //Returns a random ascending interval using notes from octaves 3-8.
 export const getRandomIntervalAscending = (): Interval => {
@@ -66,6 +98,31 @@ export const getRandomIntervalDescendingFromNote = (
   const chosenInterval =
     possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
   return Interval.DescendingInterval(startingNote, chosenInterval);
+};
+
+const getRootPositionTriad = (qualities: Chords[]): Chord => {
+  //TODO: use settings.chords.range to restrict the range instead of this
+  let rootNote = getRandomNote();
+  while (rootNote.octave >= 7) {
+    rootNote = getRandomNote();
+  }
+  const rootPositionTriadMethods = [];
+  if (Chords.major in qualities) {
+    rootPositionTriadMethods.push(Chord.RootPositionMajorTriad);
+  }
+  if (Chords.minor in qualities) {
+    rootPositionTriadMethods.push(Chord.RootPositionMinorTriad);
+  }
+  if (Chords.augmented in qualities) {
+    rootPositionTriadMethods.push(Chord.AugmentedTriad);
+  }
+  if (Chords.diminished in qualities) {
+    rootPositionTriadMethods.push(Chord.DiminishedTriad);
+  }
+  const chosenFunc = rootPositionTriadMethods[
+    randomIntInRange(0, rootPositionTriadMethods.length - 1)
+  ];
+  return chosenFunc(rootNote);
 };
 
 export const getRandomRootPositionTriad = (): Chord => {
