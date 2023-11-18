@@ -1,6 +1,6 @@
 import {Note} from '../Note';
 import {NoteName} from '../NoteName';
-import {Chord} from '../Chord';
+import {Chord, Chords} from '../Chord';
 
 describe('Chord', () => {
     it('Should be able to generate root position major chords', () => {
@@ -80,5 +80,12 @@ describe('Chord', () => {
         actualFifth = chord.notes[2];
         expect(actualThird).toEqual(expectedThird);
         expect(actualFifth).toEqual(expectedFifth);
+    });
+    it('Should be able to tell us what kind of chord it is', () => {
+        let note = new Note(NoteName.B,3);
+        let chord = Chord.AugmentedTriad(note);
+        const expected = Chords.augmented;
+        const actual = chord.quality;
+        expect(actual).toEqual(expected);
     });
 });

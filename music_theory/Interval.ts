@@ -21,10 +21,12 @@ export const Intervals = {
 export class Interval {
   note1: Note;
   note2: Note;
+  numHalfSteps: number;
 
-  private constructor(note1: Note, note2: Note) {
+  private constructor(note1: Note, note2: Note, numHalfSteps: number) {
     this.note1 = note1;
     this.note2 = note2;
+    this.numHalfSteps = numHalfSteps;
   }
 
   public equals(other: Interval): boolean {
@@ -58,7 +60,7 @@ export class Interval {
       targetNoteName,
       startingNoteOctave + octavesToIncrease,
     );
-    return new Interval(startingNote, targetNote);
+    return new Interval(startingNote, targetNote, numHalfSteps);
   }
 
   public static DescendingInterval(
@@ -81,7 +83,7 @@ export class Interval {
       targetNoteName,
       startingNoteOctave - octavesToDecrease,
     );
-    return new Interval(startingNote, targetNote);
+    return new Interval(startingNote, targetNote, numHalfSteps);
   }
 }
 

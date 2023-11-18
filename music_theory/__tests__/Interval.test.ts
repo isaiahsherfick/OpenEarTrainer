@@ -52,4 +52,11 @@ describe('Interval', () => {
         const actual = interval.note2;
         expect(actual).toEqual(expected);
     });
+    it('Should tell us what kind of interval it is', () => {
+        const expected = Intervals.minorThird;
+        const startingNote = new Note(NoteName.A, 3);
+        const interval = Interval.AscendingInterval(startingNote, Intervals.minorThird);
+        const actual = interval.numHalfSteps;
+        expect(actual).toEqual(expected);
+    });
 });
