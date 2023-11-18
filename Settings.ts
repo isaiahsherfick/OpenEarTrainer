@@ -20,8 +20,8 @@ const SettingsData: SettingsDataT = {
   },
   intervals: {
     range: {
-      low: "A1",
-      high: "C8",
+      low: 3,
+      high: 6,
     },
     progression: 'ascend',
     intervalsToQuiz: [

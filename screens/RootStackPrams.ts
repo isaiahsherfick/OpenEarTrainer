@@ -21,15 +21,15 @@ export type SettingsDataT = {
     playbackSpeed: PlaybackSpeedT
     chords: {
         range: {
-            low: string,
-            high: string
+            low: number,
+            high: number
         },
         chordsToQuiz: number[]
     },
     intervals: {
         range: {
-            low: string,
-            high: string
+            low: number,
+            high: number
         },
         progression: ProgressionT,
         intervalsToQuiz: number[]
