@@ -12,7 +12,7 @@ type SoundEngineContextT = {
     playPassive: () => void,
     pausePassive: () => void,
     replay: () => Promise<void>
-    passive: () => () => void
+    // passive: () => () => void
 }
 
 export const SoundEngineContext = createContext<SoundEngineContextT>({
@@ -21,7 +21,7 @@ export const SoundEngineContext = createContext<SoundEngineContextT>({
     playPassive: () => { },
     pausePassive: () => { },
     replay: () => new Promise<void>(() => { }),
-    passive: () => (() => { })
+    // passive: () => (() => { })
 })
 
 export const SoundEngineProvider = ({ children }: PropsWithChildren) => {

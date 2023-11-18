@@ -15,7 +15,7 @@ type PassiveTrainingProp = StackScreenProps<RootStackParamList, 'PassiveTraining
 
 export default function PassiveTraining({ route, navigation }: PassiveTrainingProp): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext)
-    const [screenLoaded, setScreenloaded] = useState(false)
+    // const [screenLoaded, setScreenloaded] = useState(false)
     const { width } = useWindowDimensions()
     const translateX = useAnimatedValue(width) // screen sliding animation
 
@@ -28,7 +28,7 @@ export default function PassiveTraining({ route, navigation }: PassiveTrainingPr
                 easing: Easing.out(Easing.quad),
                 useNativeDriver: true
             }).start(res => {
-                setScreenloaded(true)
+                // setScreenloaded(true)
             })
         })
 

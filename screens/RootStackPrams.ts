@@ -12,7 +12,7 @@ export type SettingsScreenProps = StackScreenProps<RootStackParamList, 'Settings
 
 export type NotesMode = 'chords' | 'intervals';
 export type TrainingMode = 'active' | 'passive';
-export type ProgressionT = 'ascend' | 'descend' | 'random'
+export type ProgressionT = 'ascend' | 'descend' | 'simultaneous'
 export type PlaybackSpeedT = 'fast' | 'slow'
 
 export type SettingsDataT = {
