@@ -23,11 +23,12 @@ Sound.setCategory("Playback");
 import { SoundEngineContext } from "../contexts/SoundEngineContext";
 
 type PlaybackControlProps = PropsWithChildren<{
-    TrainingMode: TrainingMode;
+    trainingMode: TrainingMode;
+    parentActionOnNextIntervalOrChord: () => void
 }>;
 
 export default function PlaybackControl(
-    props: PlaybackControlProps,
+    { trainingMode, parentActionOnNextIntervalOrChord }: PlaybackControlProps,
 ): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext);
     const { playPassive, pausePassive, replay, playNext } = useContext(SoundEngineContext)
@@ -89,9 +90,14 @@ export default function PlaybackControl(
 
     }
 
+    const skip = () => {
+        playNext()
+        parentActionOnNextIntervalOrChord()
+    }
+
     return (
         <View>
-            {props.TrainingMode === "passive" &&
+            {trainingMode === "passive" &&
                 <View style={styles.playbackControlRow}>
                     <TouchableOpacity onPress={toggleAscend}>
                         {progression === 'ascend' ?
@@ -111,7 +117,7 @@ export default function PlaybackControl(
                 </View>
             }
             <View style={styles.playbackControlRow}>
-                {props.TrainingMode === "passive" &&
+                {trainingMode === "passive" &&
                     <TouchableOpacity onPress={playPause}>
                         {audioPlaying ?
                             <SvgXml width={75} xml={pauseXML} />
@@ -121,12 +127,12 @@ export default function PlaybackControl(
                         }
                     </TouchableOpacity>
                 }
-                {props.TrainingMode === "active" &&
+                {trainingMode === "active" &&
                     <>
                         <TouchableOpacity onPress={replay}>
                             <SvgXml width={75} xml={replayXML} />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={playNext}>
+                        <TouchableOpacity onPress={skip}>
                             <SvgXml width={75} xml={skipXML} />
                         </TouchableOpacity>
                     </>

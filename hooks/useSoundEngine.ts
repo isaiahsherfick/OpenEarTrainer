@@ -65,6 +65,7 @@ export default function useSoundEngine() {
 
     const generateChordOrInterval = () => {
         currentChordOrIntervalRef.current = getNextChordOrInterval(settings)
+        console.log('USE - generateChordOrInterval', currentChordOrIntervalRef.current)
         if (currentChordOrIntervalRef.current instanceof Interval) {
             return [currentChordOrIntervalRef.current.note1, currentChordOrIntervalRef.current.note2]
         }

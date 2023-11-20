@@ -10,14 +10,17 @@ import { Gesture, GestureDetector, GestureStateChangeEvent, GestureUpdateEvent, 
 import { ActiveTrainingBody } from '../components/ActiveTrainingBody';
 import { SvgXml } from 'react-native-svg';
 import { leftScreenDots } from '../assets/icons/svgXMLs';
+import { SoundEngineContext } from '../contexts/SoundEngineContext';
 
 type ActiveTrainingProp = StackScreenProps<RootStackParamList, 'ActiveTraining'>
 
 export default function ActiveTraining({ route, navigation }: ActiveTrainingProp): JSX.Element {
     const { settings, setSettings } = useContext(SettingsContext)
+    const { currentChordOrIntervalRef } = useContext(SoundEngineContext)
     const [screenLoaded, setScreenloaded] = useState(false)
     const { width } = useWindowDimensions()
     const translateX = useAnimatedValue(-width)
+    const [trainingInfo, setTrainingInfo] = useState({})
 
     // screen slides in when in focus
     useEffect(() => {
@@ -79,6 +82,12 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
         navigation.navigate('PassiveTraining')
     }
 
+    const onNextIntervalOrChord = () => {
+        if (currentChordOrIntervalRef?.current) {
+            setTrainingInfo(currentChordOrIntervalRef.current)
+        }
+    }
+
 
     return (
         <SafeAreaView style={globalStyles.container}>
@@ -92,9 +101,12 @@ export default function ActiveTraining({ route, navigation }: ActiveTrainingProp
                         NotesMode={settings.notesMode}
                         Navigation={navigation}
                     />
-                    <ActiveTrainingBody />
+                    <ActiveTrainingBody
+                        trainingInfo={trainingInfo}
+                    />
                     <PlaybackControl
-                        TrainingMode='active'
+                        trainingMode='active'
+                        parentActionOnNextIntervalOrChord={onNextIntervalOrChord}
                     />
                 </Animated.View>
             </GestureDetector>

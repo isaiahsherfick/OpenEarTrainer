@@ -17,7 +17,7 @@ export const getNextChordOrInterval = (settings: SettingsDataT): Chord | Interva
     const validChordQualities = settings.chords.chordsToQuiz;
     const lowOct = settings.chords.range.low;
     const highOct = settings.chords.range.high;
-    return getRootPositionTriad(validChordQualities,lowOct,highOct);
+    return getRootPositionTriad(validChordQualities, lowOct, highOct);
   }
   else if (settings.notesMode == "intervals") {
     const intervalsToQuiz = settings.intervals.intervalsToQuiz;
@@ -25,13 +25,13 @@ export const getNextChordOrInterval = (settings: SettingsDataT): Chord | Interva
     const lowOct = settings.intervals.range.low;
     const highOct = settings.intervals.range.high;
     if (playbackMode == "ascend") {
-      return getRandomAscendingInterval(intervalsToQuiz,lowOct,highOct);
+      return getRandomAscendingInterval(intervalsToQuiz, lowOct, highOct);
     }
     else if (playbackMode == "descend") {
-      return getRandomDescendingInterval(intervalsToQuiz,lowOct,highOct);
+      return getRandomDescendingInterval(intervalsToQuiz, lowOct, highOct);
     }
     else if (playbackMode == "simultaneous") {
-      return getRandomAscendingInterval(intervalsToQuiz,lowOct,highOct);
+      return getRandomAscendingInterval(intervalsToQuiz, lowOct, highOct);
     }
   }
 }
@@ -40,7 +40,7 @@ export const getNextChordOrInterval = (settings: SettingsDataT): Chord | Interva
 const getRandomAscendingInterval = (possibleIntervals: Intervals[], lowOct: number, highOct: number): Interval => {
   const chosenInterval =
     possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
-  const startingNote = getRandomNoteInRange(lowOct,highOct);
+  const startingNote = getRandomNoteInRange(lowOct, highOct);
   return Interval.AscendingInterval(startingNote, chosenInterval);
 };
 
@@ -48,7 +48,7 @@ const getRandomAscendingInterval = (possibleIntervals: Intervals[], lowOct: numb
 const getRandomDescendingInterval = (possibleIntervals: Intervals[], lowOct: number, highOct: number): Interval => {
   const chosenInterval =
     possibleIntervals[randomIntInRange(0, possibleIntervals.length - 1)];
-  const startingNote = getRandomNoteInRange(lowOct,highOct);
+  const startingNote = getRandomNoteInRange(lowOct, highOct);
   return Interval.DescendingInterval(startingNote, chosenInterval);
 };
 
@@ -119,7 +119,7 @@ export const getRandomIntervalDescendingFromNote = (
 };
 
 const getRootPositionTriad = (qualities: Chords[], lowOct: number, highOct: number): Chord => {
-  let rootNote = getRandomNoteInRange(lowOct,highOct);
+  let rootNote = getRandomNoteInRange(lowOct, highOct);
   const rootPositionTriadMethods = [];
   if (Chords.major in qualities) {
     rootPositionTriadMethods.push(Chord.RootPositionMajorTriad);

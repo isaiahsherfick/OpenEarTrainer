@@ -45,7 +45,7 @@ class SoundEngine {
 
     async playSounds() {
         if (!this.sounds) return
-        debugSounds('playing', this.sounds)
+        debugSounds('SE - playing', this.sounds)
         await this.strategy.play(this.sounds)
         return this
     }
