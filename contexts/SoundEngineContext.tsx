@@ -12,7 +12,6 @@ type SoundEngineContextT = {
     playPassive: () => void,
     pausePassive: () => void,
     replay: () => Promise<void>
-    // passive: () => () => void
 }
 
 export const SoundEngineContext = createContext<SoundEngineContextT>({
@@ -21,12 +20,11 @@ export const SoundEngineContext = createContext<SoundEngineContextT>({
     playPassive: () => { },
     pausePassive: () => { },
     replay: () => new Promise<void>(() => { }),
-    // passive: () => (() => { })
 })
 
 export const SoundEngineProvider = ({ children }: PropsWithChildren) => {
     const SE = useSoundEngine()
-    console.log('SEC - rerendered', SE.currentChordOrIntervalRef.current)
+    // console.log('SEC - rerendered', SE.currentChordOrIntervalRef.current)
     return (
         <SoundEngineContext.Provider value={SE}>
             {children}

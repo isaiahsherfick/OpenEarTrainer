@@ -31,7 +31,6 @@ export default function useSoundEngine() {
 
     const playPassive = () => {
         setLooping(true)
-
     }
 
     const pausePassive = () => {
@@ -40,17 +39,6 @@ export default function useSoundEngine() {
     }
 
     const passive = () => {
-        // let looping = true
-
-        // while (looping) {
-        //     throttle(() => {
-        //         console.log('audio')
-        //     })
-        // }
-
-        // return () => {
-        //     looping = false
-        // }
     }
 
     useEffect(() => {
@@ -76,7 +64,7 @@ export default function useSoundEngine() {
 
     return {
         currentChordOrIntervalRef,
-        playNext, playPassive, pausePassive, replay, passive
+        playNext, playPassive, pausePassive, replay
     }
 }
 

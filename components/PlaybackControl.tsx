@@ -79,11 +79,9 @@ export default function PlaybackControl(
 
         if (nextState) {
             playPassive()
-            // stopPassiveRef.current = passive()
         }
         else {
             pausePassive()
-            // if (stopPassiveRef.current) stopPassiveRef.current()
         }
 
         setAudioPlaying(nextState)
