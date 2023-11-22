@@ -19,7 +19,7 @@ export function ActiveTrainingBody({ trainingInfo }: PropsWithChildren<ActiveTra
     useEffect(() => {
         calcCorrectAnswer()
         clearCells()
-    }, [trainingInfo])
+    }, [trainingInfo, settings])
 
     const clearCells = () => {
         setAnswersSelected([])
@@ -56,10 +56,10 @@ export function ActiveTrainingBody({ trainingInfo }: PropsWithChildren<ActiveTra
                 settings.intervals.intervalsToQuiz.map((intevalName, index) =>
                     <MultipleChoiceCell
                         key={index}
-                        index={index}
+                        index={intevalName}
                         option={IntervalName[intevalName]}
-                        isCorrectAnswer={index === correctAnswer}
-                        selected={answersSelected.includes(index)}
+                        isCorrectAnswer={intevalName === correctAnswer}
+                        selected={answersSelected.includes(intevalName)}
                         answerPicked={answerPicked}
                     />
                 )
@@ -67,10 +67,10 @@ export function ActiveTrainingBody({ trainingInfo }: PropsWithChildren<ActiveTra
                 settings.chords.chordsToQuiz.map((chordName, index) =>
                     <MultipleChoiceCell
                         key={index}
-                        index={index}
+                        index={chordName}
                         option={ChordName[chordName]}
-                        isCorrectAnswer={index === correctAnswer}
-                        selected={answersSelected.includes(index)}
+                        isCorrectAnswer={chordName === correctAnswer}
+                        selected={answersSelected.includes(chordName)}
                         answerPicked={answerPicked}
                     />)
             }
@@ -91,7 +91,7 @@ type MultipleChoiceCellProps = PropsWithChildren<{
 function MultipleChoiceCell({ index, option, isCorrectAnswer, selected, answerPicked }: MultipleChoiceCellProps): JSX.Element {
     return (
         <TouchableOpacity
-            key={index}
+            // key={index}
             style={[
                 styles.MultipeChioceCell,
                 selected &&
